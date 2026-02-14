@@ -1,0 +1,68 @@
+
+
+              GPSS World Simulation Report - Untitled Model 1.1.1
+
+
+                   Saturday, February 14, 2026 23:56:35  
+
+           START TIME           END TIME  BLOCKS  FACILITIES  STORAGES
+                0.000          14400.000    27        4          0
+
+
+              NAME                       VALUE  
+          CHECK_FAIL                     20.000
+          GTASK                           7.000
+          PROC1                          12.000
+          PROC2                          16.000
+          RETRY                          22.000
+          SUCCESS                        25.000
+
+
+ LABEL              LOC  BLOCK TYPE     ENTRY COUNT CURRENT COUNT RETRY
+                    1    GENERATE          1612             0       0
+                    2    ASSIGN            1612             0       0
+                    3    TRANSFER          1612             0       0
+                    4    GENERATE          7200             0       0
+                    5    ASSIGN            7200             0       0
+                    6    TRANSFER          7200             0       0
+GTASK               7    SEIZE             8812             0       0
+                    8    ADVANCE           8812             0       0
+                    9    RELEASE           8812             0       0
+                   10    SPLIT             8812             0       0
+                   11    TRANSFER          8812          7372       0
+PROC1              12    SEIZE             1440             0       0
+                   13    ADVANCE           1440             1       0
+                   14    RELEASE           1439             0       0
+                   15    TRANSFER          1439             0       0
+PROC2              16    SEIZE             1440             0       0
+                   17    ADVANCE           1440             1       0
+                   18    RELEASE           1439             0       0
+                   19    TRANSFER          1439             0       0
+CHECK_FAIL         20    SPLIT             2878             0       0
+                   21    TRANSFER          2878             0       0
+RETRY              22    SEIZE             1439             0       0
+                   23    ADVANCE           1439             1       0
+                   24    RELEASE           1438             0       0
+SUCCESS            25    TERMINATE         4316             0       0
+                   26    GENERATE             1             0       0
+                   27    TERMINATE            1             0       0
+
+
+FACILITY         ENTRIES  UTIL.   AVE. TIME AVAIL. OWNER PEND INTER RETRY DELAY
+ 1                 1440    1.000       9.999  1     3351    0    0     0   7371
+ 2                 1440    1.000       9.999  1     3332    0    0     0   7372
+ 3                 1439    0.999       9.999  1    10260    0    0     0   1439
+ 10                8812    0.000       0.000  1        0    0    0     0      0
+
+
+CEC XN   PRI          M1      ASSEM  CURRENT  NEXT  PARAMETER    VALUE
+ 20505    0       14400.000   20502      0     12       1          2.000
+
+
+FEC XN   PRI         BDT      ASSEM  CURRENT  NEXT  PARAMETER    VALUE
+  3351    0       14402.000   3332     13     14       1          1.000
+ 10260    0       14402.000   1672     23     24       1          2.000
+  3332    0       14402.000   3332     17     18       1          1.000
+ 20504    0       14402.000   20504      0      4
+ 20492    0       14402.782   20492      0      1
+ 20506    0       28800.000   20506      0     26

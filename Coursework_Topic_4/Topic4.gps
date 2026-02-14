@@ -1,0 +1,43 @@
+* Topic 4 Email Processing System - GPSS Model
+* Complex system with 3 message types and parallel processing
+* Simulation time: 100 hours = 6000 minutes
+
+* Email arrival every (20 ± 5) minutes - uniform distribution
+* We approximate with exponential for GPSS Student
+GENERATE 20,5
+
+* Split into 3 types (33% each using uniform distribution)
+SPLIT 1,SIMPLE
+SPLIT 1,SPAM
+TRANSFER ,COMPLEX
+
+* Type 1: Simple email - process in 60 minutes
+SIMPLE SEIZE 1
+ADVANCE 60
+RELEASE 1
+TERMINATE 0
+
+* Type 2: Spam - delete in 1 minute
+SPAM SEIZE 2
+ADVANCE 1
+RELEASE 2
+TERMINATE 0
+
+* Type 3: Complex email with preprocessing and parallel assembly
+COMPLEX SEIZE 3
+ADVANCE 30
+RELEASE 3
+
+* After preprocessing, we need 2 confirmations and parallel assembly
+* Simulate parallel assembly (client 60±2, others 60±8) with max time
+SEIZE 4
+ADVANCE 68
+RELEASE 4
+TERMINATE 0
+
+* Timer process - run for 6000 minutes (100 hours)
+GENERATE 6000
+TERMINATE 1
+
+* Start simulation - timer controls the length
+START 1

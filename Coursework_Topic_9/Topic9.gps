@@ -1,0 +1,51 @@
+* Topic 9: Data Collection System - GPSS Model
+* Complex system with sensor grouping, preprocessing, and distribution
+* Simulation time: 4 hours = 14400 seconds
+
+* Sensor A: arrives every (9 +/- 4) seconds
+* Approximate with exponential for GPSS Student
+GENERATE 9,4
+ASSIGN 1,1
+TRANSFER ,GTASK
+
+* Sensor B: arrives every 2 seconds
+GENERATE 2
+ASSIGN 1,2
+TRANSFER ,GTASK
+
+* Group 4 messages into tasks (GTASK = group task)
+GTASK SEIZE 10
+ADVANCE 0
+RELEASE 10
+
+* Preprocessing by 2 processors (random assignment)
+* Simulate random choice between processor 1 and 2
+SPLIT 1,PROC1
+TRANSFER ,PROC2
+
+PROC1 SEIZE 1
+ADVANCE 10
+RELEASE 1
+TRANSFER ,CHECK_FAIL
+
+PROC2 SEIZE 2
+ADVANCE 10
+RELEASE 2
+TRANSFER ,CHECK_FAIL
+
+* Check for 24% failure and retry
+CHECK_FAIL SPLIT 1,RETRY
+TRANSFER ,SUCCESS
+
+RETRY SEIZE 3
+ADVANCE 10
+RELEASE 3
+
+SUCCESS TERMINATE 0
+
+* Timer process - 4 hours = 14400 seconds
+GENERATE 14400
+TERMINATE 1
+
+* Start simulation - timer controls the length
+START 1

@@ -1,0 +1,55 @@
+
+
+              GPSS World Simulation Report - Untitled Model 1.2.1
+
+
+                   Saturday, February 14, 2026 23:55:58  
+
+           START TIME           END TIME  BLOCKS  FACILITIES  STORAGES
+                0.000           6000.000    21        4          0
+
+
+              NAME                       VALUE  
+          COMPLEX                        13.000
+          SIMPLE                          5.000
+          SPAM                            9.000
+
+
+ LABEL              LOC  BLOCK TYPE     ENTRY COUNT CURRENT COUNT RETRY
+                    1    GENERATE           301             0       0
+                    2    SPLIT              301             0       0
+                    3    SPLIT              301             0       0
+                    4    TRANSFER           301           101       0
+SIMPLE              5    SEIZE              100             0       0
+                    6    ADVANCE            100             1       0
+                    7    RELEASE             99             0       0
+                    8    TERMINATE           99             0       0
+SPAM                9    SEIZE              301             0       0
+                   10    ADVANCE            301             1       0
+                   11    RELEASE            300             0       0
+                   12    TERMINATE          300             0       0
+COMPLEX            13    SEIZE              200             0       0
+                   14    ADVANCE            200             1       0
+                   15    RELEASE            199           111       0
+                   16    SEIZE               88             0       0
+                   17    ADVANCE             88             1       0
+                   18    RELEASE             87             0       0
+                   19    TERMINATE           87             0       0
+                   20    GENERATE             1             0       0
+                   21    TERMINATE            1             0       0
+
+
+FACILITY         ENTRIES  UTIL.   AVE. TIME AVAIL. OWNER PEND INTER RETRY DELAY
+ 1                  100    0.996      59.766  1      301    0    0     0    201
+ 2                  301    0.050       1.000  1      905    0    0     0      0
+ 3                  200    0.996      29.883  1      597    0    0     0    101
+ 4                   88    0.991      67.575  1      261    0    0     0    111
+
+
+FEC XN   PRI         BDT      ASSEM  CURRENT  NEXT  PARAMETER    VALUE
+   905    0        6000.137    900     10     11
+   903    0        6021.738    903      0      1
+   301    0        6023.424    297      6      7
+   597    0        6023.424    597     14     15
+   261    0        6037.424    261     17     18
+   906    0       12000.000    906      0     20

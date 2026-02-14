@@ -1,0 +1,43 @@
+* Topic 20: Three-Computer System with Probabilistic Routing - GPSS Model
+* Complex network with feedback loops
+* Simulation: 200 tasks
+
+* Task arrival every (3 +/- 1) minutes - Limit to 200 tasks
+GENERATE 3,1,,200
+
+* Initial routing: 0.4 to Comp1, 0.3 to Comp2, 0.3 to Comp3
+TRANSFER 0.4,COMP1
+TRANSFER 0.5,COMP2
+TRANSFER ,COMP3
+
+* Computer 1: processing 4 +/- 1 minutes
+COMP1 SEIZE 1
+ADVANCE 4,1
+RELEASE 1
+
+* After Comp1: 0.3 to Comp2, 0.7 to Comp3
+TRANSFER 0.3,COMP1_TO_COMP2
+TRANSFER ,COMP1_TO_COMP3
+
+COMP1_TO_COMP2 TRANSFER ,COMP2
+COMP1_TO_COMP3 TRANSFER ,COMP3_FINAL
+
+* Computer 2: processing 3 +/- 1 minutes
+COMP2 SEIZE 2
+ADVANCE 3,1
+RELEASE 2
+TERMINATE 1
+
+* Computer 3: processing 5 +/- 2 minutes (initial and from Comp1)
+COMP3 SEIZE 3
+ADVANCE 5,2
+RELEASE 3
+TERMINATE 1
+
+COMP3_FINAL SEIZE 3
+ADVANCE 5,2
+RELEASE 3
+TERMINATE 1
+
+* Start simulation - 200 tasks
+START 200

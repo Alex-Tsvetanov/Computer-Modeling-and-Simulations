@@ -1,0 +1,7 @@
+Topic 28 Distributed Database System Results
+==================================================
+Requests generated: 150
+Requests completed: 150
+Avg total time: 20.25 min
+Min total time: 13.25 min
+Max total time: 39.36 min

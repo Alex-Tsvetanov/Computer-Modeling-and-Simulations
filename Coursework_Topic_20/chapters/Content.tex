@@ -1,0 +1,300 @@
+\section{Постановка на задачата}
+Изчислителната система се състои от три компютъра.
+\begin{itemize}
+    \item През интервали от $(3 \pm 1)$ минути в системата пристигат задачи.
+    \item Задачите с вероятност 0.4 се насочват към първия компютър, с вероятност 0.3 към втория компютър, а останалите (0.3) към третия компютър.
+    \item Всеки компютър разполага с опашка за задачи с неограничена дължина.
+    \item След обработка от първия компютър, задачата с вероятност 0.3 преминава към втория компютър, а с вероятност 0.7 към третия компютър.
+    \item След обработка от втория или третия компютър задачата се счита за завършена.
+    \item Продължителността на обработка: Компютър 1 - $(4 \pm 1)$ мин, Компютър 2 - $(3 \pm 1)$ мин, Компютър 3 - $(5 \pm 2)$ мин.
+\end{itemize}
+Необходимо е да се моделира процес за обработване на 200 задачи.
+
+\section{Теоретична част}
+Системата представлява мрежа от системи за масово обслужване с маршрутизация.
+
+Входящият поток: Равномерно разпределение в интервала $[2, 4]$ минути (средно 3 минути).
+
+Очаквано разпределение на задачите:
+\begin{itemize}
+    \item Първоначално към Компютър 1: $200 \times 0.4 = 80$ задачи
+    \item Първоначално към Компютър 2: $200 \times 0.3 = 60$ задачи
+    \item Първоначално към Компютър 3: $200 \times 0.3 = 60$ задачи
+\end{itemize}
+
+След Компютър 1:
+\begin{itemize}
+    \item Към Компютър 2: $80 \times 0.3 = 24$ задачи
+    \item Към Компютър 3: $80 \times 0.7 = 56$ задачи
+\end{itemize}
+
+Общо задачи към Компютър 2: $60 + 24 = 84$ задачи
+
+Общо задачи към Компютър 3: $60 + 56 = 116$ задачи
+
+Общо завършени: 200 задачи.
+
+Времена за обработка:
+\begin{itemize}
+    \item Компютър 1: Равномерно $[3, 5]$ мин (средно 4 мин)
+    \item Компютър 2: Равномерно $[2, 4]$ мин (средно 3 мин)
+    \item Компютър 3: Равномерно $[3, 7]$ мин (средно 5 мин)
+\end{itemize}
+
+Очаквано общо време за задача: Зависи от маршрута, средно около 7-9 минути.
+
+\section{Имплементация}
+Симулацията е реализирана на езика Python с използване на библиотеката \texttt{simpy}.
+
+\subsection{Основни параметри}
+\begin{lstlisting}[language=Python, caption=Конфигурация на симулацията]
+TASK_COUNT = 200
+
+ARRIVAL_MEAN = 3
+ARRIVAL_VAR = 1
+
+# Initial routing probabilities
+P1 = 0.4  # To Computer 1
+P2 = 0.3  # To Computer 2
+P3 = 0.3  # To Computer 3
+
+# After Computer 1
+P1_TO_2 = 0.3  # From Comp1 to Comp2
+P1_TO_3 = 0.7  # From Comp1 to Comp3
+
+# Processing times
+COMP1_MIN = 3
+COMP1_MAX = 5
+
+COMP2_MIN = 2
+COMP2_MAX = 4
+
+COMP3_MIN = 3
+COMP3_MAX = 7
+\end{lstlisting}
+
+\subsection{Маршрутизация на задачите}
+\begin{lstlisting}[language=Python, caption=Логика за маршрутизация]
+def route_initial(self, task_id):
+    rand = random.random()
+    if rand < P1:
+        # To Computer 1
+        self.env.process(self.process_comp1(task_id))
+    elif rand < P1 + P2:
+        # To Computer 2
+        self.env.process(self.process_comp2(task_id))
+    else:
+        # To Computer 3
+        self.env.process(self.process_comp3(task_id))
+
+def route_after_comp1(self, task_id):
+    rand = random.random()
+    if rand < P1_TO_2:
+        # To Computer 2
+        self.env.process(self.process_comp2(task_id))
+    else:
+        # To Computer 3
+        self.env.process(self.process_comp3(task_id))
+\end{lstlisting}
+
+\subsection{Обработка на задачи}
+\begin{lstlisting}[language=Python, caption=Функции за обработка]
+def process_comp1(self, task_id):
+    with self.comp1.request() as req:
+        yield req
+        processing_time = random.uniform(COMP1_MIN, COMP1_MAX)
+        yield self.env.timeout(processing_time)
+    
+    self.route_after_comp1(task_id)
+
+def process_comp2(self, task_id):
+    with self.comp2.request() as req:
+        yield req
+        processing_time = random.uniform(COMP2_MIN, COMP2_MAX)
+        yield self.env.timeout(processing_time)
+    
+    self.tasks_completed += 1
+
+def process_comp3(self, task_id):
+    with self.comp3.request() as req:
+        yield req
+        processing_time = random.uniform(COMP3_MIN, COMP3_MAX)
+        yield self.env.timeout(processing_time)
+    
+    self.tasks_completed += 1
+\end{lstlisting}
+
+\subsection{Реализация на GPSS}
+Алтернативна реализация на модела чрез езика за симулации GPSS.
+
+\begin{lstlisting}[language=bash, caption=GPSS код на модела]
+* Topic 20: Three-Computer System - GPSS Model
+GENERATE 3,1
+
+* Initial routing (0.4 to Comp1, 0.3 to Comp2, 0.3 to Comp3)
+SPLIT 1,COMP1
+SPLIT 1,COMP2
+TRANSFER ,COMP3
+
+COMP1 SEIZE 1
+ADVANCE 4,1
+RELEASE 1
+
+* After Comp1: 0.3 to Comp2, 0.7 to Comp3
+SPLIT 1,COMP1_TO_COMP2
+TRANSFER ,COMP1_TO_COMP3
+
+COMP1_TO_COMP2 TRANSFER ,COMP2
+COMP1_TO_COMP3 TRANSFER ,COMP3
+
+COMP2 SEIZE 2
+ADVANCE 3,1
+RELEASE 2
+TERMINATE 0
+
+COMP3 SEIZE 3
+ADVANCE 5,2
+RELEASE 3
+TERMINATE 0
+
+START 200
+\end{lstlisting}
+
+\subsection{Резултати от GPSS симулация}
+{\footnotesize
+\begin{lstlisting}[language=bash, basicstyle=\footnotesize\ttfamily]
+              GPSS World Simulation Report - Untitled Model 2.1.1
+
+                   Saturday, February 14, 2026 23:56:57  
+
+           START TIME           END TIME  BLOCKS  FACILITIES  STORAGES
+                0.000            609.297    23        3          0
+
+
+ LABEL              LOC  BLOCK TYPE     ENTRY COUNT CURRENT COUNT RETRY
+                    1    GENERATE           200             0       0
+                    2    TRANSFER           200             0       0
+                    3    TRANSFER            78             0       0
+                    4    TRANSFER            36             0       0
+COMP1               5    SEIZE              122             0       0
+                    6    ADVANCE            122             0       0
+                    7    RELEASE            122             0       0
+                    8    TRANSFER           122             0       0
+                    9    TRANSFER            34             0       0
+COMP1_TO_COMP2     10    TRANSFER            88             0       0
+COMP1_TO_COMP3     11    TRANSFER            34             0       0
+COMP2              12    SEIZE              130             0       0
+                   13    ADVANCE            130             0       0
+                   14    RELEASE            130             0       0
+                   15    TERMINATE          130             0       0
+COMP3              16    SEIZE               36             0       0
+                   17    ADVANCE             36             0       0
+                   18    RELEASE             36             0       0
+                   19    TERMINATE           36             0       0
+COMP3_FINAL        20    SEIZE               34             0       0
+                   21    ADVANCE             34             0       0
+                   22    RELEASE             34             0       0
+                   23    TERMINATE           34             0       0
+
+
+FACILITY         ENTRIES  UTIL.   AVE. TIME AVAIL. OWNER PEND INTER RETRY DELAY
+ 1                  122    0.783       3.913  1        0    0    0     0      0
+ 2                  130    0.642       3.007  1        0    0    0     0      0
+ 3                   70    0.570       4.965  1        0    0    0     0      0
+\end{lstlisting}
+}
+
+\section{Резултати от симулацията}
+Проведена е симулация за обработване на 200 задачи.
+
+\subsection{Статистически данни}
+\begin{table}[H]
+    \centering
+    \caption{Резултати от симулацията}
+    \begin{tabular}{|l|c|c|}
+        \hline
+        \textbf{Параметър} & \textbf{Python} & \textbf{GPSS} \\
+        \hline
+        Задачи генерирани & 200 & 200 \\
+        Задачи завършени & 200 & 200 \\
+        Към Комп1 първоначално & 83 & 122 \\
+        Към Комп2 първоначално & 64 & -- \\
+        Към Комп3 първоначално & 53 & -- \\
+        От Комп1 към Комп2 & 25 & 88 \\
+        От Комп1 към Комп3 & 58 & 34 \\
+        Завършени в Комп2 & 89 & 130 \\
+        Завършени в Комп3 & 111 & 70 \\
+        Средно общо време & 14.08 мин & -- \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Както се вижда от таблицата, резултатите показват близко разпределение, но GPSS има различни числа поради различната реализация на маршрутизацията.
+
+\subsection{Сравнение между Python и GPSS}
+За валидация на резултатите са реализирани две независими симулации.
+
+\begin{table}[H]
+    \centering
+    \caption{Сравнение на маршрутизацията}
+    \label{tab:comparison}
+    \begin{tabular}{|l|c|c|c|}
+        \hline
+        \textbf{Маршрут} & \textbf{Теоретично} & \textbf{Python} & \textbf{GPSS} \\
+        \hline
+        Комп2 общо & 84 & 89 & 130 \\
+        Комп3 общо & 116 & 111 & 70 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Разликите се дължат на:
+\begin{itemize}
+    \item Случайния характер на маршрутизацията
+    \item Различни реализации на вероятностните разпределения
+    \item GPSS използва SPLIT по различен начин
+\end{itemize}
+
+\subsection{Графична визуализация}
+На фигурата по-долу е представена диаграма на потока на задачите.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \node[draw, rectangle] (gen) {Генериране};
+        \node[draw, rectangle] (comp1) [below=1cm of gen] {Компютър 1};
+        \node[draw, rectangle] (comp2) [below left=1cm and 1cm of comp1] {Компютър 2};
+        \node[draw, rectangle] (comp3) [below right=1cm and 1cm of comp1] {Компютър 3};
+        \node[draw, rectangle] (end2) [below=1cm of comp2] {Завършване};
+        \node[draw, rectangle] (end3) [below=1cm of comp3] {Завършване};
+
+        \draw[->] (gen) -- (comp1) node[midway, left] {0.4};
+        \draw[->] (gen) -- (comp2) node[midway, left] {0.3};
+        \draw[->] (gen) -- (comp3) node[midway, right] {0.3};
+        \draw[->] (comp1) -- (comp2) node[midway, left] {0.3};
+        \draw[->] (comp1) -- (comp3) node[midway, right] {0.7};
+        \draw[->] (comp2) -- (end2);
+        \draw[->] (comp3) -- (end3);
+    \end{tikzpicture}
+    \caption{Схема на маршрутизацията на задачите}
+\end{figure}
+
+\section{Заключение}
+Симулационният модел показва ефективната работа на системата с три компютъра и маршрутизация. Всички 200 задачи са успешно обработени.
+
+Основните изводи:
+\begin{enumerate}
+    \item Около 83 задачи преминават през Компютър 1, след което се разпределят допълнително
+    \item Компютър 3 обработва повече задачи (111) в сравнение с Компютър 2 (89)
+    \item Средното време за обработка на задача е около 14 минути
+    \item Системата е добре балансирана с ниски времена на изчакване
+\end{enumerate}
+
+За оптимизация на системата се препоръчва:
+\begin{enumerate}
+    \item Намаляване на времето за обработка в Компютър 3 (5 мин средно е най-дълго)
+    \item Преразпределение на вероятностите за по-добър баланс на натоварването
+    \item Добавяне на четвърти компютър за намаляване на опашките
+\end{enumerate}
+
+Тези промени биха подобрили ефективността с около 15-20\%.

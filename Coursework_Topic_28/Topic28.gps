@@ -1,0 +1,62 @@
+* Topic 28: Distributed Database System - GPSS Model
+* 3 remote centers (A, B, C) with duplex channels
+* Simulation: 150 requests
+
+* Request arrival every (12 +/- 5) minutes - Limit to 150 requests
+GENERATE 12,5,,150
+
+* Preprocessing at central computer: 2 +/- 1 minutes
+SEIZE 1
+ADVANCE 2,1
+RELEASE 1
+
+* Split into 3 parallel queries to centers A, B, C
+SPLIT 1,QUERY_A
+SPLIT 1,QUERY_B
+TRANSFER ,QUERY_C
+
+* Query Center A: transmit(1) + search(5+/-2) + receive(2)
+QUERY_A SEIZE 10
+ADVANCE 1
+RELEASE 10
+
+SEIZE 4
+ADVANCE 5,2
+RELEASE 4
+
+SEIZE 11
+ADVANCE 2
+RELEASE 11
+TERMINATE 1
+
+* Query Center B: transmit(1) + search(10+/-5) + receive(2)
+QUERY_B SEIZE 10
+ADVANCE 1
+RELEASE 10
+
+SEIZE 5
+ADVANCE 10,5
+RELEASE 5
+
+SEIZE 11
+ADVANCE 2
+RELEASE 11
+TERMINATE 1
+
+* Query Center C: transmit(1) + search(8+/-4) + receive(2)
+QUERY_C SEIZE 10
+ADVANCE 1
+RELEASE 10
+
+SEIZE 6
+ADVANCE 8,4
+RELEASE 6
+
+SEIZE 11
+ADVANCE 2
+RELEASE 11
+TERMINATE 1
+
+* Start simulation - 150 requests, each creates 3 parallel queries via SPLIT
+* Each query does TERMINATE 1, so we need 150 × 3 = 450 terminations
+START 450

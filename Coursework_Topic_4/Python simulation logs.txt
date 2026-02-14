@@ -1,0 +1,925 @@
+============================================================
+TOPIC 4: EMAIL PROCESSING SYSTEM SIMULATION
+============================================================
+[81.39] Simple email 1 processed and response sent
+[91.04] Email 3 preprocessing complete, requesting confirmations...
+[91.04] Email 3 supplier confirmation received
+[91.04] Email 3 warehouse confirmation received
+[91.04] Email 3 all confirmations received, assembling response...
+[103.81] Simple email 2 processed and response sent
+[107.07] Email 4 preprocessing complete, requesting confirmations...
+[107.07] Email 4 supplier confirmation received
+[107.07] Email 4 warehouse confirmation received
+[107.07] Email 4 all confirmations received, assembling response...
+[146.93] Email 6 preprocessing complete, requesting confirmations...
+[146.93] Email 6 supplier confirmation received
+[146.93] Email 6 warehouse confirmation received
+[146.93] Email 6 all confirmations received, assembling response...
+[149.39] Email 3 client response assembled
+[149.79] Email 3 other responses assembled
+[149.79] Email 3 COMPLETED. Total time: 88.75 min
+[156.93] Spam email 8 deleted
+[160.99] Simple email 5 processed and response sent
+[163.91] Email 7 preprocessing complete, requesting confirmations...
+[163.91] Email 7 supplier confirmation received
+[163.91] Email 7 warehouse confirmation received
+[163.91] Email 7 all confirmations received, assembling response...
+[166.00] Email 4 client response assembled
+[168.70] Email 4 other responses assembled
+[168.70] Email 4 COMPLETED. Total time: 91.63 min
+[199.25] Spam email 10 deleted
+[206.11] Email 6 other responses assembled
+[206.60] Email 6 client response assembled
+[206.60] Email 6 COMPLETED. Total time: 89.68 min
+[209.02] Email 9 preprocessing complete, requesting confirmations...
+[209.02] Email 9 supplier confirmation received
+[209.02] Email 9 warehouse confirmation received
+[209.02] Email 9 all confirmations received, assembling response...
+[221.94] Email 7 client response assembled
+[228.81] Email 7 other responses assembled
+[228.81] Email 7 COMPLETED. Total time: 94.89 min
+[234.60] Spam email 12 deleted
+[266.41] Email 9 other responses assembled
+[270.85] Email 9 client response assembled
+[270.85] Email 9 COMPLETED. Total time: 91.83 min
+[274.80] Simple email 11 processed and response sent
+[287.08] Email 13 preprocessing complete, requesting confirmations...
+[287.08] Email 13 supplier confirmation received
+[287.08] Email 13 warehouse confirmation received
+[287.08] Email 13 all confirmations received, assembling response...
+[298.02] Spam email 15 deleted
+[313.81] Spam email 16 deleted
+[334.72] Simple email 14 processed and response sent
+[347.22] Email 13 client response assembled
+[354.65] Email 13 other responses assembled
+[354.65] Email 13 COMPLETED. Total time: 97.57 min
+[360.96] Spam email 18 deleted
+[366.10] Email 17 preprocessing complete, requesting confirmations...
+[366.10] Email 17 supplier confirmation received
+[366.10] Email 17 warehouse confirmation received
+[366.10] Email 17 all confirmations received, assembling response...
+[418.83] Email 17 other responses assembled
+[426.92] Email 17 client response assembled
+[426.92] Email 17 COMPLETED. Total time: 90.82 min
+[440.73] Simple email 19 processed and response sent
+[446.81] Spam email 22 deleted
+[463.46] Simple email 20 processed and response sent
+[468.17] Spam email 23 deleted
+[484.80] Spam email 24 deleted
+[487.01] Simple email 21 processed and response sent
+[501.89] Spam email 25 deleted
+[552.91] Email 26 preprocessing complete, requesting confirmations...
+[552.91] Email 26 supplier confirmation received
+[552.91] Email 26 warehouse confirmation received
+[552.91] Email 26 all confirmations received, assembling response...
+[566.74] Spam email 28 deleted
+[574.39] Email 27 preprocessing complete, requesting confirmations...
+[574.39] Email 27 supplier confirmation received
+[574.39] Email 27 warehouse confirmation received
+[574.39] Email 27 all confirmations received, assembling response...
+[602.73] Spam email 30 deleted
+[608.83] Email 26 other responses assembled
+[613.05] Email 26 client response assembled
+[613.05] Email 26 COMPLETED. Total time: 90.14 min
+[614.54] Email 29 preprocessing complete, requesting confirmations...
+[614.54] Email 29 supplier confirmation received
+[614.54] Email 29 warehouse confirmation received
+[614.54] Email 29 all confirmations received, assembling response...
+[636.35] Email 27 client response assembled
+[636.63] Email 27 other responses assembled
+[636.63] Email 27 COMPLETED. Total time: 92.24 min
+[649.21] Spam email 32 deleted
+[670.20] Email 29 other responses assembled
+[675.64] Email 29 client response assembled
+[675.64] Email 29 COMPLETED. Total time: 91.10 min
+[685.16] Simple email 31 processed and response sent
+[714.78] Spam email 35 deleted
+[720.02] Email 34 preprocessing complete, requesting confirmations...
+[720.02] Email 34 supplier confirmation received
+[720.02] Email 34 warehouse confirmation received
+[720.02] Email 34 all confirmations received, assembling response...
+[725.89] Simple email 33 processed and response sent
+[751.50] Spam email 37 deleted
+[760.91] Email 36 preprocessing complete, requesting confirmations...
+[760.91] Email 36 supplier confirmation received
+[760.91] Email 36 warehouse confirmation received
+[760.91] Email 36 all confirmations received, assembling response...
+[780.02] Email 34 client response assembled
+[786.17] Email 34 other responses assembled
+[786.17] Email 34 COMPLETED. Total time: 96.15 min
+[796.89] Email 38 preprocessing complete, requesting confirmations...
+[796.89] Email 38 supplier confirmation received
+[796.89] Email 38 warehouse confirmation received
+[796.89] Email 38 all confirmations received, assembling response...
+[817.74] Email 39 preprocessing complete, requesting confirmations...
+[817.74] Email 39 supplier confirmation received
+[817.74] Email 39 warehouse confirmation received
+[817.74] Email 39 all confirmations received, assembling response...
+[821.53] Email 36 other responses assembled
+[821.89] Email 36 client response assembled
+[821.89] Email 36 COMPLETED. Total time: 90.98 min
+[836.73] Email 40 preprocessing complete, requesting confirmations...
+[836.73] Email 40 supplier confirmation received
+[836.73] Email 40 warehouse confirmation received
+[836.73] Email 40 all confirmations received, assembling response...
+[855.77] Email 38 client response assembled
+[864.86] Email 38 other responses assembled
+[864.86] Email 38 COMPLETED. Total time: 97.96 min
+[878.76] Email 39 client response assembled
+[883.52] Email 39 other responses assembled
+[883.52] Email 39 COMPLETED. Total time: 95.78 min
+[886.67] Simple email 41 processed and response sent
+[895.49] Email 40 other responses assembled
+[896.79] Email 43 preprocessing complete, requesting confirmations...
+[896.79] Email 43 supplier confirmation received
+[896.79] Email 43 warehouse confirmation received
+[896.79] Email 43 all confirmations received, assembling response...
+[897.90] Email 40 client response assembled
+[897.90] Email 40 COMPLETED. Total time: 91.17 min
+[907.94] Simple email 42 processed and response sent
+[921.75] Email 44 preprocessing complete, requesting confirmations...
+[921.75] Email 44 supplier confirmation received
+[921.75] Email 44 warehouse confirmation received
+[921.75] Email 44 all confirmations received, assembling response...
+[932.47] Spam email 46 deleted
+[939.27] Email 45 preprocessing complete, requesting confirmations...
+[939.27] Email 45 supplier confirmation received
+[939.27] Email 45 warehouse confirmation received
+[939.27] Email 45 all confirmations received, assembling response...
+[957.00] Email 43 client response assembled
+[963.87] Email 43 other responses assembled
+[963.87] Email 43 COMPLETED. Total time: 97.08 min
+[982.34] Email 44 other responses assembled
+[982.48] Email 44 client response assembled
+[982.48] Email 44 COMPLETED. Total time: 90.73 min
+[995.96] Email 45 other responses assembled
+[998.46] Spam email 49 deleted
+[998.63] Email 45 client response assembled
+[998.63] Email 45 COMPLETED. Total time: 89.36 min
+[1003.70] Email 48 preprocessing complete, requesting confirmations...
+[1003.70] Email 48 supplier confirmation received
+[1003.70] Email 48 warehouse confirmation received
+[1003.70] Email 48 all confirmations received, assembling response...
+[1014.16] Simple email 47 processed and response sent
+[1046.88] Spam email 51 deleted
+[1063.82] Email 48 other responses assembled
+[1064.75] Email 48 client response assembled
+[1064.75] Email 48 COMPLETED. Total time: 91.05 min
+[1082.17] Simple email 50 processed and response sent
+[1099.30] Email 52 preprocessing complete, requesting confirmations...
+[1099.30] Email 52 supplier confirmation received
+[1099.30] Email 52 warehouse confirmation received
+[1099.30] Email 52 all confirmations received, assembling response...
+[1139.13] Email 54 preprocessing complete, requesting confirmations...
+[1139.13] Email 54 supplier confirmation received
+[1139.13] Email 54 warehouse confirmation received
+[1139.13] Email 54 all confirmations received, assembling response...
+[1150.39] Simple email 53 processed and response sent
+[1152.55] Spam email 56 deleted
+[1157.94] Email 52 client response assembled
+[1163.31] Email 55 preprocessing complete, requesting confirmations...
+[1163.31] Email 55 supplier confirmation received
+[1163.31] Email 55 warehouse confirmation received
+[1163.31] Email 55 all confirmations received, assembling response...
+[1166.55] Email 52 other responses assembled
+[1166.55] Email 52 COMPLETED. Total time: 97.26 min
+[1185.80] Spam email 58 deleted
+[1197.20] Email 54 client response assembled
+[1205.99] Email 54 other responses assembled
+[1205.99] Email 54 COMPLETED. Total time: 96.87 min
+[1222.27] Email 55 client response assembled
+[1224.39] Email 55 other responses assembled
+[1224.39] Email 55 COMPLETED. Total time: 91.08 min
+[1228.95] Simple email 57 processed and response sent
+[1237.96] Email 59 preprocessing complete, requesting confirmations...
+[1237.96] Email 59 supplier confirmation received
+[1237.96] Email 59 warehouse confirmation received
+[1237.96] Email 59 all confirmations received, assembling response...
+[1276.94] Spam email 62 deleted
+[1282.22] Email 61 preprocessing complete, requesting confirmations...
+[1282.22] Email 61 supplier confirmation received
+[1282.22] Email 61 warehouse confirmation received
+[1282.22] Email 61 all confirmations received, assembling response...
+[1290.62] Simple email 60 processed and response sent
+[1292.61] Email 59 other responses assembled
+[1299.75] Email 59 client response assembled
+[1299.75] Email 59 COMPLETED. Total time: 91.79 min
+[1318.60] Spam email 64 deleted
+[1330.59] Email 63 preprocessing complete, requesting confirmations...
+[1330.59] Email 63 supplier confirmation received
+[1330.59] Email 63 warehouse confirmation received
+[1330.59] Email 63 all confirmations received, assembling response...
+[1343.93] Email 61 client response assembled
+[1346.30] Email 61 other responses assembled
+[1346.30] Email 61 COMPLETED. Total time: 94.08 min
+[1366.59] Email 65 preprocessing complete, requesting confirmations...
+[1366.59] Email 65 supplier confirmation received
+[1366.59] Email 65 warehouse confirmation received
+[1366.59] Email 65 all confirmations received, assembling response...
+[1388.56] Email 63 other responses assembled
+[1391.27] Email 63 client response assembled
+[1391.27] Email 63 COMPLETED. Total time: 90.69 min
+[1416.10] Simple email 66 processed and response sent
+[1425.94] Email 65 client response assembled
+[1428.00] Email 65 other responses assembled
+[1428.00] Email 65 COMPLETED. Total time: 91.41 min
+[1433.35] Simple email 67 processed and response sent
+[1439.94] Email 69 preprocessing complete, requesting confirmations...
+[1439.94] Email 69 supplier confirmation received
+[1439.94] Email 69 warehouse confirmation received
+[1439.94] Email 69 all confirmations received, assembling response...
+[1454.23] Simple email 68 processed and response sent
+[1468.37] Spam email 72 deleted
+[1485.53] Simple email 70 processed and response sent
+[1493.08] Email 69 other responses assembled
+[1501.38] Email 69 client response assembled
+[1501.38] Email 69 COMPLETED. Total time: 91.44 min
+[1509.59] Simple email 71 processed and response sent
+[1536.75] Email 74 preprocessing complete, requesting confirmations...
+[1536.75] Email 74 supplier confirmation received
+[1536.75] Email 74 warehouse confirmation received
+[1536.75] Email 74 all confirmations received, assembling response...
+[1544.51] Simple email 73 processed and response sent
+[1572.95] Spam email 77 deleted
+[1587.51] Simple email 75 processed and response sent
+[1591.79] Email 74 other responses assembled
+[1592.18] Spam email 78 deleted
+[1597.98] Email 74 client response assembled
+[1597.98] Email 74 COMPLETED. Total time: 91.23 min
+[1610.36] Simple email 76 processed and response sent
+[1653.54] Spam email 81 deleted
+[1666.55] Email 80 preprocessing complete, requesting confirmations...
+[1666.55] Email 80 supplier confirmation received
+[1666.55] Email 80 warehouse confirmation received
+[1666.55] Email 80 all confirmations received, assembling response...
+[1674.82] Simple email 79 processed and response sent
+[1692.72] Spam email 83 deleted
+[1720.30] Email 80 other responses assembled
+[1727.76] Email 80 client response assembled
+[1727.76] Email 80 COMPLETED. Total time: 91.20 min
+[1734.82] Simple email 82 processed and response sent
+[1768.12] Simple email 84 processed and response sent
+[1785.91] Simple email 85 processed and response sent
+[1799.09] Email 87 preprocessing complete, requesting confirmations...
+[1799.09] Email 87 supplier confirmation received
+[1799.09] Email 87 warehouse confirmation received
+[1799.09] Email 87 all confirmations received, assembling response...
+[1809.65] Simple email 86 processed and response sent
+[1815.07] Email 88 preprocessing complete, requesting confirmations...
+[1815.07] Email 88 supplier confirmation received
+[1815.07] Email 88 warehouse confirmation received
+[1815.07] Email 88 all confirmations received, assembling response...
+[1827.72] Spam email 90 deleted
+[1860.43] Email 87 client response assembled
+[1866.59] Email 87 other responses assembled
+[1866.59] Email 87 COMPLETED. Total time: 97.50 min
+[1870.06] Simple email 89 processed and response sent
+[1870.49] Email 88 other responses assembled
+[1870.54] Spam email 92 deleted
+[1875.01] Email 88 client response assembled
+[1875.01] Email 88 COMPLETED. Total time: 89.94 min
+[1888.19] Spam email 93 deleted
+[1910.75] Simple email 91 processed and response sent
+[1935.04] Email 94 preprocessing complete, requesting confirmations...
+[1935.04] Email 94 supplier confirmation received
+[1935.04] Email 94 warehouse confirmation received
+[1935.04] Email 94 all confirmations received, assembling response...
+[1959.61] Email 95 preprocessing complete, requesting confirmations...
+[1959.61] Email 95 supplier confirmation received
+[1959.61] Email 95 warehouse confirmation received
+[1959.61] Email 95 all confirmations received, assembling response...
+[1990.08] Email 94 other responses assembled
+[1994.99] Email 94 client response assembled
+[1994.99] Email 94 COMPLETED. Total time: 89.95 min
+[2005.92] Email 97 preprocessing complete, requesting confirmations...
+[2005.92] Email 97 supplier confirmation received
+[2005.92] Email 97 warehouse confirmation received
+[2005.92] Email 97 all confirmations received, assembling response...
+[2011.23] Simple email 96 processed and response sent
+[2019.93] Email 95 client response assembled
+[2020.29] Email 95 other responses assembled
+[2020.29] Email 95 COMPLETED. Total time: 90.68 min
+[2054.05] Simple email 98 processed and response sent
+[2060.47] Email 100 preprocessing complete, requesting confirmations...
+[2060.47] Email 100 supplier confirmation received
+[2060.47] Email 100 warehouse confirmation received
+[2060.47] Email 100 all confirmations received, assembling response...
+[2062.95] Spam email 102 deleted
+[2065.93] Email 97 client response assembled
+[2071.56] Email 97 other responses assembled
+[2071.56] Email 97 COMPLETED. Total time: 95.64 min
+[2074.90] Simple email 99 processed and response sent
+[2106.27] Simple email 101 processed and response sent
+[2108.15] Email 103 preprocessing complete, requesting confirmations...
+[2108.15] Email 103 supplier confirmation received
+[2108.15] Email 103 warehouse confirmation received
+[2108.15] Email 103 all confirmations received, assembling response...
+[2118.74] Email 100 client response assembled
+[2125.61] Email 104 preprocessing complete, requesting confirmations...
+[2125.61] Email 104 supplier confirmation received
+[2125.61] Email 104 warehouse confirmation received
+[2125.61] Email 104 all confirmations received, assembling response...
+[2126.25] Email 100 other responses assembled
+[2126.25] Email 100 COMPLETED. Total time: 95.79 min
+[2141.01] Email 105 preprocessing complete, requesting confirmations...
+[2141.01] Email 105 supplier confirmation received
+[2141.01] Email 105 warehouse confirmation received
+[2141.01] Email 105 all confirmations received, assembling response...
+[2161.24] Email 106 preprocessing complete, requesting confirmations...
+[2161.24] Email 106 supplier confirmation received
+[2161.24] Email 106 warehouse confirmation received
+[2161.24] Email 106 all confirmations received, assembling response...
+[2166.48] Email 103 client response assembled
+[2170.67] Email 103 other responses assembled
+[2170.67] Email 103 COMPLETED. Total time: 92.52 min
+[2179.38] Email 107 preprocessing complete, requesting confirmations...
+[2179.38] Email 107 supplier confirmation received
+[2179.38] Email 107 warehouse confirmation received
+[2179.38] Email 107 all confirmations received, assembling response...
+[2180.88] Email 104 other responses assembled
+[2187.35] Email 104 client response assembled
+[2187.35] Email 104 COMPLETED. Total time: 91.74 min
+[2195.10] Email 105 other responses assembled
+[2200.07] Email 105 client response assembled
+[2200.07] Email 105 COMPLETED. Total time: 89.06 min
+[2220.50] Email 106 client response assembled
+[2225.27] Email 106 other responses assembled
+[2225.27] Email 106 COMPLETED. Total time: 94.03 min
+[2227.38] Simple email 108 processed and response sent
+[2239.86] Email 107 client response assembled
+[2240.39] Email 107 other responses assembled
+[2240.39] Email 107 COMPLETED. Total time: 91.01 min
+[2242.47] Simple email 109 processed and response sent
+[2258.21] Simple email 110 processed and response sent
+[2267.39] Spam email 113 deleted
+[2278.26] Simple email 111 processed and response sent
+[2285.24] Spam email 114 deleted
+[2302.60] Simple email 112 processed and response sent
+[2337.58] Email 115 preprocessing complete, requesting confirmations...
+[2337.58] Email 115 supplier confirmation received
+[2337.58] Email 115 warehouse confirmation received
+[2337.58] Email 115 all confirmations received, assembling response...
+[2355.60] Email 116 preprocessing complete, requesting confirmations...
+[2355.60] Email 116 supplier confirmation received
+[2355.60] Email 116 warehouse confirmation received
+[2355.60] Email 116 all confirmations received, assembling response...
+[2375.89] Email 117 preprocessing complete, requesting confirmations...
+[2375.89] Email 117 supplier confirmation received
+[2375.89] Email 117 warehouse confirmation received
+[2375.89] Email 117 all confirmations received, assembling response...
+[2398.25] Email 115 client response assembled
+[2398.45] Email 115 other responses assembled
+[2398.45] Email 115 COMPLETED. Total time: 90.87 min
+[2411.83] Email 116 other responses assembled
+[2417.11] Email 116 client response assembled
+[2417.11] Email 116 COMPLETED. Total time: 91.51 min
+[2421.93] Simple email 118 processed and response sent
+[2429.40] Spam email 121 deleted
+[2432.40] Email 117 other responses assembled
+[2434.51] Email 117 client response assembled
+[2434.51] Email 117 COMPLETED. Total time: 88.62 min
+[2444.35] Simple email 119 processed and response sent
+[2449.46] Spam email 122 deleted
+[2466.53] Simple email 120 processed and response sent
+[2489.43] Spam email 124 deleted
+[2532.51] Simple email 123 processed and response sent
+[2549.13] Spam email 127 deleted
+[2565.75] Spam email 128 deleted
+[2571.73] Simple email 125 processed and response sent
+[2586.27] Spam email 129 deleted
+[2586.76] Simple email 126 processed and response sent
+[2651.63] Email 131 preprocessing complete, requesting confirmations...
+[2651.63] Email 131 supplier confirmation received
+[2651.63] Email 131 warehouse confirmation received
+[2651.63] Email 131 all confirmations received, assembling response...
+[2662.03] Spam email 133 deleted
+[2665.87] Simple email 130 processed and response sent
+[2675.67] Email 132 preprocessing complete, requesting confirmations...
+[2675.67] Email 132 supplier confirmation received
+[2675.67] Email 132 warehouse confirmation received
+[2675.67] Email 132 all confirmations received, assembling response...
+[2711.10] Email 131 client response assembled
+[2712.47] Email 131 other responses assembled
+[2712.47] Email 131 COMPLETED. Total time: 90.84 min
+[2734.90] Email 132 client response assembled
+[2737.30] Simple email 134 processed and response sent
+[2742.05] Email 132 other responses assembled
+[2742.05] Email 132 COMPLETED. Total time: 96.38 min
+[2753.11] Email 136 preprocessing complete, requesting confirmations...
+[2753.11] Email 136 supplier confirmation received
+[2753.11] Email 136 warehouse confirmation received
+[2753.11] Email 136 all confirmations received, assembling response...
+[2761.29] Simple email 135 processed and response sent
+[2769.14] Email 137 preprocessing complete, requesting confirmations...
+[2769.14] Email 137 supplier confirmation received
+[2769.14] Email 137 warehouse confirmation received
+[2769.14] Email 137 all confirmations received, assembling response...
+[2812.74] Email 136 client response assembled
+[2815.04] Email 136 other responses assembled
+[2815.04] Email 136 COMPLETED. Total time: 91.93 min
+[2822.98] Simple email 138 processed and response sent
+[2823.74] Email 137 other responses assembled
+[2828.09] Email 137 client response assembled
+[2828.09] Email 137 COMPLETED. Total time: 88.95 min
+[2828.85] Spam email 141 deleted
+[2847.24] Simple email 139 processed and response sent
+[2851.67] Spam email 142 deleted
+[2871.05] Simple email 140 processed and response sent
+[2897.80] Spam email 144 deleted
+[2903.69] Email 143 preprocessing complete, requesting confirmations...
+[2903.69] Email 143 supplier confirmation received
+[2903.69] Email 143 warehouse confirmation received
+[2903.69] Email 143 all confirmations received, assembling response...
+[2954.97] Spam email 147 deleted
+[2961.81] Email 143 other responses assembled
+[2964.50] Email 143 client response assembled
+[2964.50] Email 143 COMPLETED. Total time: 90.81 min
+[2973.39] Simple email 145 processed and response sent
+[2996.98] Simple email 146 processed and response sent
+[3007.63] Spam email 150 deleted
+[3019.70] Email 149 preprocessing complete, requesting confirmations...
+[3019.70] Email 149 supplier confirmation received
+[3019.70] Email 149 warehouse confirmation received
+[3019.70] Email 149 all confirmations received, assembling response...
+[3025.42] Spam email 151 deleted
+[3032.47] Simple email 148 processed and response sent
+[3046.83] Spam email 152 deleted
+[3077.98] Email 149 client response assembled
+[3084.07] Email 149 other responses assembled
+[3084.07] Email 149 COMPLETED. Total time: 94.37 min
+[3097.63] Email 153 preprocessing complete, requesting confirmations...
+[3097.63] Email 153 supplier confirmation received
+[3097.63] Email 153 warehouse confirmation received
+[3097.63] Email 153 all confirmations received, assembling response...
+[3103.09] Spam email 155 deleted
+[3145.94] Simple email 154 processed and response sent
+[3147.47] Email 156 preprocessing complete, requesting confirmations...
+[3147.47] Email 156 supplier confirmation received
+[3147.47] Email 156 warehouse confirmation received
+[3147.47] Email 156 all confirmations received, assembling response...
+[3152.48] Email 153 other responses assembled
+[3159.51] Email 153 client response assembled
+[3159.51] Email 153 COMPLETED. Total time: 91.88 min
+[3166.82] Email 157 preprocessing complete, requesting confirmations...
+[3166.82] Email 157 supplier confirmation received
+[3166.82] Email 157 warehouse confirmation received
+[3166.82] Email 157 all confirmations received, assembling response...
+[3207.22] Email 156 client response assembled
+[3208.54] Email 159 preprocessing complete, requesting confirmations...
+[3208.54] Email 159 supplier confirmation received
+[3208.54] Email 159 warehouse confirmation received
+[3208.54] Email 159 all confirmations received, assembling response...
+[3215.22] Email 156 other responses assembled
+[3215.22] Email 156 COMPLETED. Total time: 97.75 min
+[3219.68] Simple email 158 processed and response sent
+[3222.90] Email 157 other responses assembled
+[3227.13] Email 157 client response assembled
+[3227.13] Email 157 COMPLETED. Total time: 90.31 min
+[3227.90] Email 160 preprocessing complete, requesting confirmations...
+[3227.90] Email 160 supplier confirmation received
+[3227.90] Email 160 warehouse confirmation received
+[3227.90] Email 160 all confirmations received, assembling response...
+[3252.15] Email 161 preprocessing complete, requesting confirmations...
+[3252.15] Email 161 supplier confirmation received
+[3252.15] Email 161 warehouse confirmation received
+[3252.15] Email 161 all confirmations received, assembling response...
+[3268.69] Email 159 client response assembled
+[3272.05] Email 159 other responses assembled
+[3272.05] Email 159 COMPLETED. Total time: 93.51 min
+[3274.52] Email 162 preprocessing complete, requesting confirmations...
+[3274.52] Email 162 supplier confirmation received
+[3274.52] Email 162 warehouse confirmation received
+[3274.52] Email 162 all confirmations received, assembling response...
+[3286.68] Email 160 client response assembled
+[3286.80] Email 160 other responses assembled
+[3286.80] Email 160 COMPLETED. Total time: 88.90 min
+[3291.93] Spam email 164 deleted
+[3312.64] Email 161 client response assembled
+[3314.77] Email 161 other responses assembled
+[3314.77] Email 161 COMPLETED. Total time: 92.61 min
+[3328.73] Simple email 163 processed and response sent
+[3331.47] Email 162 other responses assembled
+[3333.72] Email 162 client response assembled
+[3333.72] Email 162 COMPLETED. Total time: 89.20 min
+[3339.19] Email 165 preprocessing complete, requesting confirmations...
+[3339.19] Email 165 supplier confirmation received
+[3339.19] Email 165 warehouse confirmation received
+[3339.19] Email 165 all confirmations received, assembling response...
+[3374.06] Email 167 preprocessing complete, requesting confirmations...
+[3374.06] Email 167 supplier confirmation received
+[3374.06] Email 167 warehouse confirmation received
+[3374.06] Email 167 all confirmations received, assembling response...
+[3387.15] Simple email 166 processed and response sent
+[3389.78] Spam email 169 deleted
+[3397.26] Email 165 other responses assembled
+[3398.09] Email 168 preprocessing complete, requesting confirmations...
+[3398.09] Email 168 supplier confirmation received
+[3398.09] Email 168 warehouse confirmation received
+[3398.09] Email 168 all confirmations received, assembling response...
+[3399.85] Email 165 client response assembled
+[3399.85] Email 165 COMPLETED. Total time: 90.66 min
+[3425.88] Spam email 171 deleted
+[3433.69] Email 167 client response assembled
+[3436.65] Email 170 preprocessing complete, requesting confirmations...
+[3436.65] Email 170 supplier confirmation received
+[3436.65] Email 170 warehouse confirmation received
+[3436.65] Email 170 all confirmations received, assembling response...
+[3439.40] Email 167 other responses assembled
+[3439.40] Email 167 COMPLETED. Total time: 95.34 min
+[3457.81] Email 168 client response assembled
+[3459.37] Email 168 other responses assembled
+[3459.37] Email 168 COMPLETED. Total time: 91.28 min
+[3474.30] Email 172 preprocessing complete, requesting confirmations...
+[3474.30] Email 172 supplier confirmation received
+[3474.30] Email 172 warehouse confirmation received
+[3474.30] Email 172 all confirmations received, assembling response...
+[3495.51] Email 170 client response assembled
+[3496.22] Email 170 other responses assembled
+[3496.22] Email 170 COMPLETED. Total time: 89.57 min
+[3520.99] Simple email 173 processed and response sent
+[3534.95] Email 172 client response assembled
+[3536.21] Email 172 other responses assembled
+[3536.21] Email 172 COMPLETED. Total time: 91.91 min
+[3538.83] Simple email 174 processed and response sent
+[3562.02] Simple email 175 processed and response sent
+[3583.74] Simple email 176 processed and response sent
+[3606.81] Simple email 177 processed and response sent
+[3616.89] Email 179 preprocessing complete, requesting confirmations...
+[3616.89] Email 179 supplier confirmation received
+[3616.89] Email 179 warehouse confirmation received
+[3616.89] Email 179 all confirmations received, assembling response...
+[3622.05] Simple email 178 processed and response sent
+[3652.91] Spam email 182 deleted
+[3659.94] Email 181 preprocessing complete, requesting confirmations...
+[3659.94] Email 181 supplier confirmation received
+[3659.94] Email 181 warehouse confirmation received
+[3659.94] Email 181 all confirmations received, assembling response...
+[3670.39] Simple email 180 processed and response sent
+[3678.10] Email 179 other responses assembled
+[3678.44] Email 179 client response assembled
+[3678.44] Email 179 COMPLETED. Total time: 91.54 min
+[3718.53] Email 181 client response assembled
+[3722.95] Email 181 other responses assembled
+[3722.95] Email 181 COMPLETED. Total time: 93.00 min
+[3730.90] Simple email 183 processed and response sent
+[3740.45] Email 185 preprocessing complete, requesting confirmations...
+[3740.45] Email 185 supplier confirmation received
+[3740.45] Email 185 warehouse confirmation received
+[3740.45] Email 185 all confirmations received, assembling response...
+[3753.69] Simple email 184 processed and response sent
+[3790.63] Simple email 186 processed and response sent
+[3794.39] Email 185 other responses assembled
+[3802.12] Email 185 client response assembled
+[3802.12] Email 185 COMPLETED. Total time: 91.67 min
+[3804.22] Email 188 preprocessing complete, requesting confirmations...
+[3804.22] Email 188 supplier confirmation received
+[3804.22] Email 188 warehouse confirmation received
+[3804.22] Email 188 all confirmations received, assembling response...
+[3811.20] Simple email 187 processed and response sent
+[3824.53] Email 189 preprocessing complete, requesting confirmations...
+[3824.53] Email 189 supplier confirmation received
+[3824.53] Email 189 warehouse confirmation received
+[3824.53] Email 189 all confirmations received, assembling response...
+[3845.48] Email 190 preprocessing complete, requesting confirmations...
+[3845.48] Email 190 supplier confirmation received
+[3845.48] Email 190 warehouse confirmation received
+[3845.48] Email 190 all confirmations received, assembling response...
+[3859.09] Spam email 192 deleted
+[3866.02] Email 188 client response assembled
+[3868.63] Email 191 preprocessing complete, requesting confirmations...
+[3868.63] Email 191 supplier confirmation received
+[3868.63] Email 191 warehouse confirmation received
+[3868.63] Email 191 all confirmations received, assembling response...
+[3870.48] Email 188 other responses assembled
+[3870.48] Email 188 COMPLETED. Total time: 96.26 min
+[3883.35] Email 189 other responses assembled
+[3886.10] Email 189 client response assembled
+[3886.10] Email 189 COMPLETED. Total time: 91.57 min
+[3904.12] Email 190 client response assembled
+[3905.68] Email 193 preprocessing complete, requesting confirmations...
+[3905.68] Email 193 supplier confirmation received
+[3905.68] Email 193 warehouse confirmation received
+[3905.68] Email 193 all confirmations received, assembling response...
+[3911.27] Email 190 other responses assembled
+[3911.27] Email 190 COMPLETED. Total time: 95.78 min
+[3914.27] Spam email 195 deleted
+[3927.62] Email 191 client response assembled
+[3930.83] Email 191 other responses assembled
+[3930.83] Email 191 COMPLETED. Total time: 92.20 min
+[3955.53] Simple email 194 processed and response sent
+[3961.63] Email 196 preprocessing complete, requesting confirmations...
+[3961.63] Email 196 supplier confirmation received
+[3961.63] Email 196 warehouse confirmation received
+[3961.63] Email 196 all confirmations received, assembling response...
+[3962.25] Email 193 other responses assembled
+[3963.99] Email 193 client response assembled
+[3963.99] Email 193 COMPLETED. Total time: 88.31 min
+[3984.90] Spam email 199 deleted
+[4005.33] Spam email 200 deleted
+[4007.44] Simple email 197 processed and response sent
+[4020.95] Spam email 201 deleted
+[4022.41] Email 196 client response assembled
+[4024.75] Simple email 198 processed and response sent
+[4024.94] Email 196 other responses assembled
+[4024.94] Email 196 COMPLETED. Total time: 93.30 min
+[4068.84] Email 202 preprocessing complete, requesting confirmations...
+[4068.84] Email 202 supplier confirmation received
+[4068.84] Email 202 warehouse confirmation received
+[4068.84] Email 202 all confirmations received, assembling response...
+[4112.30] Spam email 205 deleted
+[4123.30] Simple email 203 processed and response sent
+[4126.93] Email 202 other responses assembled
+[4129.91] Email 202 client response assembled
+[4129.91] Email 202 COMPLETED. Total time: 91.06 min
+[4134.83] Spam email 206 deleted
+[4146.87] Simple email 204 processed and response sent
+[4184.22] Email 207 preprocessing complete, requesting confirmations...
+[4184.22] Email 207 supplier confirmation received
+[4184.22] Email 207 warehouse confirmation received
+[4184.22] Email 207 all confirmations received, assembling response...
+[4199.66] Spam email 209 deleted
+[4204.68] Email 208 preprocessing complete, requesting confirmations...
+[4204.68] Email 208 supplier confirmation received
+[4204.68] Email 208 warehouse confirmation received
+[4204.68] Email 208 all confirmations received, assembling response...
+[4214.95] Spam email 210 deleted
+[4237.19] Spam email 211 deleted
+[4240.58] Email 207 other responses assembled
+[4244.17] Email 207 client response assembled
+[4244.17] Email 207 COMPLETED. Total time: 89.95 min
+[4264.02] Email 208 client response assembled
+[4267.54] Email 208 other responses assembled
+[4267.54] Email 208 COMPLETED. Total time: 92.87 min
+[4281.72] Spam email 213 deleted
+[4290.38] Email 212 preprocessing complete, requesting confirmations...
+[4290.38] Email 212 supplier confirmation received
+[4290.38] Email 212 warehouse confirmation received
+[4290.38] Email 212 all confirmations received, assembling response...
+[4302.64] Spam email 214 deleted
+[4319.00] Spam email 215 deleted
+[4335.82] Spam email 216 deleted
+[4343.73] Email 212 other responses assembled
+[4351.03] Email 212 client response assembled
+[4351.03] Email 212 COMPLETED. Total time: 90.65 min
+[4374.16] Spam email 218 deleted
+[4396.77] Spam email 219 deleted
+[4413.61] Simple email 217 processed and response sent
+[4414.55] Spam email 220 deleted
+[4472.17] Spam email 223 deleted
+[4480.78] Email 222 preprocessing complete, requesting confirmations...
+[4480.78] Email 222 supplier confirmation received
+[4480.78] Email 222 warehouse confirmation received
+[4480.78] Email 222 all confirmations received, assembling response...
+[4491.07] Simple email 221 processed and response sent
+[4539.05] Email 222 client response assembled
+[4548.09] Email 222 other responses assembled
+[4548.09] Email 222 COMPLETED. Total time: 97.32 min
+[4548.41] Simple email 224 processed and response sent
+[4570.95] Simple email 225 processed and response sent
+[4587.95] Simple email 226 processed and response sent
+[4595.42] Email 228 preprocessing complete, requesting confirmations...
+[4595.42] Email 228 supplier confirmation received
+[4595.42] Email 228 warehouse confirmation received
+[4595.42] Email 228 all confirmations received, assembling response...
+[4609.16] Simple email 227 processed and response sent
+[4631.22] Email 230 preprocessing complete, requesting confirmations...
+[4631.22] Email 230 supplier confirmation received
+[4631.22] Email 230 warehouse confirmation received
+[4631.22] Email 230 all confirmations received, assembling response...
+[4641.57] Simple email 229 processed and response sent
+[4645.47] Spam email 232 deleted
+[4652.29] Email 231 preprocessing complete, requesting confirmations...
+[4652.29] Email 231 supplier confirmation received
+[4652.29] Email 231 warehouse confirmation received
+[4652.29] Email 231 all confirmations received, assembling response...
+[4653.33] Email 228 other responses assembled
+[4654.45] Email 228 client response assembled
+[4654.45] Email 228 COMPLETED. Total time: 89.02 min
+[4685.64] Spam email 234 deleted
+[4685.84] Email 230 other responses assembled
+[4690.56] Email 233 preprocessing complete, requesting confirmations...
+[4690.56] Email 233 supplier confirmation received
+[4690.56] Email 233 warehouse confirmation received
+[4690.56] Email 233 all confirmations received, assembling response...
+[4692.33] Email 230 client response assembled
+[4692.33] Email 230 COMPLETED. Total time: 91.11 min
+[4709.28] Email 231 other responses assembled
+[4710.39] Email 231 client response assembled
+[4710.39] Email 231 COMPLETED. Total time: 88.10 min
+[4733.60] Email 235 preprocessing complete, requesting confirmations...
+[4733.60] Email 235 supplier confirmation received
+[4733.60] Email 235 warehouse confirmation received
+[4733.60] Email 235 all confirmations received, assembling response...
+[4743.77] Email 233 other responses assembled
+[4751.42] Email 233 client response assembled
+[4751.42] Email 233 COMPLETED. Total time: 90.86 min
+[4772.93] Email 237 preprocessing complete, requesting confirmations...
+[4772.93] Email 237 supplier confirmation received
+[4772.93] Email 237 warehouse confirmation received
+[4772.93] Email 237 all confirmations received, assembling response...
+[4786.91] Simple email 236 processed and response sent
+[4789.81] Spam email 239 deleted
+[4794.69] Email 235 client response assembled
+[4795.98] Email 238 preprocessing complete, requesting confirmations...
+[4795.98] Email 238 supplier confirmation received
+[4795.98] Email 238 warehouse confirmation received
+[4795.98] Email 238 all confirmations received, assembling response...
+[4799.21] Email 235 other responses assembled
+[4799.21] Email 235 COMPLETED. Total time: 95.60 min
+[4805.50] Spam email 240 deleted
+[4831.78] Email 237 other responses assembled
+[4832.32] Email 237 client response assembled
+[4832.32] Email 237 COMPLETED. Total time: 89.39 min
+[4848.06] Spam email 242 deleted
+[4848.18] Email 238 other responses assembled
+[4856.57] Email 238 client response assembled
+[4856.57] Email 238 COMPLETED. Total time: 90.59 min
+[4869.41] Spam email 243 deleted
+[4887.72] Simple email 241 processed and response sent
+[4891.49] Spam email 244 deleted
+[4932.90] Spam email 246 deleted
+[4937.25] Email 245 preprocessing complete, requesting confirmations...
+[4937.25] Email 245 supplier confirmation received
+[4937.25] Email 245 warehouse confirmation received
+[4937.25] Email 245 all confirmations received, assembling response...
+[4954.06] Spam email 247 deleted
+[4994.34] Spam email 249 deleted
+[4998.93] Email 245 client response assembled
+[5001.64] Email 245 other responses assembled
+[5001.64] Email 245 COMPLETED. Total time: 94.39 min
+[5002.42] Email 248 preprocessing complete, requesting confirmations...
+[5002.42] Email 248 supplier confirmation received
+[5002.42] Email 248 warehouse confirmation received
+[5002.42] Email 248 all confirmations received, assembling response...
+[5017.86] Spam email 250 deleted
+[5035.30] Spam email 251 deleted
+[5055.80] Email 248 other responses assembled
+[5063.74] Email 248 client response assembled
+[5063.74] Email 248 COMPLETED. Total time: 91.32 min
+[5085.00] Email 252 preprocessing complete, requesting confirmations...
+[5085.00] Email 252 supplier confirmation received
+[5085.00] Email 252 warehouse confirmation received
+[5085.00] Email 252 all confirmations received, assembling response...
+[5094.73] Spam email 254 deleted
+[5117.71] Spam email 255 deleted
+[5133.79] Simple email 253 processed and response sent
+[5144.30] Email 252 client response assembled
+[5144.80] Email 252 other responses assembled
+[5144.80] Email 252 COMPLETED. Total time: 89.80 min
+[5157.52] Spam email 257 deleted
+[5164.50] Email 256 preprocessing complete, requesting confirmations...
+[5164.50] Email 256 supplier confirmation received
+[5164.50] Email 256 warehouse confirmation received
+[5164.50] Email 256 all confirmations received, assembling response...
+[5200.27] Spam email 259 deleted
+[5219.56] Email 256 other responses assembled
+[5224.57] Email 256 client response assembled
+[5224.57] Email 256 COMPLETED. Total time: 90.07 min
+[5237.07] Simple email 258 processed and response sent
+[5264.85] Spam email 262 deleted
+[5271.73] Email 261 preprocessing complete, requesting confirmations...
+[5271.73] Email 261 supplier confirmation received
+[5271.73] Email 261 warehouse confirmation received
+[5271.73] Email 261 all confirmations received, assembling response...
+[5279.83] Simple email 260 processed and response sent
+[5316.78] Email 263 preprocessing complete, requesting confirmations...
+[5316.78] Email 263 supplier confirmation received
+[5316.78] Email 263 warehouse confirmation received
+[5316.78] Email 263 all confirmations received, assembling response...
+[5326.03] Spam email 265 deleted
+[5327.28] Email 261 other responses assembled
+[5330.10] Email 261 client response assembled
+[5330.10] Email 261 COMPLETED. Total time: 88.37 min
+[5334.21] Email 264 preprocessing complete, requesting confirmations...
+[5334.21] Email 264 supplier confirmation received
+[5334.21] Email 264 warehouse confirmation received
+[5334.21] Email 264 all confirmations received, assembling response...
+[5350.99] Spam email 266 deleted
+[5368.70] Spam email 267 deleted
+[5376.67] Email 263 client response assembled
+[5377.27] Email 263 other responses assembled
+[5377.27] Email 263 COMPLETED. Total time: 90.49 min
+[5391.84] Email 264 other responses assembled
+[5394.41] Email 264 client response assembled
+[5394.41] Email 264 COMPLETED. Total time: 90.20 min
+[5415.01] Email 268 preprocessing complete, requesting confirmations...
+[5415.01] Email 268 supplier confirmation received
+[5415.01] Email 268 warehouse confirmation received
+[5415.01] Email 268 all confirmations received, assembling response...
+[5442.53] Spam email 271 deleted
+[5461.93] Simple email 269 processed and response sent
+[5476.81] Email 268 client response assembled
+[5478.05] Email 268 other responses assembled
+[5478.05] Email 268 COMPLETED. Total time: 93.04 min
+[5484.36] Simple email 270 processed and response sent
+[5489.29] Email 272 preprocessing complete, requesting confirmations...
+[5489.29] Email 272 supplier confirmation received
+[5489.29] Email 272 warehouse confirmation received
+[5489.29] Email 272 all confirmations received, assembling response...
+[5506.03] Spam email 274 deleted
+[5514.06] Email 273 preprocessing complete, requesting confirmations...
+[5514.06] Email 273 supplier confirmation received
+[5514.06] Email 273 warehouse confirmation received
+[5514.06] Email 273 all confirmations received, assembling response...
+[5551.21] Email 272 client response assembled
+[5552.30] Email 275 preprocessing complete, requesting confirmations...
+[5552.30] Email 275 supplier confirmation received
+[5552.30] Email 275 warehouse confirmation received
+[5552.30] Email 275 all confirmations received, assembling response...
+[5554.61] Email 272 other responses assembled
+[5554.61] Email 272 COMPLETED. Total time: 95.32 min
+[5566.28] Email 273 other responses assembled
+[5572.78] Email 273 client response assembled
+[5572.78] Email 273 COMPLETED. Total time: 88.72 min
+[5585.69] Spam email 278 deleted
+[5598.57] Simple email 276 processed and response sent
+[5612.51] Email 275 client response assembled
+[5615.46] Email 275 other responses assembled
+[5615.46] Email 275 COMPLETED. Total time: 93.16 min
+[5622.46] Spam email 280 deleted
+[5623.31] Simple email 277 processed and response sent
+[5642.24] Spam email 281 deleted
+[5660.71] Simple email 279 processed and response sent
+[5676.61] Spam email 283 deleted
+[5718.09] Simple email 282 processed and response sent
+[5751.75] Simple email 284 processed and response sent
+[5761.53] Email 286 preprocessing complete, requesting confirmations...
+[5761.53] Email 286 supplier confirmation received
+[5761.53] Email 286 warehouse confirmation received
+[5761.53] Email 286 all confirmations received, assembling response...
+[5770.76] Simple email 285 processed and response sent
+[5787.36] Spam email 289 deleted
+[5807.06] Simple email 287 processed and response sent
+[5814.89] Email 286 other responses assembled
+[5823.33] Email 286 client response assembled
+[5823.33] Email 286 COMPLETED. Total time: 91.80 min
+[5830.18] Simple email 288 processed and response sent
+[5837.42] Email 290 preprocessing complete, requesting confirmations...
+[5837.42] Email 290 supplier confirmation received
+[5837.42] Email 290 warehouse confirmation received
+[5837.42] Email 290 all confirmations received, assembling response...
+[5854.68] Email 291 preprocessing complete, requesting confirmations...
+[5854.68] Email 291 supplier confirmation received
+[5854.68] Email 291 warehouse confirmation received
+[5854.68] Email 291 all confirmations received, assembling response...
+[5873.48] Email 292 preprocessing complete, requesting confirmations...
+[5873.48] Email 292 supplier confirmation received
+[5873.48] Email 292 warehouse confirmation received
+[5873.48] Email 292 all confirmations received, assembling response...
+[5894.18] Email 290 other responses assembled
+[5898.38] Email 293 preprocessing complete, requesting confirmations...
+[5898.38] Email 293 supplier confirmation received
+[5898.38] Email 293 warehouse confirmation received
+[5898.38] Email 293 all confirmations received, assembling response...
+[5899.06] Email 290 client response assembled
+[5899.06] Email 290 COMPLETED. Total time: 91.63 min
+[5913.90] Email 291 client response assembled
+[5916.62] Email 291 other responses assembled
+[5916.62] Email 291 COMPLETED. Total time: 91.94 min
+[5922.99] Email 294 preprocessing complete, requesting confirmations...
+[5922.99] Email 294 supplier confirmation received
+[5922.99] Email 294 warehouse confirmation received
+[5922.99] Email 294 all confirmations received, assembling response...
+[5931.88] Email 292 client response assembled
+[5937.69] Email 292 other responses assembled
+[5937.69] Email 292 COMPLETED. Total time: 94.20 min
+[5952.55] Spam email 297 deleted
+[5952.90] Email 293 other responses assembled
+[5959.03] Email 293 client response assembled
+[5959.03] Email 293 COMPLETED. Total time: 90.64 min
+[5960.62] Email 296 preprocessing complete, requesting confirmations...
+[5960.62] Email 296 supplier confirmation received
+[5960.62] Email 296 warehouse confirmation received
+[5960.62] Email 296 all confirmations received, assembling response...
+[5967.88] Spam email 298 deleted
+[5970.10] Simple email 295 processed and response sent
+[5981.52] Email 294 other responses assembled
+[5981.61] Email 294 client response assembled
+[5981.61] Email 294 COMPLETED. Total time: 88.63 min
+
+============================================================
+SIMULATION RESULTS
+============================================================
+Total simulation time: 100 hours (6000 minutes)
+
+Email Statistics:
+  Total emails received: 299
+  Simple emails processed (Type 1): 99
+  Spam deleted (Type 2): 99
+  Complex orders completed (Type 3): 99
+  Complex emails still in progress: 0
+
+Expected ~100 emails of each type
+
+Simple Email Processing:
+  Average time: 60.00 min
+
+Spam Deletion:
+  Average time: 1.00 min
+
+Complex Email Processing:
+  Average total time: 92.07 min
+  Min time: 88.10 min
+  Max time: 97.96 min
+
+Results saved to simulation_results.txt

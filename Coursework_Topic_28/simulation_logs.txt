@@ -1,0 +1,1549 @@
+======================================================================
+TOPIC 28: DISTRIBUTED DATABASE SYSTEM SIMULATION
+======================================================================
+Number of requests: 150
+Arrival interval: (12 +/- 5) minutes
+Preprocessing: (2 +/- 1) minutes
+Outgoing channel: 1 min, Incoming: 2 min
+Center A search: (5 +/- 2) min
+Center B search: (10 +/- 5) min
+Center C search: (8 +/- 4) min
+======================================================================
+[13.39] Request 1 arrived
+[14.94] Request 1 preprocessing complete (took 1.55 min)
+[19.84] Request 1 Center A search complete
+[20.64] Request 2 arrived
+[21.82] Request 2 preprocessing complete (took 1.17 min)
+[21.84] Request 1 Center A response received
+[27.36] Request 1 Center C search complete
+[27.51] Request 2 Center A search complete
+[29.31] Request 1 Center B search complete
+[29.36] Request 1 Center C response received
+[31.36] Request 2 Center A response received
+[31.60] Request 2 Center C search complete
+[33.36] Request 1 Center B response received
+[33.36] Request 1 all center responses received (query phase took 18.41 min)
+[33.36] Request 1 COMPLETED (total time: 19.96 min)
+[35.36] Request 2 Center C response received
+[36.50] Request 2 Center B search complete
+[36.57] Request 3 arrived
+[37.62] Request 3 preprocessing complete (took 1.05 min)
+[38.50] Request 2 Center B response received
+[38.50] Request 2 all center responses received (query phase took 16.68 min)
+[38.50] Request 2 COMPLETED (total time: 17.85 min)
+[42.41] Request 3 Center A search complete
+[44.41] Request 3 Center A response received
+[48.62] Request 4 arrived
+[48.98] Request 3 Center C search complete
+[50.80] Request 4 preprocessing complete (took 2.18 min)
+[50.98] Request 3 Center C response received
+[51.12] Request 3 Center B search complete
+[53.12] Request 3 Center B response received
+[53.12] Request 3 all center responses received (query phase took 15.50 min)
+[53.12] Request 3 COMPLETED (total time: 16.55 min)
+[57.82] Request 5 arrived
+[57.86] Request 4 Center B search complete
+[58.04] Request 4 Center A search complete
+[59.50] Request 5 preprocessing complete (took 1.68 min)
+[59.86] Request 4 Center B response received
+[61.86] Request 4 Center A response received
+[64.13] Request 5 Center A search complete
+[64.24] Request 4 Center C search complete
+[66.13] Request 5 Center A response received
+[68.13] Request 4 Center C response received
+[68.13] Request 4 all center responses received (query phase took 17.33 min)
+[68.13] Request 4 COMPLETED (total time: 19.51 min)
+[70.94] Request 5 Center C search complete
+[71.81] Request 6 arrived
+[72.94] Request 5 Center C response received
+[73.00] Request 6 preprocessing complete (took 1.19 min)
+[76.08] Request 5 Center B search complete
+[78.08] Request 5 Center B response received
+[78.08] Request 5 all center responses received (query phase took 18.57 min)
+[78.08] Request 5 COMPLETED (total time: 20.25 min)
+[79.73] Request 7 arrived
+[80.39] Request 6 Center A search complete
+[81.81] Request 7 preprocessing complete (took 2.07 min)
+[82.39] Request 6 Center A response received
+[84.83] Request 6 Center C search complete
+[86.83] Request 6 Center C response received
+[89.15] Request 6 Center B search complete
+[89.70] Request 7 Center A search complete
+[91.15] Request 6 Center B response received
+[91.15] Request 6 all center responses received (query phase took 18.15 min)
+[91.15] Request 6 COMPLETED (total time: 19.34 min)
+[91.86] Request 7 Center C search complete
+[93.15] Request 7 Center A response received
+[94.03] Request 8 arrived
+[95.15] Request 7 Center C response received
+[96.27] Request 8 preprocessing complete (took 2.24 min)
+[99.67] Request 7 Center B search complete
+[101.67] Request 7 Center B response received
+[101.67] Request 7 all center responses received (query phase took 19.86 min)
+[101.67] Request 7 COMPLETED (total time: 21.94 min)
+[103.71] Request 8 Center A search complete
+[105.71] Request 8 Center A response received
+[107.89] Request 8 Center C search complete
+[109.32] Request 9 arrived
+[109.89] Request 8 Center C response received
+[110.78] Request 9 preprocessing complete (took 1.46 min)
+[111.71] Request 8 Center B search complete
+[113.71] Request 8 Center B response received
+[113.71] Request 8 all center responses received (query phase took 17.45 min)
+[113.71] Request 8 COMPLETED (total time: 19.68 min)
+[115.94] Request 9 Center A search complete
+[116.78] Request 10 arrived
+[117.94] Request 9 Center A response received
+[118.34] Request 10 preprocessing complete (took 1.56 min)
+[118.58] Request 9 Center B search complete
+[119.64] Request 9 Center C search complete
+[120.58] Request 9 Center B response received
+[122.58] Request 9 Center C response received
+[122.58] Request 9 all center responses received (query phase took 11.80 min)
+[122.58] Request 9 COMPLETED (total time: 13.25 min)
+[124.79] Request 11 arrived
+[124.88] Request 10 Center A search complete
+[126.33] Request 11 preprocessing complete (took 1.53 min)
+[126.88] Request 10 Center A response received
+[128.30] Request 10 Center C search complete
+[128.99] Request 10 Center B search complete
+[130.30] Request 10 Center C response received
+[132.30] Request 10 Center B response received
+[132.30] Request 10 all center responses received (query phase took 13.96 min)
+[132.30] Request 10 COMPLETED (total time: 15.52 min)
+[133.89] Request 12 arrived
+[134.07] Request 11 Center A search complete
+[136.07] Request 11 Center A response received
+[136.35] Request 12 preprocessing complete (took 2.46 min)
+[138.20] Request 11 Center C search complete
+[140.20] Request 11 Center C response received
+[140.47] Request 11 Center B search complete
+[141.00] Request 12 Center A search complete
+[142.47] Request 11 Center B response received
+[142.47] Request 11 all center responses received (query phase took 16.14 min)
+[142.47] Request 11 COMPLETED (total time: 17.67 min)
+[142.60] Request 13 arrived
+[144.47] Request 12 Center A response received
+[144.71] Request 13 preprocessing complete (took 2.11 min)
+[146.38] Request 12 Center C search complete
+[148.38] Request 12 Center C response received
+[151.45] Request 13 Center A search complete
+[153.45] Request 13 Center A response received
+[155.36] Request 12 Center B search complete
+[156.00] Request 14 arrived
+[157.06] Request 14 preprocessing complete (took 1.06 min)
+[157.36] Request 12 Center B response received
+[157.36] Request 12 all center responses received (query phase took 21.02 min)
+[157.36] Request 12 COMPLETED (total time: 23.47 min)
+[158.46] Request 13 Center C search complete
+[160.46] Request 13 Center C response received
+[162.33] Request 14 Center A search complete
+[164.33] Request 14 Center A response received
+[165.29] Request 15 arrived
+[166.21] Request 14 Center C search complete
+[168.12] Request 13 Center B search complete
+[168.18] Request 15 preprocessing complete (took 2.89 min)
+[168.21] Request 14 Center C response received
+[170.21] Request 13 Center B response received
+[170.21] Request 13 all center responses received (query phase took 25.49 min)
+[170.21] Request 13 COMPLETED (total time: 27.61 min)
+[173.43] Request 15 Center A search complete
+[174.40] Request 16 arrived
+[175.43] Request 15 Center A response received
+[177.23] Request 16 preprocessing complete (took 2.83 min)
+[180.42] Request 15 Center C search complete
+[181.89] Request 14 Center B search complete
+[182.42] Request 15 Center C response received
+[183.06] Request 16 Center A search complete
+[184.42] Request 14 Center B response received
+[184.42] Request 14 all center responses received (query phase took 27.36 min)
+[184.42] Request 14 COMPLETED (total time: 28.42 min)
+[185.36] Request 17 arrived
+[186.42] Request 16 Center A response received
+[186.54] Request 16 Center C search complete
+[186.88] Request 17 preprocessing complete (took 1.53 min)
+[188.54] Request 16 Center C response received
+[189.35] Request 15 Center B search complete
+[191.35] Request 15 Center B response received
+[191.35] Request 15 all center responses received (query phase took 23.18 min)
+[191.35] Request 15 COMPLETED (total time: 26.06 min)
+[193.22] Request 17 Center A search complete
+[195.22] Request 17 Center A response received
+[197.08] Request 17 Center C search complete
+[197.97] Request 18 arrived
+[199.08] Request 17 Center C response received
+[200.96] Request 18 preprocessing complete (took 3.00 min)
+[203.33] Request 16 Center B search complete
+[205.33] Request 16 Center B response received
+[205.33] Request 16 all center responses received (query phase took 28.10 min)
+[205.33] Request 16 COMPLETED (total time: 30.93 min)
+[207.00] Request 18 Center A search complete
+[207.16] Request 19 arrived
+[208.34] Request 18 Center C search complete
+[209.00] Request 18 Center A response received
+[209.24] Request 17 Center B search complete
+[209.42] Request 19 preprocessing complete (took 2.25 min)
+[211.00] Request 18 Center C response received
+[213.00] Request 17 Center B response received
+[213.00] Request 17 all center responses received (query phase took 26.12 min)
+[213.00] Request 17 COMPLETED (total time: 27.65 min)
+[215.11] Request 19 Center A search complete
+[215.26] Request 20 arrived
+[216.93] Request 19 Center C search complete
+[217.11] Request 19 Center A response received
+[218.25] Request 20 preprocessing complete (took 2.99 min)
+[219.11] Request 19 Center C response received
+[222.16] Request 18 Center B search complete
+[224.16] Request 18 Center B response received
+[224.16] Request 18 all center responses received (query phase took 23.20 min)
+[224.16] Request 18 COMPLETED (total time: 26.19 min)
+[224.37] Request 20 Center A search complete
+[226.08] Request 21 arrived
+[226.37] Request 20 Center A response received
+[228.52] Request 21 preprocessing complete (took 2.44 min)
+[233.02] Request 20 Center C search complete
+[233.19] Request 22 arrived
+[235.02] Request 20 Center C response received
+[235.24] Request 21 Center A search complete
+[235.47] Request 22 preprocessing complete (took 2.28 min)
+[235.77] Request 19 Center B search complete
+[237.24] Request 21 Center A response received
+[239.24] Request 19 Center B response received
+[239.24] Request 19 all center responses received (query phase took 29.83 min)
+[239.24] Request 19 COMPLETED (total time: 32.08 min)
+[241.21] Request 22 Center A search complete
+[241.32] Request 21 Center C search complete
+[241.88] Request 20 Center B search complete
+[242.86] Request 23 arrived
+[243.21] Request 22 Center A response received
+[244.39] Request 23 preprocessing complete (took 1.53 min)
+[245.21] Request 21 Center C response received
+[247.21] Request 20 Center B response received
+[247.21] Request 20 all center responses received (query phase took 28.96 min)
+[247.21] Request 20 COMPLETED (total time: 31.95 min)
+[248.95] Request 22 Center C search complete
+[250.39] Request 23 Center A search complete
+[250.95] Request 22 Center C response received
+[252.95] Request 23 Center A response received
+[254.37] Request 23 Center C search complete
+[256.37] Request 23 Center C response received
+[256.42] Request 21 Center B search complete
+[258.42] Request 21 Center B response received
+[258.42] Request 21 all center responses received (query phase took 29.91 min)
+[258.42] Request 21 COMPLETED (total time: 32.35 min)
+[258.62] Request 24 arrived
+[260.21] Request 24 preprocessing complete (took 1.60 min)
+[266.77] Request 24 Center A search complete
+[268.77] Request 24 Center A response received
+[270.55] Request 22 Center B search complete
+[272.09] Request 24 Center C search complete
+[272.55] Request 22 Center B response received
+[272.55] Request 22 all center responses received (query phase took 37.08 min)
+[272.55] Request 22 COMPLETED (total time: 39.36 min)
+[274.32] Request 25 arrived
+[274.55] Request 24 Center C response received
+[276.40] Request 25 preprocessing complete (took 2.08 min)
+[277.08] Request 23 Center B search complete
+[279.08] Request 23 Center B response received
+[279.08] Request 23 all center responses received (query phase took 34.69 min)
+[279.08] Request 23 COMPLETED (total time: 36.22 min)
+[282.52] Request 25 Center A search complete
+[283.41] Request 25 Center C search complete
+[284.52] Request 25 Center A response received
+[286.52] Request 25 Center C response received
+[288.95] Request 26 arrived
+[289.86] Request 24 Center B search complete
+[289.99] Request 26 preprocessing complete (took 1.04 min)
+[291.86] Request 24 Center B response received
+[291.86] Request 24 all center responses received (query phase took 31.65 min)
+[291.86] Request 24 COMPLETED (total time: 33.25 min)
+[297.50] Request 26 Center A search complete
+[299.19] Request 27 arrived
+[299.50] Request 26 Center A response received
+[300.30] Request 27 preprocessing complete (took 1.12 min)
+[303.64] Request 26 Center C search complete
+[304.15] Request 25 Center B search complete
+[305.64] Request 26 Center C response received
+[307.64] Request 25 Center B response received
+[307.64] Request 25 all center responses received (query phase took 31.24 min)
+[307.64] Request 25 COMPLETED (total time: 33.32 min)
+[307.82] Request 27 Center A search complete
+[309.26] Request 28 arrived
+[309.82] Request 27 Center A response received
+[310.01] Request 26 Center B search complete
+[310.40] Request 28 preprocessing complete (took 1.14 min)
+[312.01] Request 26 Center B response received
+[312.01] Request 26 all center responses received (query phase took 22.02 min)
+[312.01] Request 26 COMPLETED (total time: 23.06 min)
+[315.22] Request 27 Center C search complete
+[317.22] Request 27 Center C response received
+[317.47] Request 28 Center A search complete
+[319.47] Request 28 Center A response received
+[320.24] Request 28 Center C search complete
+[321.12] Request 29 arrived
+[322.24] Request 28 Center C response received
+[322.62] Request 27 Center B search complete
+[323.22] Request 29 preprocessing complete (took 2.10 min)
+[324.62] Request 27 Center B response received
+[324.62] Request 27 all center responses received (query phase took 24.31 min)
+[324.62] Request 27 COMPLETED (total time: 25.43 min)
+[330.27] Request 28 Center B search complete
+[330.71] Request 29 Center A search complete
+[332.27] Request 28 Center B response received
+[332.27] Request 28 all center responses received (query phase took 21.86 min)
+[332.27] Request 28 COMPLETED (total time: 23.00 min)
+[332.88] Request 30 arrived
+[333.61] Request 29 Center C search complete
+[334.27] Request 29 Center A response received
+[335.34] Request 30 preprocessing complete (took 2.46 min)
+[336.27] Request 29 Center C response received
+[337.39] Request 29 Center B search complete
+[339.39] Request 29 Center B response received
+[339.39] Request 29 all center responses received (query phase took 16.16 min)
+[339.39] Request 29 COMPLETED (total time: 18.26 min)
+[340.14] Request 30 Center A search complete
+[342.14] Request 30 Center A response received
+[345.27] Request 31 arrived
+[345.50] Request 30 Center B search complete
+[347.15] Request 31 preprocessing complete (took 1.88 min)
+[347.50] Request 30 Center B response received
+[350.30] Request 30 Center C search complete
+[352.30] Request 30 Center C response received
+[352.30] Request 30 all center responses received (query phase took 16.96 min)
+[352.30] Request 30 COMPLETED (total time: 19.42 min)
+[353.22] Request 31 Center A search complete
+[355.22] Request 31 Center A response received
+[355.36] Request 31 Center B search complete
+[356.10] Request 31 Center C search complete
+[357.36] Request 31 Center B response received
+[358.77] Request 32 arrived
+[359.36] Request 31 Center C response received
+[359.36] Request 31 all center responses received (query phase took 12.21 min)
+[359.36] Request 31 COMPLETED (total time: 14.09 min)
+[360.94] Request 32 preprocessing complete (took 2.18 min)
+[365.87] Request 32 Center A search complete
+[367.87] Request 32 Center A response received
+[368.51] Request 32 Center C search complete
+[369.15] Request 33 arrived
+[370.15] Request 32 Center B search complete
+[370.51] Request 32 Center C response received
+[370.61] Request 33 preprocessing complete (took 1.46 min)
+[372.51] Request 32 Center B response received
+[372.51] Request 32 all center responses received (query phase took 11.57 min)
+[372.51] Request 32 COMPLETED (total time: 13.74 min)
+[378.17] Request 33 Center C search complete
+[378.23] Request 33 Center A search complete
+[380.17] Request 33 Center C response received
+[382.17] Request 33 Center A response received
+[382.46] Request 34 arrived
+[384.80] Request 34 preprocessing complete (took 2.34 min)
+[386.20] Request 33 Center B search complete
+[388.20] Request 33 Center B response received
+[388.20] Request 33 all center responses received (query phase took 17.60 min)
+[388.20] Request 33 COMPLETED (total time: 19.05 min)
+[389.66] Request 34 Center A search complete
+[391.66] Request 34 Center A response received
+[391.84] Request 35 arrived
+[393.12] Request 34 Center B search complete
+[393.79] Request 35 preprocessing complete (took 1.95 min)
+[395.12] Request 34 Center B response received
+[399.28] Request 34 Center C search complete
+[400.92] Request 35 Center A search complete
+[401.28] Request 34 Center C response received
+[401.28] Request 34 all center responses received (query phase took 16.48 min)
+[401.28] Request 34 COMPLETED (total time: 18.82 min)
+[403.28] Request 35 Center A response received
+[404.55] Request 36 arrived
+[404.81] Request 35 Center C search complete
+[406.41] Request 36 preprocessing complete (took 1.86 min)
+[406.81] Request 35 Center C response received
+[408.86] Request 35 Center B search complete
+[410.86] Request 35 Center B response received
+[410.86] Request 35 all center responses received (query phase took 17.07 min)
+[410.86] Request 35 COMPLETED (total time: 19.02 min)
+[412.11] Request 36 Center A search complete
+[412.52] Request 37 arrived
+[414.11] Request 36 Center A response received
+[415.49] Request 37 preprocessing complete (took 2.97 min)
+[418.53] Request 36 Center B search complete
+[419.25] Request 36 Center C search complete
+[419.88] Request 37 Center A search complete
+[420.53] Request 36 Center B response received
+[422.53] Request 36 Center C response received
+[422.53] Request 36 all center responses received (query phase took 16.12 min)
+[422.53] Request 36 COMPLETED (total time: 17.98 min)
+[424.53] Request 37 Center A response received
+[425.96] Request 37 Center C search complete
+[426.25] Request 38 arrived
+[427.56] Request 37 Center B search complete
+[427.75] Request 38 preprocessing complete (took 1.50 min)
+[427.96] Request 37 Center C response received
+[429.96] Request 37 Center B response received
+[429.96] Request 37 all center responses received (query phase took 14.47 min)
+[429.96] Request 37 COMPLETED (total time: 17.44 min)
+[432.51] Request 38 Center A search complete
+[434.51] Request 38 Center A response received
+[438.13] Request 38 Center C search complete
+[439.24] Request 38 Center B search complete
+[440.13] Request 38 Center C response received
+[441.87] Request 39 arrived
+[442.13] Request 38 Center B response received
+[442.13] Request 38 all center responses received (query phase took 14.38 min)
+[442.13] Request 38 COMPLETED (total time: 15.87 min)
+[443.37] Request 39 preprocessing complete (took 1.50 min)
+[451.06] Request 39 Center A search complete
+[451.66] Request 40 arrived
+[452.76] Request 40 preprocessing complete (took 1.10 min)
+[453.06] Request 39 Center A response received
+[454.80] Request 39 Center B search complete
+[456.80] Request 39 Center B response received
+[457.26] Request 39 Center C search complete
+[459.26] Request 39 Center C response received
+[459.26] Request 39 all center responses received (query phase took 15.89 min)
+[459.26] Request 39 COMPLETED (total time: 17.39 min)
+[460.75] Request 40 Center A search complete
+[462.75] Request 40 Center A response received
+[464.16] Request 41 arrived
+[466.86] Request 41 preprocessing complete (took 2.70 min)
+[468.16] Request 40 Center B search complete
+[469.01] Request 40 Center C search complete
+[470.16] Request 40 Center B response received
+[471.52] Request 41 Center A search complete
+[472.16] Request 40 Center C response received
+[472.16] Request 40 all center responses received (query phase took 19.40 min)
+[472.16] Request 40 COMPLETED (total time: 20.51 min)
+[474.16] Request 41 Center A response received
+[475.57] Request 41 Center C search complete
+[477.57] Request 41 Center C response received
+[478.71] Request 41 Center B search complete
+[480.42] Request 42 arrived
+[480.71] Request 41 Center B response received
+[480.71] Request 41 all center responses received (query phase took 13.86 min)
+[480.71] Request 41 COMPLETED (total time: 16.55 min)
+[481.54] Request 42 preprocessing complete (took 1.12 min)
+[487.06] Request 42 Center A search complete
+[489.06] Request 42 Center A response received
+[490.66] Request 42 Center C search complete
+[491.43] Request 43 arrived
+[492.66] Request 42 Center C response received
+[493.34] Request 43 preprocessing complete (took 1.91 min)
+[498.39] Request 42 Center B search complete
+[499.04] Request 43 Center A search complete
+[500.39] Request 42 Center B response received
+[500.39] Request 42 all center responses received (query phase took 18.85 min)
+[500.39] Request 42 COMPLETED (total time: 19.97 min)
+[502.39] Request 43 Center A response received
+[506.27] Request 44 arrived
+[508.00] Request 43 Center C search complete
+[508.71] Request 44 preprocessing complete (took 2.44 min)
+[510.00] Request 43 Center C response received
+[513.33] Request 44 Center A search complete
+[513.35] Request 43 Center B search complete
+[515.33] Request 44 Center A response received
+[517.33] Request 43 Center B response received
+[517.33] Request 43 all center responses received (query phase took 23.99 min)
+[517.33] Request 43 COMPLETED (total time: 25.90 min)
+[518.08] Request 44 Center C search complete
+[518.83] Request 45 arrived
+[520.08] Request 44 Center C response received
+[520.92] Request 45 preprocessing complete (took 2.08 min)
+[527.91] Request 45 Center A search complete
+[528.03] Request 44 Center B search complete
+[528.37] Request 45 Center C search complete
+[529.91] Request 45 Center A response received
+[531.62] Request 46 arrived
+[531.91] Request 44 Center B response received
+[531.91] Request 44 all center responses received (query phase took 23.20 min)
+[531.91] Request 44 COMPLETED (total time: 25.63 min)
+[533.91] Request 45 Center C response received
+[534.33] Request 46 preprocessing complete (took 2.71 min)
+[538.88] Request 45 Center B search complete
+[538.96] Request 46 Center A search complete
+[540.88] Request 45 Center B response received
+[540.88] Request 45 all center responses received (query phase took 19.96 min)
+[540.88] Request 45 COMPLETED (total time: 22.04 min)
+[542.88] Request 46 Center A response received
+[543.65] Request 47 arrived
+[544.68] Request 46 Center B search complete
+[545.84] Request 47 preprocessing complete (took 2.19 min)
+[546.68] Request 46 Center B response received
+[549.01] Request 46 Center C search complete
+[551.01] Request 46 Center C response received
+[551.01] Request 46 all center responses received (query phase took 16.69 min)
+[551.01] Request 46 COMPLETED (total time: 19.39 min)
+[552.51] Request 48 arrived
+[552.54] Request 47 Center A search complete
+[553.97] Request 47 Center C search complete
+[554.00] Request 48 preprocessing complete (took 1.49 min)
+[554.54] Request 47 Center A response received
+[555.19] Request 47 Center B search complete
+[556.54] Request 47 Center C response received
+[558.54] Request 47 Center B response received
+[558.54] Request 47 all center responses received (query phase took 12.70 min)
+[558.54] Request 47 COMPLETED (total time: 14.89 min)
+[560.38] Request 48 Center A search complete
+[562.38] Request 48 Center A response received
+[564.36] Request 48 Center C search complete
+[566.36] Request 48 Center C response received
+[567.20] Request 48 Center B search complete
+[568.41] Request 49 arrived
+[569.20] Request 48 Center B response received
+[569.20] Request 48 all center responses received (query phase took 15.19 min)
+[569.20] Request 48 COMPLETED (total time: 16.69 min)
+[570.46] Request 49 preprocessing complete (took 2.05 min)
+[578.20] Request 49 Center A search complete
+[579.50] Request 49 Center B search complete
+[580.20] Request 49 Center A response received
+[581.25] Request 50 arrived
+[582.20] Request 49 Center B response received
+[583.04] Request 50 preprocessing complete (took 1.79 min)
+[583.19] Request 49 Center C search complete
+[585.19] Request 49 Center C response received
+[585.19] Request 49 all center responses received (query phase took 14.73 min)
+[585.19] Request 49 COMPLETED (total time: 16.78 min)
+[589.73] Request 50 Center A search complete
+[590.64] Request 51 arrived
+[591.73] Request 50 Center A response received
+[591.78] Request 51 preprocessing complete (took 1.15 min)
+[592.57] Request 50 Center C search complete
+[593.04] Request 50 Center B search complete
+[594.57] Request 50 Center C response received
+[596.57] Request 50 Center B response received
+[596.57] Request 50 all center responses received (query phase took 13.53 min)
+[596.57] Request 50 COMPLETED (total time: 15.32 min)
+[597.61] Request 51 Center A search complete
+[599.61] Request 51 Center A response received
+[605.16] Request 52 arrived
+[606.58] Request 52 preprocessing complete (took 1.43 min)
+[606.75] Request 51 Center C search complete
+[608.75] Request 51 Center C response received
+[608.77] Request 51 Center B search complete
+[610.77] Request 51 Center B response received
+[610.77] Request 51 all center responses received (query phase took 18.98 min)
+[610.77] Request 51 COMPLETED (total time: 20.13 min)
+[611.64] Request 52 Center A search complete
+[612.89] Request 53 arrived
+[613.64] Request 52 Center A response received
+[614.63] Request 53 preprocessing complete (took 1.74 min)
+[619.26] Request 53 Center A search complete
+[620.63] Request 52 Center C search complete
+[621.26] Request 53 Center A response received
+[623.10] Request 52 Center B search complete
+[623.26] Request 52 Center C response received
+[625.26] Request 52 Center B response received
+[625.26] Request 52 all center responses received (query phase took 18.68 min)
+[625.26] Request 52 COMPLETED (total time: 20.10 min)
+[628.68] Request 54 arrived
+[631.30] Request 53 Center C search complete
+[631.65] Request 54 preprocessing complete (took 2.97 min)
+[633.30] Request 53 Center C response received
+[635.13] Request 53 Center B search complete
+[637.13] Request 53 Center B response received
+[637.13] Request 53 all center responses received (query phase took 22.51 min)
+[637.13] Request 53 COMPLETED (total time: 24.25 min)
+[638.27] Request 54 Center A search complete
+[638.72] Request 54 Center C search complete
+[640.27] Request 54 Center A response received
+[641.80] Request 55 arrived
+[642.27] Request 54 Center C response received
+[644.12] Request 55 preprocessing complete (took 2.33 min)
+[648.31] Request 54 Center B search complete
+[650.31] Request 54 Center B response received
+[650.31] Request 54 all center responses received (query phase took 18.65 min)
+[650.31] Request 54 COMPLETED (total time: 21.62 min)
+[651.79] Request 56 arrived
+[651.88] Request 55 Center A search complete
+[652.20] Request 55 Center C search complete
+[653.88] Request 55 Center A response received
+[653.90] Request 56 preprocessing complete (took 2.11 min)
+[654.46] Request 55 Center B search complete
+[655.88] Request 55 Center C response received
+[657.88] Request 55 Center B response received
+[657.88] Request 55 all center responses received (query phase took 13.76 min)
+[657.88] Request 55 COMPLETED (total time: 16.08 min)
+[658.99] Request 56 Center A search complete
+[659.86] Request 57 arrived
+[660.99] Request 56 Center A response received
+[662.13] Request 57 preprocessing complete (took 2.27 min)
+[666.64] Request 56 Center C search complete
+[666.95] Request 56 Center B search complete
+[667.19] Request 57 Center A search complete
+[668.64] Request 56 Center C response received
+[668.90] Request 58 arrived
+[670.08] Request 58 preprocessing complete (took 1.18 min)
+[670.64] Request 56 Center B response received
+[670.64] Request 56 all center responses received (query phase took 16.74 min)
+[670.64] Request 56 COMPLETED (total time: 18.85 min)
+[672.64] Request 57 Center A response received
+[674.55] Request 57 Center C search complete
+[675.78] Request 58 Center A search complete
+[676.55] Request 57 Center C response received
+[678.55] Request 58 Center A response received
+[680.76] Request 58 Center C search complete
+[681.00] Request 57 Center B search complete
+[682.76] Request 58 Center C response received
+[684.36] Request 59 arrived
+[684.76] Request 57 Center B response received
+[684.76] Request 57 all center responses received (query phase took 22.63 min)
+[684.76] Request 57 COMPLETED (total time: 24.90 min)
+[686.03] Request 58 Center B search complete
+[686.63] Request 59 preprocessing complete (took 2.27 min)
+[688.03] Request 58 Center B response received
+[688.03] Request 58 all center responses received (query phase took 17.95 min)
+[688.03] Request 58 COMPLETED (total time: 19.14 min)
+[691.68] Request 59 Center A search complete
+[693.68] Request 59 Center A response received
+[698.05] Request 59 Center C search complete
+[699.07] Request 60 arrived
+[700.05] Request 59 Center C response received
+[700.09] Request 60 preprocessing complete (took 1.02 min)
+[701.04] Request 59 Center B search complete
+[703.04] Request 59 Center B response received
+[703.04] Request 59 all center responses received (query phase took 16.41 min)
+[703.04] Request 59 COMPLETED (total time: 18.69 min)
+[704.39] Request 60 Center A search complete
+[706.39] Request 60 Center A response received
+[710.35] Request 61 arrived
+[713.02] Request 61 preprocessing complete (took 2.67 min)
+[714.32] Request 60 Center C search complete
+[715.92] Request 60 Center B search complete
+[716.32] Request 60 Center C response received
+[718.32] Request 60 Center B response received
+[718.32] Request 60 all center responses received (query phase took 18.23 min)
+[718.32] Request 60 COMPLETED (total time: 19.25 min)
+[719.35] Request 61 Center A search complete
+[721.04] Request 61 Center C search complete
+[721.35] Request 61 Center A response received
+[722.40] Request 61 Center B search complete
+[722.80] Request 62 arrived
+[723.35] Request 61 Center C response received
+[725.35] Request 61 Center B response received
+[725.35] Request 61 all center responses received (query phase took 12.33 min)
+[725.35] Request 61 COMPLETED (total time: 15.00 min)
+[725.60] Request 62 preprocessing complete (took 2.80 min)
+[732.78] Request 62 Center A search complete
+[732.88] Request 63 arrived
+[734.38] Request 63 preprocessing complete (took 1.50 min)
+[734.78] Request 62 Center A response received
+[738.80] Request 63 Center A search complete
+[739.79] Request 62 Center C search complete
+[740.80] Request 63 Center A response received
+[741.21] Request 62 Center B search complete
+[741.99] Request 64 arrived
+[742.80] Request 62 Center C response received
+[744.23] Request 64 preprocessing complete (took 2.24 min)
+[744.80] Request 62 Center B response received
+[744.80] Request 62 all center responses received (query phase took 19.19 min)
+[744.80] Request 62 COMPLETED (total time: 21.99 min)
+[748.85] Request 64 Center A search complete
+[750.03] Request 63 Center C search complete
+[750.85] Request 64 Center A response received
+[752.85] Request 63 Center C response received
+[753.05] Request 65 arrived
+[755.05] Request 63 Center B search complete
+[756.00] Request 65 preprocessing complete (took 2.95 min)
+[757.05] Request 63 Center B response received
+[757.05] Request 63 all center responses received (query phase took 22.66 min)
+[757.05] Request 63 COMPLETED (total time: 24.16 min)
+[761.47] Request 64 Center C search complete
+[763.47] Request 64 Center C response received
+[763.53] Request 65 Center A search complete
+[765.53] Request 65 Center A response received
+[765.67] Request 65 Center C search complete
+[767.67] Request 65 Center C response received
+[768.16] Request 64 Center B search complete
+[768.70] Request 66 arrived
+[770.16] Request 64 Center B response received
+[770.16] Request 64 all center responses received (query phase took 25.93 min)
+[770.16] Request 64 COMPLETED (total time: 28.17 min)
+[771.56] Request 66 preprocessing complete (took 2.86 min)
+[778.77] Request 66 Center A search complete
+[779.02] Request 67 arrived
+[780.52] Request 65 Center B search complete
+[780.55] Request 67 preprocessing complete (took 1.53 min)
+[780.77] Request 66 Center A response received
+[782.77] Request 65 Center B response received
+[782.77] Request 65 all center responses received (query phase took 26.76 min)
+[782.77] Request 65 COMPLETED (total time: 29.72 min)
+[784.98] Request 67 Center A search complete
+[785.47] Request 66 Center C search complete
+[786.98] Request 67 Center A response received
+[788.98] Request 66 Center C response received
+[793.40] Request 66 Center B search complete
+[794.12] Request 68 arrived
+[795.40] Request 66 Center B response received
+[795.40] Request 66 all center responses received (query phase took 23.84 min)
+[795.40] Request 66 COMPLETED (total time: 26.70 min)
+[796.45] Request 67 Center C search complete
+[796.76] Request 68 preprocessing complete (took 2.63 min)
+[798.45] Request 67 Center C response received
+[802.60] Request 68 Center A search complete
+[803.35] Request 69 arrived
+[804.60] Request 68 Center A response received
+[804.80] Request 69 preprocessing complete (took 1.46 min)
+[806.20] Request 68 Center C search complete
+[806.98] Request 67 Center B search complete
+[808.20] Request 68 Center C response received
+[808.90] Request 69 Center A search complete
+[810.20] Request 67 Center B response received
+[810.20] Request 67 all center responses received (query phase took 29.65 min)
+[810.20] Request 67 COMPLETED (total time: 31.18 min)
+[812.20] Request 69 Center A response received
+[813.91] Request 68 Center B search complete
+[814.43] Request 69 Center C search complete
+[815.91] Request 68 Center B response received
+[815.91] Request 68 all center responses received (query phase took 19.15 min)
+[815.91] Request 68 COMPLETED (total time: 21.79 min)
+[817.91] Request 69 Center C response received
+[818.30] Request 70 arrived
+[819.86] Request 70 preprocessing complete (took 1.56 min)
+[826.43] Request 70 Center A search complete
+[827.56] Request 69 Center B search complete
+[828.43] Request 70 Center A response received
+[830.06] Request 70 Center C search complete
+[830.43] Request 69 Center B response received
+[830.43] Request 69 all center responses received (query phase took 25.62 min)
+[830.43] Request 69 COMPLETED (total time: 27.08 min)
+[832.43] Request 70 Center C response received
+[834.97] Request 71 arrived
+[837.85] Request 71 preprocessing complete (took 2.88 min)
+[842.31] Request 71 Center A search complete
+[842.37] Request 70 Center B search complete
+[844.31] Request 71 Center A response received
+[846.31] Request 70 Center B response received
+[846.31] Request 70 all center responses received (query phase took 26.45 min)
+[846.31] Request 70 COMPLETED (total time: 28.01 min)
+[847.33] Request 72 arrived
+[848.86] Request 72 preprocessing complete (took 1.53 min)
+[849.15] Request 71 Center B search complete
+[851.15] Request 71 Center B response received
+[852.61] Request 71 Center C search complete
+[853.30] Request 72 Center A search complete
+[854.61] Request 71 Center C response received
+[854.61] Request 71 all center responses received (query phase took 16.76 min)
+[854.61] Request 71 COMPLETED (total time: 19.64 min)
+[856.61] Request 72 Center A response received
+[860.21] Request 72 Center B search complete
+[862.21] Request 72 Center B response received
+[862.44] Request 72 Center C search complete
+[863.96] Request 73 arrived
+[864.44] Request 72 Center C response received
+[864.44] Request 72 all center responses received (query phase took 15.58 min)
+[864.44] Request 72 COMPLETED (total time: 17.11 min)
+[866.17] Request 73 preprocessing complete (took 2.21 min)
+[872.22] Request 73 Center A search complete
+[874.10] Request 74 arrived
+[874.22] Request 73 Center A response received
+[876.51] Request 74 preprocessing complete (took 2.42 min)
+[877.02] Request 73 Center B search complete
+[877.78] Request 73 Center C search complete
+[879.02] Request 73 Center B response received
+[880.52] Request 74 Center A search complete
+[881.02] Request 73 Center C response received
+[881.02] Request 73 all center responses received (query phase took 14.85 min)
+[881.02] Request 73 COMPLETED (total time: 17.06 min)
+[883.02] Request 74 Center A response received
+[883.64] Request 75 arrived
+[886.13] Request 75 preprocessing complete (took 2.48 min)
+[887.82] Request 74 Center C search complete
+[889.82] Request 74 Center C response received
+[892.77] Request 74 Center B search complete
+[892.81] Request 75 Center A search complete
+[894.77] Request 74 Center B response received
+[894.77] Request 74 all center responses received (query phase took 18.26 min)
+[894.77] Request 74 COMPLETED (total time: 20.67 min)
+[896.04] Request 75 Center C search complete
+[896.77] Request 75 Center A response received
+[897.84] Request 76 arrived
+[898.47] Request 75 Center B search complete
+[898.77] Request 75 Center C response received
+[899.50] Request 76 preprocessing complete (took 1.66 min)
+[900.77] Request 75 Center B response received
+[900.77] Request 75 all center responses received (query phase took 14.64 min)
+[900.77] Request 75 COMPLETED (total time: 17.13 min)
+[904.75] Request 76 Center A search complete
+[906.75] Request 76 Center A response received
+[911.48] Request 77 arrived
+[912.26] Request 76 Center C search complete
+[913.10] Request 77 preprocessing complete (took 1.62 min)
+[914.26] Request 76 Center C response received
+[914.98] Request 76 Center B search complete
+[916.98] Request 76 Center B response received
+[916.98] Request 76 all center responses received (query phase took 17.48 min)
+[916.98] Request 76 COMPLETED (total time: 19.14 min)
+[918.73] Request 77 Center A search complete
+[920.73] Request 77 Center A response received
+[921.48] Request 78 arrived
+[922.46] Request 77 Center C search complete
+[923.32] Request 78 preprocessing complete (took 1.84 min)
+[924.12] Request 77 Center B search complete
+[924.46] Request 77 Center C response received
+[926.46] Request 77 Center B response received
+[926.46] Request 77 all center responses received (query phase took 13.37 min)
+[926.46] Request 77 COMPLETED (total time: 14.98 min)
+[929.76] Request 79 arrived
+[931.09] Request 78 Center A search complete
+[931.36] Request 79 preprocessing complete (took 1.60 min)
+[933.09] Request 78 Center A response received
+[937.10] Request 78 Center B search complete
+[937.55] Request 78 Center C search complete
+[937.55] Request 79 Center A search complete
+[939.10] Request 78 Center B response received
+[941.10] Request 78 Center C response received
+[941.10] Request 78 all center responses received (query phase took 17.77 min)
+[941.10] Request 78 COMPLETED (total time: 19.61 min)
+[942.10] Request 79 Center B search complete
+[942.91] Request 80 arrived
+[943.10] Request 79 Center A response received
+[943.84] Request 79 Center C search complete
+[945.07] Request 80 preprocessing complete (took 2.16 min)
+[945.10] Request 79 Center B response received
+[947.10] Request 79 Center C response received
+[947.10] Request 79 all center responses received (query phase took 15.74 min)
+[947.10] Request 79 COMPLETED (total time: 17.34 min)
+[951.69] Request 80 Center A search complete
+[953.69] Request 80 Center A response received
+[954.21] Request 81 arrived
+[955.61] Request 80 Center C search complete
+[956.16] Request 81 preprocessing complete (took 1.95 min)
+[956.72] Request 80 Center B search complete
+[957.61] Request 80 Center C response received
+[959.61] Request 80 Center B response received
+[959.61] Request 80 all center responses received (query phase took 14.54 min)
+[959.61] Request 80 COMPLETED (total time: 16.70 min)
+[963.35] Request 82 arrived
+[963.76] Request 81 Center A search complete
+[964.51] Request 81 Center C search complete
+[965.38] Request 82 preprocessing complete (took 2.03 min)
+[965.76] Request 81 Center A response received
+[967.76] Request 81 Center C response received
+[971.12] Request 81 Center B search complete
+[971.19] Request 83 arrived
+[971.91] Request 82 Center A search complete
+[973.12] Request 81 Center B response received
+[973.12] Request 81 all center responses received (query phase took 16.96 min)
+[973.12] Request 81 COMPLETED (total time: 18.91 min)
+[973.54] Request 83 preprocessing complete (took 2.35 min)
+[975.06] Request 82 Center C search complete
+[975.12] Request 82 Center A response received
+[977.12] Request 82 Center C response received
+[978.44] Request 83 Center A search complete
+[980.44] Request 83 Center A response received
+[982.13] Request 83 Center C search complete
+[984.13] Request 83 Center C response received
+[984.30] Request 82 Center B search complete
+[985.71] Request 84 arrived
+[986.30] Request 82 Center B response received
+[986.30] Request 82 all center responses received (query phase took 20.92 min)
+[986.30] Request 82 COMPLETED (total time: 22.95 min)
+[987.66] Request 84 preprocessing complete (took 1.95 min)
+[989.55] Request 83 Center B search complete
+[991.55] Request 83 Center B response received
+[991.55] Request 83 all center responses received (query phase took 18.00 min)
+[991.55] Request 83 COMPLETED (total time: 20.35 min)
+[995.06] Request 84 Center A search complete
+[995.15] Request 85 arrived
+[995.38] Request 84 Center B search complete
+[996.54] Request 85 preprocessing complete (took 1.39 min)
+[997.06] Request 84 Center A response received
+[997.97] Request 84 Center C search complete
+[999.06] Request 84 Center B response received
+[1001.06] Request 84 Center C response received
+[1001.06] Request 84 all center responses received (query phase took 13.40 min)
+[1001.06] Request 84 COMPLETED (total time: 15.35 min)
+[1003.33] Request 85 Center A search complete
+[1005.33] Request 85 Center A response received
+[1005.50] Request 85 Center C search complete
+[1007.50] Request 85 Center C response received
+[1008.45] Request 86 arrived
+[1008.49] Request 85 Center B search complete
+[1009.46] Request 86 preprocessing complete (took 1.01 min)
+[1010.49] Request 85 Center B response received
+[1010.49] Request 85 all center responses received (query phase took 13.94 min)
+[1010.49] Request 85 COMPLETED (total time: 15.33 min)
+[1016.47] Request 86 Center A search complete
+[1017.32] Request 86 Center C search complete
+[1018.47] Request 86 Center A response received
+[1020.47] Request 86 Center C response received
+[1022.01] Request 87 arrived
+[1023.36] Request 87 preprocessing complete (took 1.35 min)
+[1024.16] Request 86 Center B search complete
+[1026.16] Request 86 Center B response received
+[1026.16] Request 86 all center responses received (query phase took 16.70 min)
+[1026.16] Request 86 COMPLETED (total time: 17.71 min)
+[1030.77] Request 87 Center C search complete
+[1031.20] Request 87 Center A search complete
+[1032.77] Request 87 Center C response received
+[1033.26] Request 88 arrived
+[1034.77] Request 87 Center A response received
+[1035.54] Request 87 Center B search complete
+[1035.96] Request 88 preprocessing complete (took 2.70 min)
+[1037.54] Request 87 Center B response received
+[1037.54] Request 87 all center responses received (query phase took 14.18 min)
+[1037.54] Request 87 COMPLETED (total time: 15.53 min)
+[1041.79] Request 88 Center A search complete
+[1042.76] Request 89 arrived
+[1043.79] Request 88 Center A response received
+[1044.95] Request 89 preprocessing complete (took 2.19 min)
+[1048.30] Request 88 Center C search complete
+[1050.30] Request 88 Center C response received
+[1050.98] Request 88 Center B search complete
+[1052.75] Request 89 Center A search complete
+[1052.98] Request 88 Center B response received
+[1052.98] Request 88 all center responses received (query phase took 17.01 min)
+[1052.98] Request 88 COMPLETED (total time: 19.71 min)
+[1054.98] Request 89 Center A response received
+[1059.43] Request 89 Center C search complete
+[1059.64] Request 90 arrived
+[1061.43] Request 89 Center C response received
+[1061.64] Request 90 preprocessing complete (took 2.01 min)
+[1062.10] Request 89 Center B search complete
+[1064.10] Request 89 Center B response received
+[1064.10] Request 89 all center responses received (query phase took 19.15 min)
+[1064.10] Request 89 COMPLETED (total time: 21.35 min)
+[1068.97] Request 90 Center A search complete
+[1070.97] Request 90 Center A response received
+[1073.83] Request 91 arrived
+[1074.12] Request 90 Center B search complete
+[1075.78] Request 91 preprocessing complete (took 1.95 min)
+[1075.82] Request 90 Center C search complete
+[1076.12] Request 90 Center B response received
+[1078.12] Request 90 Center C response received
+[1078.12] Request 90 all center responses received (query phase took 16.48 min)
+[1078.12] Request 90 COMPLETED (total time: 18.49 min)
+[1080.81] Request 91 Center A search complete
+[1082.81] Request 91 Center A response received
+[1085.25] Request 91 Center B search complete
+[1087.25] Request 91 Center B response received
+[1087.88] Request 91 Center C search complete
+[1088.26] Request 92 arrived
+[1089.88] Request 91 Center C response received
+[1089.88] Request 91 all center responses received (query phase took 14.10 min)
+[1089.88] Request 91 COMPLETED (total time: 16.05 min)
+[1090.31] Request 92 preprocessing complete (took 2.04 min)
+[1096.81] Request 92 Center A search complete
+[1097.93] Request 92 Center C search complete
+[1098.81] Request 92 Center A response received
+[1100.05] Request 92 Center B search complete
+[1100.81] Request 92 Center C response received
+[1102.81] Request 92 Center B response received
+[1102.81] Request 92 all center responses received (query phase took 12.51 min)
+[1102.81] Request 92 COMPLETED (total time: 14.55 min)
+[1102.92] Request 93 arrived
+[1104.47] Request 93 preprocessing complete (took 1.54 min)
+[1109.74] Request 93 Center A search complete
+[1111.74] Request 93 Center A response received
+[1112.57] Request 93 Center C search complete
+[1112.78] Request 94 arrived
+[1114.57] Request 93 Center C response received
+[1115.17] Request 94 preprocessing complete (took 2.39 min)
+[1116.87] Request 93 Center B search complete
+[1118.87] Request 93 Center B response received
+[1118.87] Request 93 all center responses received (query phase took 14.40 min)
+[1118.87] Request 93 COMPLETED (total time: 15.94 min)
+[1121.99] Request 94 Center A search complete
+[1122.09] Request 95 arrived
+[1122.81] Request 94 Center B search complete
+[1123.92] Request 95 preprocessing complete (took 1.83 min)
+[1123.99] Request 94 Center A response received
+[1125.43] Request 94 Center C search complete
+[1125.99] Request 94 Center B response received
+[1127.99] Request 94 Center C response received
+[1127.99] Request 94 all center responses received (query phase took 12.83 min)
+[1127.99] Request 94 COMPLETED (total time: 15.21 min)
+[1128.75] Request 95 Center A search complete
+[1130.75] Request 95 Center A response received
+[1134.52] Request 96 arrived
+[1135.13] Request 95 Center B search complete
+[1136.91] Request 96 preprocessing complete (took 2.39 min)
+[1137.13] Request 95 Center B response received
+[1138.16] Request 95 Center C search complete
+[1140.16] Request 95 Center C response received
+[1140.16] Request 95 all center responses received (query phase took 16.24 min)
+[1140.16] Request 95 COMPLETED (total time: 18.07 min)
+[1144.34] Request 96 Center A search complete
+[1146.34] Request 96 Center A response received
+[1146.95] Request 96 Center C search complete
+[1147.36] Request 97 arrived
+[1148.95] Request 96 Center C response received
+[1149.06] Request 97 preprocessing complete (took 1.70 min)
+[1151.57] Request 96 Center B search complete
+[1153.57] Request 96 Center B response received
+[1153.57] Request 96 all center responses received (query phase took 16.66 min)
+[1153.57] Request 96 COMPLETED (total time: 19.05 min)
+[1154.42] Request 98 arrived
+[1156.08] Request 97 Center A search complete
+[1156.91] Request 98 preprocessing complete (took 2.50 min)
+[1158.08] Request 97 Center A response received
+[1163.10] Request 98 Center A search complete
+[1163.69] Request 97 Center C search complete
+[1165.10] Request 98 Center A response received
+[1165.10] Request 97 Center B search complete
+[1165.61] Request 99 arrived
+[1167.10] Request 97 Center C response received
+[1167.48] Request 99 preprocessing complete (took 1.87 min)
+[1169.10] Request 97 Center B response received
+[1169.10] Request 97 all center responses received (query phase took 20.04 min)
+[1169.10] Request 97 COMPLETED (total time: 21.74 min)
+[1171.60] Request 99 Center A search complete
+[1172.31] Request 98 Center B search complete
+[1172.52] Request 98 Center C search complete
+[1173.60] Request 99 Center A response received
+[1174.80] Request 100 arrived
+[1175.60] Request 98 Center B response received
+[1176.13] Request 100 preprocessing complete (took 1.33 min)
+[1177.60] Request 98 Center C response received
+[1177.60] Request 98 all center responses received (query phase took 20.68 min)
+[1177.60] Request 98 COMPLETED (total time: 23.18 min)
+[1180.67] Request 99 Center B search complete
+[1181.95] Request 99 Center C search complete
+[1182.00] Request 100 Center A search complete
+[1182.67] Request 99 Center B response received
+[1184.67] Request 99 Center C response received
+[1184.67] Request 99 all center responses received (query phase took 17.19 min)
+[1184.67] Request 99 COMPLETED (total time: 19.06 min)
+[1185.85] Request 101 arrived
+[1186.67] Request 100 Center A response received
+[1186.94] Request 100 Center B search complete
+[1187.63] Request 101 preprocessing complete (took 1.79 min)
+[1188.94] Request 100 Center B response received
+[1190.93] Request 100 Center C search complete
+[1192.93] Request 100 Center C response received
+[1192.93] Request 100 all center responses received (query phase took 16.79 min)
+[1192.93] Request 100 COMPLETED (total time: 18.12 min)
+[1193.12] Request 102 arrived
+[1193.89] Request 101 Center A search complete
+[1194.91] Request 101 Center B search complete
+[1195.04] Request 102 preprocessing complete (took 1.92 min)
+[1195.89] Request 101 Center A response received
+[1197.89] Request 101 Center B response received
+[1199.24] Request 102 Center A search complete
+[1200.07] Request 101 Center C search complete
+[1201.24] Request 102 Center A response received
+[1201.47] Request 103 arrived
+[1203.24] Request 101 Center C response received
+[1203.24] Request 101 all center responses received (query phase took 15.61 min)
+[1203.24] Request 101 COMPLETED (total time: 17.39 min)
+[1204.00] Request 103 preprocessing complete (took 2.52 min)
+[1205.76] Request 102 Center C search complete
+[1205.83] Request 102 Center B search complete
+[1207.76] Request 102 Center C response received
+[1209.51] Request 103 Center A search complete
+[1209.76] Request 102 Center B response received
+[1209.76] Request 102 all center responses received (query phase took 14.72 min)
+[1209.76] Request 102 COMPLETED (total time: 16.65 min)
+[1211.74] Request 104 arrived
+[1211.76] Request 103 Center A response received
+[1212.91] Request 104 preprocessing complete (took 1.16 min)
+[1216.98] Request 104 Center A search complete
+[1217.65] Request 103 Center C search complete
+[1218.52] Request 103 Center B search complete
+[1218.98] Request 104 Center A response received
+[1220.98] Request 103 Center C response received
+[1221.26] Request 105 arrived
+[1222.98] Request 103 Center B response received
+[1222.98] Request 103 all center responses received (query phase took 18.99 min)
+[1222.98] Request 103 COMPLETED (total time: 21.51 min)
+[1223.56] Request 105 preprocessing complete (took 2.30 min)
+[1225.97] Request 104 Center C search complete
+[1227.97] Request 104 Center C response received
+[1230.69] Request 105 Center A search complete
+[1231.76] Request 106 arrived
+[1232.69] Request 105 Center A response received
+[1233.51] Request 104 Center B search complete
+[1234.66] Request 106 preprocessing complete (took 2.90 min)
+[1235.51] Request 104 Center B response received
+[1235.51] Request 104 all center responses received (query phase took 22.61 min)
+[1235.51] Request 104 COMPLETED (total time: 23.77 min)
+[1235.78] Request 105 Center C search complete
+[1237.78] Request 105 Center C response received
+[1238.74] Request 106 Center A search complete
+[1240.51] Request 105 Center B search complete
+[1240.74] Request 106 Center A response received
+[1242.74] Request 105 Center B response received
+[1242.74] Request 105 all center responses received (query phase took 19.18 min)
+[1242.74] Request 105 COMPLETED (total time: 21.48 min)
+[1242.88] Request 106 Center C search complete
+[1244.88] Request 106 Center C response received
+[1246.31] Request 107 arrived
+[1246.77] Request 106 Center B search complete
+[1248.43] Request 107 preprocessing complete (took 2.13 min)
+[1248.77] Request 106 Center B response received
+[1248.77] Request 106 all center responses received (query phase took 14.11 min)
+[1248.77] Request 106 COMPLETED (total time: 17.01 min)
+[1253.31] Request 107 Center A search complete
+[1255.31] Request 107 Center A response received
+[1260.00] Request 108 arrived
+[1261.57] Request 107 Center C search complete
+[1262.21] Request 108 preprocessing complete (took 2.21 min)
+[1262.43] Request 107 Center B search complete
+[1263.57] Request 107 Center C response received
+[1265.57] Request 107 Center B response received
+[1265.57] Request 107 all center responses received (query phase took 17.14 min)
+[1265.57] Request 107 COMPLETED (total time: 19.26 min)
+[1268.68] Request 109 arrived
+[1269.21] Request 108 Center A search complete
+[1269.89] Request 109 preprocessing complete (took 1.22 min)
+[1270.36] Request 108 Center B search complete
+[1271.21] Request 108 Center A response received
+[1273.21] Request 108 Center B response received
+[1274.00] Request 109 Center A search complete
+[1275.77] Request 108 Center C search complete
+[1276.00] Request 109 Center A response received
+[1278.00] Request 108 Center C response received
+[1278.00] Request 108 all center responses received (query phase took 15.78 min)
+[1278.00] Request 108 COMPLETED (total time: 18.00 min)
+[1280.01] Request 109 Center B search complete
+[1282.01] Request 109 Center B response received
+[1285.19] Request 109 Center C search complete
+[1285.33] Request 110 arrived
+[1287.12] Request 110 preprocessing complete (took 1.79 min)
+[1287.19] Request 109 Center C response received
+[1287.19] Request 109 all center responses received (query phase took 17.29 min)
+[1287.19] Request 109 COMPLETED (total time: 18.51 min)
+[1293.98] Request 110 Center A search complete
+[1294.88] Request 110 Center B search complete
+[1295.98] Request 110 Center A response received
+[1297.98] Request 110 Center B response received
+[1299.64] Request 110 Center C search complete
+[1301.64] Request 110 Center C response received
+[1301.64] Request 110 all center responses received (query phase took 14.52 min)
+[1301.64] Request 110 COMPLETED (total time: 16.32 min)
+[1301.91] Request 111 arrived
+[1303.11] Request 111 preprocessing complete (took 1.20 min)
+[1310.20] Request 111 Center A search complete
+[1312.20] Request 111 Center A response received
+[1314.91] Request 111 Center C search complete
+[1315.18] Request 112 arrived
+[1316.91] Request 111 Center C response received
+[1318.15] Request 112 preprocessing complete (took 2.97 min)
+[1318.61] Request 111 Center B search complete
+[1320.61] Request 111 Center B response received
+[1320.61] Request 111 all center responses received (query phase took 17.50 min)
+[1320.61] Request 111 COMPLETED (total time: 18.71 min)
+[1323.39] Request 113 arrived
+[1325.28] Request 112 Center A search complete
+[1325.40] Request 113 preprocessing complete (took 2.01 min)
+[1327.28] Request 112 Center A response received
+[1328.57] Request 112 Center C search complete
+[1328.62] Request 112 Center B search complete
+[1330.57] Request 112 Center C response received
+[1330.77] Request 113 Center A search complete
+[1332.57] Request 112 Center B response received
+[1332.57] Request 112 all center responses received (query phase took 14.43 min)
+[1332.57] Request 112 COMPLETED (total time: 17.39 min)
+[1334.10] Request 114 arrived
+[1334.57] Request 113 Center A response received
+[1337.02] Request 114 preprocessing complete (took 2.92 min)
+[1339.37] Request 113 Center C search complete
+[1341.37] Request 113 Center C response received
+[1341.84] Request 113 Center B search complete
+[1342.15] Request 115 arrived
+[1343.56] Request 114 Center A search complete
+[1343.84] Request 113 Center B response received
+[1343.84] Request 113 all center responses received (query phase took 18.44 min)
+[1343.84] Request 113 COMPLETED (total time: 20.45 min)
+[1344.62] Request 115 preprocessing complete (took 2.47 min)
+[1345.84] Request 114 Center A response received
+[1350.65] Request 114 Center C search complete
+[1352.48] Request 115 Center A search complete
+[1352.65] Request 114 Center C response received
+[1353.51] Request 116 arrived
+[1353.92] Request 114 Center B search complete
+[1354.65] Request 115 Center A response received
+[1355.58] Request 116 preprocessing complete (took 2.08 min)
+[1356.65] Request 114 Center B response received
+[1356.65] Request 114 all center responses received (query phase took 19.63 min)
+[1356.65] Request 114 COMPLETED (total time: 22.55 min)
+[1356.81] Request 115 Center C search complete
+[1358.81] Request 115 Center C response received
+[1361.32] Request 116 Center A search complete
+[1363.32] Request 116 Center A response received
+[1363.75] Request 115 Center B search complete
+[1365.75] Request 115 Center B response received
+[1365.75] Request 115 all center responses received (query phase took 21.13 min)
+[1365.75] Request 115 COMPLETED (total time: 23.60 min)
+[1368.43] Request 116 Center C search complete
+[1368.59] Request 117 arrived
+[1370.43] Request 116 Center C response received
+[1371.25] Request 117 preprocessing complete (took 2.66 min)
+[1371.43] Request 116 Center B search complete
+[1373.43] Request 116 Center B response received
+[1373.43] Request 116 all center responses received (query phase took 17.85 min)
+[1373.43] Request 116 COMPLETED (total time: 19.93 min)
+[1375.60] Request 117 Center A search complete
+[1377.60] Request 117 Center A response received
+[1380.20] Request 117 Center C search complete
+[1382.20] Request 117 Center C response received
+[1384.11] Request 118 arrived
+[1386.33] Request 118 preprocessing complete (took 2.22 min)
+[1387.07] Request 117 Center B search complete
+[1389.07] Request 117 Center B response received
+[1389.07] Request 117 all center responses received (query phase took 17.82 min)
+[1389.07] Request 117 COMPLETED (total time: 20.48 min)
+[1391.84] Request 118 Center A search complete
+[1393.61] Request 118 Center B search complete
+[1393.84] Request 118 Center A response received
+[1395.75] Request 119 arrived
+[1395.84] Request 118 Center B response received
+[1397.18] Request 119 preprocessing complete (took 1.42 min)
+[1400.13] Request 118 Center C search complete
+[1402.13] Request 118 Center C response received
+[1402.13] Request 118 all center responses received (query phase took 15.81 min)
+[1402.13] Request 118 COMPLETED (total time: 18.03 min)
+[1404.37] Request 119 Center A search complete
+[1404.57] Request 120 arrived
+[1406.12] Request 120 preprocessing complete (took 1.55 min)
+[1406.37] Request 119 Center A response received
+[1407.58] Request 119 Center B search complete
+[1409.58] Request 119 Center B response received
+[1410.16] Request 120 Center A search complete
+[1411.22] Request 119 Center C search complete
+[1412.16] Request 120 Center A response received
+[1414.16] Request 119 Center C response received
+[1414.16] Request 119 all center responses received (query phase took 16.99 min)
+[1414.16] Request 119 COMPLETED (total time: 18.41 min)
+[1415.90] Request 120 Center C search complete
+[1417.90] Request 120 Center C response received
+[1418.58] Request 121 arrived
+[1420.56] Request 121 preprocessing complete (took 1.98 min)
+[1422.60] Request 120 Center B search complete
+[1424.60] Request 120 Center B response received
+[1424.60] Request 120 all center responses received (query phase took 18.48 min)
+[1424.60] Request 120 COMPLETED (total time: 20.03 min)
+[1427.59] Request 121 Center A search complete
+[1429.59] Request 121 Center A response received
+[1432.73] Request 121 Center C search complete
+[1432.78] Request 122 arrived
+[1434.51] Request 121 Center B search complete
+[1434.73] Request 121 Center C response received
+[1435.37] Request 122 preprocessing complete (took 2.59 min)
+[1436.73] Request 121 Center B response received
+[1436.73] Request 121 all center responses received (query phase took 16.17 min)
+[1436.73] Request 121 COMPLETED (total time: 18.14 min)
+[1439.74] Request 122 Center A search complete
+[1441.74] Request 122 Center A response received
+[1444.59] Request 122 Center B search complete
+[1444.69] Request 123 arrived
+[1446.59] Request 122 Center B response received
+[1446.85] Request 123 preprocessing complete (took 2.16 min)
+[1447.90] Request 122 Center C search complete
+[1449.90] Request 122 Center C response received
+[1449.90] Request 122 all center responses received (query phase took 14.53 min)
+[1449.90] Request 122 COMPLETED (total time: 17.12 min)
+[1452.75] Request 123 Center A search complete
+[1454.75] Request 123 Center A response received
+[1454.75] Request 124 arrived
+[1456.42] Request 124 preprocessing complete (took 1.66 min)
+[1457.26] Request 123 Center C search complete
+[1459.16] Request 123 Center B search complete
+[1459.26] Request 123 Center C response received
+[1461.26] Request 123 Center B response received
+[1461.26] Request 123 all center responses received (query phase took 14.40 min)
+[1461.26] Request 123 COMPLETED (total time: 16.57 min)
+[1463.23] Request 124 Center A search complete
+[1465.23] Request 124 Center A response received
+[1465.43] Request 124 Center C search complete
+[1466.87] Request 124 Center B search complete
+[1467.43] Request 124 Center C response received
+[1469.21] Request 125 arrived
+[1469.43] Request 124 Center B response received
+[1469.43] Request 124 all center responses received (query phase took 13.01 min)
+[1469.43] Request 124 COMPLETED (total time: 14.67 min)
+[1470.60] Request 125 preprocessing complete (took 1.39 min)
+[1475.08] Request 125 Center A search complete
+[1477.08] Request 125 Center A response received
+[1477.42] Request 126 arrived
+[1478.85] Request 126 preprocessing complete (took 1.43 min)
+[1482.96] Request 125 Center B search complete
+[1483.70] Request 125 Center C search complete
+[1484.79] Request 126 Center A search complete
+[1484.96] Request 125 Center B response received
+[1486.27] Request 127 arrived
+[1486.96] Request 125 Center C response received
+[1486.96] Request 125 all center responses received (query phase took 16.36 min)
+[1486.96] Request 125 COMPLETED (total time: 17.74 min)
+[1487.84] Request 127 preprocessing complete (took 1.57 min)
+[1488.96] Request 126 Center A response received
+[1492.24] Request 127 Center A search complete
+[1494.24] Request 127 Center A response received
+[1495.20] Request 126 Center B search complete
+[1495.51] Request 126 Center C search complete
+[1497.20] Request 126 Center B response received
+[1498.52] Request 128 arrived
+[1499.20] Request 126 Center C response received
+[1499.20] Request 126 all center responses received (query phase took 20.35 min)
+[1499.20] Request 126 COMPLETED (total time: 21.78 min)
+[1499.55] Request 128 preprocessing complete (took 1.03 min)
+[1501.33] Request 127 Center C search complete
+[1502.14] Request 127 Center B search complete
+[1503.33] Request 127 Center C response received
+[1505.33] Request 127 Center B response received
+[1505.33] Request 127 all center responses received (query phase took 17.49 min)
+[1505.33] Request 127 COMPLETED (total time: 19.06 min)
+[1505.68] Request 128 Center A search complete
+[1507.31] Request 129 arrived
+[1507.68] Request 128 Center A response received
+[1509.71] Request 129 preprocessing complete (took 2.39 min)
+[1509.89] Request 128 Center B search complete
+[1511.89] Request 128 Center B response received
+[1514.21] Request 129 Center A search complete
+[1514.34] Request 128 Center C search complete
+[1516.21] Request 129 Center A response received
+[1518.21] Request 128 Center C response received
+[1518.21] Request 128 all center responses received (query phase took 18.67 min)
+[1518.21] Request 128 COMPLETED (total time: 19.69 min)
+[1519.85] Request 130 arrived
+[1521.99] Request 130 preprocessing complete (took 2.15 min)
+[1522.27] Request 129 Center C search complete
+[1524.27] Request 129 Center C response received
+[1525.39] Request 129 Center B search complete
+[1527.39] Request 129 Center B response received
+[1527.39] Request 129 all center responses received (query phase took 17.68 min)
+[1527.39] Request 129 COMPLETED (total time: 20.08 min)
+[1527.87] Request 130 Center A search complete
+[1529.87] Request 130 Center A response received
+[1532.23] Request 130 Center B search complete
+[1532.52] Request 130 Center C search complete
+[1534.23] Request 130 Center B response received
+[1535.57] Request 131 arrived
+[1536.23] Request 130 Center C response received
+[1536.23] Request 130 all center responses received (query phase took 14.24 min)
+[1536.23] Request 130 COMPLETED (total time: 16.39 min)
+[1538.45] Request 131 preprocessing complete (took 2.88 min)
+[1543.09] Request 132 arrived
+[1544.37] Request 131 Center A search complete
+[1545.35] Request 132 preprocessing complete (took 2.26 min)
+[1546.37] Request 131 Center A response received
+[1548.66] Request 131 Center C search complete
+[1549.56] Request 132 Center A search complete
+[1550.66] Request 131 Center C response received
+[1550.83] Request 133 arrived
+[1552.43] Request 133 preprocessing complete (took 1.61 min)
+[1552.66] Request 132 Center A response received
+[1553.68] Request 131 Center B search complete
+[1553.85] Request 132 Center C search complete
+[1555.68] Request 131 Center B response received
+[1555.68] Request 131 all center responses received (query phase took 17.22 min)
+[1555.68] Request 131 COMPLETED (total time: 20.10 min)
+[1557.68] Request 132 Center C response received
+[1559.86] Request 132 Center B search complete
+[1560.41] Request 133 Center A search complete
+[1561.86] Request 132 Center B response received
+[1561.86] Request 132 all center responses received (query phase took 16.52 min)
+[1561.86] Request 132 COMPLETED (total time: 18.77 min)
+[1563.46] Request 134 arrived
+[1563.86] Request 133 Center A response received
+[1564.91] Request 134 preprocessing complete (took 1.45 min)
+[1565.55] Request 133 Center C search complete
+[1567.55] Request 133 Center C response received
+[1570.92] Request 133 Center B search complete
+[1571.00] Request 134 Center A search complete
+[1572.92] Request 133 Center B response received
+[1572.92] Request 133 all center responses received (query phase took 20.49 min)
+[1572.92] Request 133 COMPLETED (total time: 22.10 min)
+[1574.92] Request 134 Center A response received
+[1575.51] Request 134 Center C search complete
+[1577.51] Request 134 Center C response received
+[1578.36] Request 135 arrived
+[1580.35] Request 134 Center B search complete
+[1581.34] Request 135 preprocessing complete (took 2.98 min)
+[1582.35] Request 134 Center B response received
+[1582.35] Request 134 all center responses received (query phase took 17.44 min)
+[1582.35] Request 134 COMPLETED (total time: 18.90 min)
+[1586.56] Request 135 Center A search complete
+[1588.56] Request 135 Center A response received
+[1593.22] Request 135 Center C search complete
+[1593.96] Request 136 arrived
+[1594.55] Request 135 Center B search complete
+[1595.22] Request 135 Center C response received
+[1596.86] Request 136 preprocessing complete (took 2.90 min)
+[1597.22] Request 135 Center B response received
+[1597.22] Request 135 all center responses received (query phase took 15.88 min)
+[1597.22] Request 135 COMPLETED (total time: 18.86 min)
+[1601.69] Request 136 Center A search complete
+[1603.69] Request 136 Center A response received
+[1605.97] Request 136 Center B search complete
+[1607.97] Request 136 Center B response received
+[1608.37] Request 137 arrived
+[1609.14] Request 136 Center C search complete
+[1609.71] Request 137 preprocessing complete (took 1.35 min)
+[1611.14] Request 136 Center C response received
+[1611.14] Request 136 all center responses received (query phase took 14.28 min)
+[1611.14] Request 136 COMPLETED (total time: 17.18 min)
+[1614.01] Request 137 Center A search complete
+[1616.01] Request 137 Center A response received
+[1616.74] Request 137 Center B search complete
+[1616.94] Request 138 arrived
+[1618.52] Request 138 preprocessing complete (took 1.58 min)
+[1618.74] Request 137 Center B response received
+[1620.32] Request 137 Center C search complete
+[1622.32] Request 137 Center C response received
+[1622.32] Request 137 all center responses received (query phase took 12.60 min)
+[1622.32] Request 137 COMPLETED (total time: 13.95 min)
+[1623.44] Request 138 Center A search complete
+[1625.44] Request 138 Center A response received
+[1629.87] Request 139 arrived
+[1631.14] Request 138 Center C search complete
+[1632.25] Request 139 preprocessing complete (took 2.37 min)
+[1632.59] Request 138 Center B search complete
+[1633.14] Request 138 Center C response received
+[1635.14] Request 138 Center B response received
+[1635.14] Request 138 all center responses received (query phase took 16.62 min)
+[1635.14] Request 138 COMPLETED (total time: 18.21 min)
+[1639.94] Request 139 Center A search complete
+[1641.41] Request 140 arrived
+[1641.94] Request 139 Center A response received
+[1644.25] Request 139 Center C search complete
+[1644.28] Request 140 preprocessing complete (took 2.87 min)
+[1646.25] Request 139 Center C response received
+[1647.13] Request 139 Center B search complete
+[1649.13] Request 139 Center B response received
+[1649.13] Request 139 all center responses received (query phase took 16.88 min)
+[1649.13] Request 139 COMPLETED (total time: 19.25 min)
+[1649.98] Request 140 Center A search complete
+[1651.98] Request 140 Center A response received
+[1655.03] Request 141 arrived
+[1656.46] Request 140 Center C search complete
+[1657.57] Request 140 Center B search complete
+[1657.68] Request 141 preprocessing complete (took 2.65 min)
+[1658.46] Request 140 Center C response received
+[1660.46] Request 140 Center B response received
+[1660.46] Request 140 all center responses received (query phase took 16.18 min)
+[1660.46] Request 140 COMPLETED (total time: 19.05 min)
+[1661.97] Request 141 Center A search complete
+[1663.97] Request 141 Center A response received
+[1666.34] Request 141 Center B search complete
+[1667.14] Request 141 Center C search complete
+[1668.34] Request 141 Center B response received
+[1670.34] Request 141 Center C response received
+[1670.34] Request 141 all center responses received (query phase took 12.66 min)
+[1670.34] Request 141 COMPLETED (total time: 15.31 min)
+[1671.11] Request 142 arrived
+[1673.25] Request 142 preprocessing complete (took 2.14 min)
+[1678.40] Request 142 Center A search complete
+[1680.40] Request 142 Center A response received
+[1681.49] Request 142 Center B search complete
+[1683.49] Request 142 Center B response received
+[1685.60] Request 143 arrived
+[1685.76] Request 142 Center C search complete
+[1687.76] Request 142 Center C response received
+[1687.76] Request 142 all center responses received (query phase took 14.51 min)
+[1687.76] Request 142 COMPLETED (total time: 16.65 min)
+[1688.49] Request 143 preprocessing complete (took 2.89 min)
+[1694.49] Request 143 Center A search complete
+[1696.13] Request 143 Center C search complete
+[1696.49] Request 143 Center A response received
+[1698.49] Request 143 Center C response received
+[1699.60] Request 144 arrived
+[1700.42] Request 143 Center B search complete
+[1701.46] Request 144 preprocessing complete (took 1.86 min)
+[1702.42] Request 143 Center B response received
+[1702.42] Request 143 all center responses received (query phase took 13.94 min)
+[1702.42] Request 143 COMPLETED (total time: 16.82 min)
+[1706.75] Request 144 Center A search complete
+[1707.00] Request 145 arrived
+[1708.75] Request 144 Center A response received
+[1709.19] Request 144 Center C search complete
+[1709.67] Request 145 preprocessing complete (took 2.67 min)
+[1710.97] Request 144 Center B search complete
+[1711.19] Request 144 Center C response received
+[1713.19] Request 144 Center B response received
+[1713.19] Request 144 all center responses received (query phase took 11.73 min)
+[1713.19] Request 144 COMPLETED (total time: 13.59 min)
+[1715.97] Request 145 Center A search complete
+[1717.97] Request 145 Center A response received
+[1723.62] Request 146 arrived
+[1724.66] Request 145 Center C search complete
+[1725.15] Request 146 preprocessing complete (took 1.54 min)
+[1726.18] Request 145 Center B search complete
+[1726.66] Request 145 Center C response received
+[1728.66] Request 145 Center B response received
+[1728.66] Request 145 all center responses received (query phase took 19.00 min)
+[1728.66] Request 145 COMPLETED (total time: 21.67 min)
+[1729.32] Request 146 Center A search complete
+[1731.32] Request 146 Center A response received
+[1735.92] Request 146 Center C search complete
+[1737.34] Request 147 arrived
+[1737.92] Request 146 Center C response received
+[1739.72] Request 146 Center B search complete
+[1740.17] Request 147 preprocessing complete (took 2.83 min)
+[1741.72] Request 146 Center B response received
+[1741.72] Request 146 all center responses received (query phase took 16.56 min)
+[1741.72] Request 146 COMPLETED (total time: 18.10 min)
+[1744.90] Request 147 Center A search complete
+[1746.90] Request 147 Center A response received
+[1750.85] Request 148 arrived
+[1752.04] Request 148 preprocessing complete (took 1.18 min)
+[1752.25] Request 147 Center C search complete
+[1753.02] Request 147 Center B search complete
+[1754.25] Request 147 Center C response received
+[1756.25] Request 147 Center B response received
+[1756.25] Request 147 all center responses received (query phase took 16.08 min)
+[1756.25] Request 147 COMPLETED (total time: 18.91 min)
+[1757.43] Request 148 Center A search complete
+[1759.43] Request 148 Center A response received
+[1762.37] Request 148 Center B search complete
+[1762.77] Request 149 arrived
+[1764.37] Request 148 Center B response received
+[1764.40] Request 148 Center C search complete
+[1764.43] Request 149 preprocessing complete (took 1.66 min)
+[1766.40] Request 148 Center C response received
+[1766.40] Request 148 all center responses received (query phase took 14.36 min)
+[1766.40] Request 148 COMPLETED (total time: 15.54 min)
+[1771.20] Request 149 Center A search complete
+[1773.20] Request 149 Center A response received
+[1774.31] Request 149 Center B search complete
+[1776.31] Request 149 Center B response received
+[1778.35] Request 150 arrived
+[1778.99] Request 149 Center C search complete
+[1780.97] Request 150 preprocessing complete (took 2.63 min)
+[1780.99] Request 149 Center C response received
+[1780.99] Request 149 all center responses received (query phase took 16.56 min)
+[1780.99] Request 149 COMPLETED (total time: 18.22 min)
+[1787.18] Request 150 Center A search complete
+[1789.18] Request 150 Center A response received
+[1790.49] Request 150 Center C search complete
+[1792.49] Request 150 Center C response received
+[1792.52] Request 150 Center B search complete
+[1794.52] Request 150 Center B response received
+[1794.52] Request 150 all center responses received (query phase took 13.55 min)
+[1794.52] Request 150 COMPLETED (total time: 16.18 min)
+
+======================================================================
+SIMULATION RESULTS
+======================================================================
+
+Request Statistics:
+  Requests generated: 150
+  Requests completed: 150
+
+Total Time Statistics:
+  Average: 20.25 min
+  Minimum: 13.25 min
+  Maximum: 39.36 min
+
+Preprocessing Time:
+  Average: 2.00 min
+
+Center A (fastest, 5±2 min):
+  Queries: 150
+  Avg search time: 4.92 min
+  Avg wait time: 0.00 min
+
+Center B (slowest, 10±5 min):
+  Queries: 150
+  Avg search time: 10.17 min
+  Avg wait time: 2.79 min
+
+Center C (medium, 8±4 min):
+  Queries: 150
+  Avg search time: 8.17 min
+  Avg wait time: 0.45 min
+
+Theoretical Analysis:
+  Preprocessing: ~2 min
+  Center A total: 1 + 5 + 2 = 8 min
+  Center B total: 1 + 10 + 2 = 13 min (bottleneck)
+  Center C total: 1 + 8 + 2 = 11 min
+  Expected total: ~2 + 13 = 15 min (limited by slowest center)

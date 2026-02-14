@@ -1,0 +1,12 @@
+Topic 20 Three-Computer System Results
+==================================================
+Tasks generated: 200
+Tasks completed: 200
+Initial to Comp1: 83
+Initial to Comp2: 64
+Initial to Comp3: 53
+Comp1->Comp2: 25
+Comp1->Comp3: 58
+Completed at Comp2: 89
+Completed at Comp3: 111
+Avg total time: 14.08 min

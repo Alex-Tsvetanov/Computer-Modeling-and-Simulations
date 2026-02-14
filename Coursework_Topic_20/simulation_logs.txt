@@ -1,0 +1,522 @@
+======================================================================
+TOPIC 20: THREE-COMPUTER SYSTEM WITH PROBABILISTIC ROUTING
+======================================================================
+Number of tasks: 200
+Arrival interval: (3 +/- 1) minutes
+Initial routing: 0.4->Comp1, 0.3->Comp2, 0.3->Comp3
+After Comp1: 0.3->Comp2, 0.7->Comp3
+Processing: T1=[3,5], T2=[2,4], T3=[3,7]
+======================================================================
+[3.28] Task 1 arrived
+[5.83] Task 2 arrived
+[6.73] Task 1 completed at Computer 1 (queue: 0.00 min, process: 3.45 min)
+[9.18] Task 3 arrived
+[9.57] Task 1 COMPLETED at Computer 2 (total: 6.29 min)
+[11.62] Task 4 arrived
+[12.40] Task 2 COMPLETED at Computer 3 (total: 6.57 min)
+[13.19] Task 3 completed at Computer 1 (queue: 0.00 min, process: 4.01 min)
+[14.02] Task 5 arrived
+[16.03] Task 5 COMPLETED at Computer 2 (total: 2.01 min)
+[16.63] Task 4 completed at Computer 1 (queue: 1.57 min, process: 3.44 min)
+[17.64] Task 6 arrived
+[18.37] Task 3 COMPLETED at Computer 3 (total: 9.19 min)
+[19.95] Task 6 COMPLETED at Computer 2 (total: 2.31 min)
+[20.32] Task 7 arrived
+[22.50] Task 8 arrived
+[23.51] Task 7 completed at Computer 1 (queue: 0.00 min, process: 3.19 min)
+[25.20] Task 4 COMPLETED at Computer 3 (total: 13.58 min)
+[25.71] Task 9 arrived
+[28.47] Task 9 COMPLETED at Computer 2 (total: 2.76 min)
+[29.66] Task 10 arrived
+[31.12] Task 8 COMPLETED at Computer 3 (total: 8.62 min)
+[32.89] Task 10 COMPLETED at Computer 2 (total: 3.24 min)
+[33.31] Task 11 arrived
+[35.41] Task 11 COMPLETED at Computer 2 (total: 2.09 min)
+[36.72] Task 12 arrived
+[37.57] Task 7 COMPLETED at Computer 3 (total: 17.25 min)
+[39.30] Task 13 arrived
+[39.88] Task 12 completed at Computer 1 (queue: 0.00 min, process: 3.16 min)
+[41.50] Task 14 arrived
+[43.15] Task 12 COMPLETED at Computer 2 (total: 6.43 min)
+[43.61] Task 13 completed at Computer 1 (queue: 0.58 min, process: 3.73 min)
+[43.92] Task 15 arrived
+[46.27] Task 16 arrived
+[47.49] Task 13 COMPLETED at Computer 2 (total: 8.18 min)
+[47.91] Task 14 completed at Computer 1 (queue: 2.11 min, process: 4.30 min)
+[48.59] Task 17 arrived
+[50.78] Task 16 COMPLETED at Computer 3 (total: 4.52 min)
+[51.47] Task 15 COMPLETED at Computer 2 (total: 7.54 min)
+[51.96] Task 18 arrived
+[54.03] Task 19 arrived
+[55.02] Task 17 COMPLETED at Computer 2 (total: 6.42 min)
+[55.59] Task 18 completed at Computer 1 (queue: 0.00 min, process: 3.63 min)
+[56.45] Task 20 arrived
+[57.16] Task 14 COMPLETED at Computer 3 (total: 15.65 min)
+[59.76] Task 21 arrived
+[60.35] Task 19 completed at Computer 1 (queue: 1.57 min, process: 4.75 min)
+[61.74] Task 18 COMPLETED at Computer 3 (total: 9.78 min)
+[62.68] Task 22 arrived
+[62.84] Task 19 COMPLETED at Computer 2 (total: 8.81 min)
+[64.47] Task 20 completed at Computer 1 (queue: 3.90 min, process: 4.12 min)
+[65.64] Task 22 COMPLETED at Computer 2 (total: 2.96 min)
+[65.79] Task 21 COMPLETED at Computer 3 (total: 6.03 min)
+[66.47] Task 23 arrived
+[68.65] Task 24 arrived
+[69.63] Task 20 COMPLETED at Computer 2 (total: 13.18 min)
+[70.87] Task 25 arrived
+[72.91] Task 24 completed at Computer 1 (queue: 0.00 min, process: 4.25 min)
+[73.00] Task 26 arrived
+[73.22] Task 23 COMPLETED at Computer 2 (total: 6.74 min)
+[76.94] Task 25 COMPLETED at Computer 2 (total: 6.06 min)
+[76.94] Task 27 arrived
+[78.96] Task 26 COMPLETED at Computer 2 (total: 5.96 min)
+[79.89] Task 24 COMPLETED at Computer 3 (total: 11.24 min)
+[80.31] Task 28 arrived
+[83.53] Task 28 completed at Computer 1 (queue: 0.00 min, process: 3.22 min)
+[83.59] Task 29 arrived
+[85.04] Task 27 COMPLETED at Computer 3 (total: 8.10 min)
+[87.34] Task 29 COMPLETED at Computer 2 (total: 3.75 min)
+[87.50] Task 30 arrived
+[89.09] Task 28 COMPLETED at Computer 3 (total: 8.79 min)
+[89.85] Task 31 arrived
+[91.32] Task 30 COMPLETED at Computer 2 (total: 3.83 min)
+[92.45] Task 32 arrived
+[94.76] Task 33 arrived
+[95.41] Task 31 COMPLETED at Computer 3 (total: 5.56 min)
+[95.97] Task 32 COMPLETED at Computer 2 (total: 3.53 min)
+[98.31] Task 34 arrived
+[99.04] Task 33 COMPLETED at Computer 2 (total: 4.28 min)
+[100.96] Task 35 arrived
+[101.35] Task 34 completed at Computer 1 (queue: 0.00 min, process: 3.04 min)
+[104.72] Task 36 arrived
+[107.29] Task 35 COMPLETED at Computer 3 (total: 6.33 min)
+[108.47] Task 37 arrived
+[109.61] Task 36 completed at Computer 1 (queue: 0.00 min, process: 4.89 min)
+[110.61] Task 38 arrived
+[110.63] Task 34 COMPLETED at Computer 3 (total: 12.32 min)
+[112.00] Task 37 COMPLETED at Computer 2 (total: 3.52 min)
+[113.56] Task 39 arrived
+[114.69] Task 36 COMPLETED at Computer 3 (total: 9.97 min)
+[114.71] Task 38 completed at Computer 1 (queue: 0.00 min, process: 4.10 min)
+[116.41] Task 40 arrived
+[118.54] Task 39 COMPLETED at Computer 3 (total: 4.97 min)
+[118.81] Task 41 arrived
+[122.11] Task 42 arrived
+[122.78] Task 38 COMPLETED at Computer 3 (total: 12.17 min)
+[124.35] Task 42 COMPLETED at Computer 2 (total: 2.24 min)
+[125.15] Task 43 arrived
+[126.68] Task 40 COMPLETED at Computer 3 (total: 10.27 min)
+[128.32] Task 44 arrived
+[128.61] Task 43 completed at Computer 1 (queue: 0.00 min, process: 3.46 min)
+[130.56] Task 41 COMPLETED at Computer 3 (total: 11.75 min)
+[131.59] Task 45 arrived
+[132.42] Task 43 COMPLETED at Computer 2 (total: 7.27 min)
+[133.33] Task 44 completed at Computer 1 (queue: 0.28 min, process: 4.72 min)
+[134.06] Task 46 arrived
+[136.59] Task 45 completed at Computer 1 (queue: 1.74 min, process: 3.26 min)
+[137.18] Task 44 COMPLETED at Computer 3 (total: 8.86 min)
+[137.20] Task 47 arrived
+[139.58] Task 48 arrived
+[142.45] Task 49 arrived
+[143.32] Task 46 COMPLETED at Computer 3 (total: 9.26 min)
+[143.43] Task 48 completed at Computer 1 (queue: 0.00 min, process: 3.85 min)
+[145.79] Task 49 COMPLETED at Computer 2 (total: 3.35 min)
+[145.90] Task 50 arrived
+[148.60] Task 48 COMPLETED at Computer 2 (total: 9.01 min)
+[149.40] Task 50 completed at Computer 1 (queue: 0.00 min, process: 3.50 min)
+[149.63] Task 51 arrived
+[150.26] Task 45 COMPLETED at Computer 3 (total: 18.67 min)
+[152.19] Task 52 arrived
+[152.30] Task 50 COMPLETED at Computer 2 (total: 6.39 min)
+[154.26] Task 47 COMPLETED at Computer 3 (total: 17.05 min)
+[155.07] Task 53 arrived
+[156.02] Task 51 COMPLETED at Computer 2 (total: 6.39 min)
+[159.07] Task 54 arrived
+[159.46] Task 52 COMPLETED at Computer 3 (total: 7.27 min)
+[159.74] Task 53 completed at Computer 1 (queue: 0.00 min, process: 4.67 min)
+[162.71] Task 53 COMPLETED at Computer 2 (total: 7.64 min)
+[162.92] Task 55 arrived
+[165.72] Task 56 arrived
+[165.85] Task 54 COMPLETED at Computer 3 (total: 6.78 min)
+[166.04] Task 55 completed at Computer 1 (queue: 0.00 min, process: 3.12 min)
+[169.61] Task 55 COMPLETED at Computer 2 (total: 6.69 min)
+[169.70] Task 57 arrived
+[169.95] Task 56 completed at Computer 1 (queue: 0.32 min, process: 3.91 min)
+[173.61] Task 58 arrived
+[173.69] Task 57 COMPLETED at Computer 2 (total: 3.99 min)
+[175.82] Task 56 COMPLETED at Computer 3 (total: 10.10 min)
+[176.20] Task 59 arrived
+[178.55] Task 58 completed at Computer 1 (queue: 0.00 min, process: 4.94 min)
+[179.29] Task 60 arrived
+[179.70] Task 59 COMPLETED at Computer 2 (total: 3.50 min)
+[182.29] Task 61 arrived
+[183.41] Task 58 COMPLETED at Computer 2 (total: 9.79 min)
+[185.45] Task 61 completed at Computer 1 (queue: 0.00 min, process: 3.16 min)
+[185.78] Task 60 COMPLETED at Computer 2 (total: 6.49 min)
+[186.22] Task 62 arrived
+[188.46] Task 63 arrived
+[191.00] Task 62 completed at Computer 1 (queue: 0.00 min, process: 4.78 min)
+[191.15] Task 61 COMPLETED at Computer 3 (total: 8.86 min)
+[191.64] Task 64 arrived
+[194.05] Task 64 COMPLETED at Computer 2 (total: 2.41 min)
+[194.83] Task 63 completed at Computer 1 (queue: 2.54 min, process: 3.84 min)
+[195.51] Task 65 arrived
+[196.49] Task 62 COMPLETED at Computer 3 (total: 10.27 min)
+[198.31] Task 66 arrived
+[199.86] Task 65 completed at Computer 1 (queue: 0.00 min, process: 4.34 min)
+[200.69] Task 63 COMPLETED at Computer 3 (total: 12.23 min)
+[201.81] Task 67 arrived
+[202.77] Task 65 COMPLETED at Computer 2 (total: 7.26 min)
+[203.96] Task 68 arrived
+[204.85] Task 66 completed at Computer 1 (queue: 1.55 min, process: 5.00 min)
+[205.66] Task 67 COMPLETED at Computer 3 (total: 3.85 min)
+[207.82] Task 69 arrived
+[209.61] Task 68 completed at Computer 1 (queue: 0.90 min, process: 4.76 min)
+[210.14] Task 66 COMPLETED at Computer 3 (total: 11.83 min)
+[211.49] Task 70 arrived
+[213.51] Task 71 arrived
+[213.84] Task 69 completed at Computer 1 (queue: 1.79 min, process: 4.22 min)
+[215.12] Task 70 COMPLETED at Computer 2 (total: 3.63 min)
+[216.83] Task 72 arrived
+[217.09] Task 68 COMPLETED at Computer 3 (total: 13.13 min)
+[217.10] Task 71 completed at Computer 1 (queue: 0.33 min, process: 3.27 min)
+[219.05] Task 73 arrived
+[220.31] Task 71 COMPLETED at Computer 2 (total: 6.81 min)
+[221.54] Task 72 completed at Computer 1 (queue: 0.27 min, process: 4.44 min)
+[222.30] Task 69 COMPLETED at Computer 3 (total: 14.48 min)
+[222.31] Task 74 arrived
+[224.50] Task 75 arrived
+[224.52] Task 72 COMPLETED at Computer 2 (total: 7.68 min)
+[226.35] Task 73 completed at Computer 1 (queue: 2.49 min, process: 4.81 min)
+[226.51] Task 76 arrived
+[227.01] Task 74 COMPLETED at Computer 3 (total: 4.69 min)
+[229.99] Task 77 arrived
+[230.62] Task 75 completed at Computer 1 (queue: 1.85 min, process: 4.27 min)
+[232.01] Task 78 arrived
+[232.14] Task 77 COMPLETED at Computer 2 (total: 2.15 min)
+[232.22] Task 73 COMPLETED at Computer 3 (total: 13.17 min)
+[235.30] Task 78 COMPLETED at Computer 2 (total: 3.30 min)
+[235.43] Task 76 completed at Computer 1 (queue: 4.12 min, process: 4.81 min)
+[235.68] Task 79 arrived
+[235.81] Task 75 COMPLETED at Computer 3 (total: 11.31 min)
+[238.05] Task 76 COMPLETED at Computer 2 (total: 11.54 min)
+[239.27] Task 80 arrived
+[241.69] Task 81 arrived
+[242.25] Task 79 COMPLETED at Computer 3 (total: 6.57 min)
+[243.90] Task 82 arrived
+[246.20] Task 82 COMPLETED at Computer 2 (total: 2.31 min)
+[246.25] Task 81 completed at Computer 1 (queue: 0.00 min, process: 4.56 min)
+[247.14] Task 83 arrived
+[248.79] Task 80 COMPLETED at Computer 3 (total: 9.52 min)
+[251.09] Task 84 arrived
+[253.14] Task 85 arrived
+[255.03] Task 81 COMPLETED at Computer 3 (total: 13.34 min)
+[255.80] Task 86 arrived
+[259.53] Task 87 arrived
+[261.75] Task 83 COMPLETED at Computer 3 (total: 14.62 min)
+[262.06] Task 88 arrived
+[265.81] Task 89 arrived
+[266.78] Task 88 completed at Computer 1 (queue: 0.00 min, process: 4.72 min)
+[267.90] Task 84 COMPLETED at Computer 3 (total: 16.81 min)
+[269.44] Task 90 arrived
+[270.39] Task 89 completed at Computer 1 (queue: 0.97 min, process: 3.61 min)
+[271.49] Task 91 arrived
+[273.05] Task 89 COMPLETED at Computer 2 (total: 7.24 min)
+[274.05] Task 92 arrived
+[274.08] Task 85 COMPLETED at Computer 3 (total: 20.95 min)
+[275.12] Task 90 completed at Computer 1 (queue: 0.95 min, process: 4.73 min)
+[276.85] Task 93 arrived
+[278.01] Task 92 COMPLETED at Computer 2 (total: 3.96 min)
+[279.23] Task 86 COMPLETED at Computer 3 (total: 23.43 min)
+[280.20] Task 93 completed at Computer 1 (queue: 0.00 min, process: 3.36 min)
+[280.79] Task 94 arrived
+[282.42] Task 93 COMPLETED at Computer 2 (total: 5.57 min)
+[284.24] Task 95 arrived
+[285.05] Task 94 COMPLETED at Computer 2 (total: 4.26 min)
+[286.08] Task 87 COMPLETED at Computer 3 (total: 26.55 min)
+[287.27] Task 96 arrived
+[287.82] Task 95 COMPLETED at Computer 2 (total: 3.57 min)
+[290.27] Task 96 completed at Computer 1 (queue: 0.00 min, process: 3.00 min)
+[290.69] Task 97 arrived
+[291.39] Task 88 COMPLETED at Computer 3 (total: 29.32 min)
+[294.12] Task 98 arrived
+[294.17] Task 97 COMPLETED at Computer 2 (total: 3.48 min)
+[296.26] Task 99 arrived
+[297.07] Task 91 COMPLETED at Computer 3 (total: 25.58 min)
+[298.45] Task 98 completed at Computer 1 (queue: 0.00 min, process: 4.33 min)
+[298.89] Task 100 arrived
+[301.71] Task 101 arrived
+[302.05] Task 99 completed at Computer 1 (queue: 2.19 min, process: 3.60 min)
+[303.46] Task 90 COMPLETED at Computer 3 (total: 34.02 min)
+[303.96] Task 101 COMPLETED at Computer 2 (total: 2.25 min)
+[304.30] Task 102 arrived
+[306.93] Task 100 completed at Computer 1 (queue: 3.16 min, process: 4.88 min)
+[307.53] Task 103 arrived
+[309.17] Task 96 COMPLETED at Computer 3 (total: 21.90 min)
+[309.53] Task 104 arrived
+[310.10] Task 103 COMPLETED at Computer 2 (total: 2.57 min)
+[312.84] Task 105 arrived
+[313.03] Task 104 COMPLETED at Computer 2 (total: 3.50 min)
+[313.89] Task 98 COMPLETED at Computer 3 (total: 19.77 min)
+[315.27] Task 106 arrived
+[315.98] Task 105 COMPLETED at Computer 2 (total: 3.14 min)
+[317.61] Task 107 arrived
+[320.49] Task 99 COMPLETED at Computer 3 (total: 24.23 min)
+[320.64] Task 108 arrived
+[321.87] Task 107 completed at Computer 1 (queue: 0.00 min, process: 4.27 min)
+[324.14] Task 109 arrived
+[324.83] Task 102 COMPLETED at Computer 3 (total: 20.53 min)
+[326.54] Task 110 arrived
+[327.19] Task 109 completed at Computer 1 (queue: 0.00 min, process: 3.05 min)
+[328.69] Task 110 COMPLETED at Computer 2 (total: 2.15 min)
+[328.81] Task 100 COMPLETED at Computer 3 (total: 29.92 min)
+[330.24] Task 111 arrived
+[333.63] Task 112 arrived
+[334.23] Task 111 completed at Computer 1 (queue: 0.00 min, process: 3.99 min)
+[334.33] Task 106 COMPLETED at Computer 3 (total: 19.06 min)
+[336.94] Task 113 arrived
+[337.73] Task 111 COMPLETED at Computer 2 (total: 7.49 min)
+[337.76] Task 108 COMPLETED at Computer 3 (total: 17.12 min)
+[338.77] Task 112 completed at Computer 1 (queue: 0.60 min, process: 4.54 min)
+[339.30] Task 114 arrived
+[341.65] Task 113 COMPLETED at Computer 2 (total: 4.70 min)
+[342.83] Task 107 COMPLETED at Computer 3 (total: 25.22 min)
+[342.99] Task 115 arrived
+[343.21] Task 114 completed at Computer 1 (queue: 0.00 min, process: 3.91 min)
+[345.25] Task 112 COMPLETED at Computer 2 (total: 11.62 min)
+[346.18] Task 116 arrived
+[348.50] Task 109 COMPLETED at Computer 3 (total: 24.36 min)
+[349.41] Task 117 arrived
+[352.50] Task 117 COMPLETED at Computer 2 (total: 3.10 min)
+[353.07] Task 118 arrived
+[354.38] Task 115 COMPLETED at Computer 3 (total: 11.39 min)
+[356.56] Task 119 arrived
+[359.05] Task 120 arrived
+[359.28] Task 114 COMPLETED at Computer 3 (total: 19.98 min)
+[360.83] Task 119 completed at Computer 1 (queue: 0.00 min, process: 4.28 min)
+[362.09] Task 121 arrived
+[362.99] Task 119 COMPLETED at Computer 2 (total: 6.43 min)
+[364.64] Task 122 arrived
+[364.78] Task 116 COMPLETED at Computer 3 (total: 18.60 min)
+[365.73] Task 121 completed at Computer 1 (queue: 0.00 min, process: 3.64 min)
+[366.91] Task 123 arrived
+[367.10] Task 122 COMPLETED at Computer 2 (total: 2.46 min)
+[369.73] Task 124 arrived
+[370.56] Task 118 COMPLETED at Computer 3 (total: 17.49 min)
+[371.00] Task 123 completed at Computer 1 (queue: 0.00 min, process: 4.09 min)
+[372.14] Task 125 arrived
+[372.57] Task 124 COMPLETED at Computer 2 (total: 2.84 min)
+[375.86] Task 126 arrived
+[376.10] Task 125 COMPLETED at Computer 2 (total: 3.96 min)
+[377.18] Task 120 COMPLETED at Computer 3 (total: 18.13 min)
+[377.87] Task 127 arrived
+[379.56] Task 126 completed at Computer 1 (queue: 0.00 min, process: 3.70 min)
+[381.78] Task 128 arrived
+[383.19] Task 121 COMPLETED at Computer 3 (total: 21.10 min)
+[384.87] Task 129 arrived
+[387.31] Task 130 arrived
+[388.61] Task 123 COMPLETED at Computer 3 (total: 21.69 min)
+[388.74] Task 129 completed at Computer 1 (queue: 0.00 min, process: 3.87 min)
+[389.98] Task 131 arrived
+[392.07] Task 130 completed at Computer 1 (queue: 1.43 min, process: 3.33 min)
+[392.23] Task 132 arrived
+[393.22] Task 131 COMPLETED at Computer 2 (total: 3.24 min)
+[394.32] Task 127 COMPLETED at Computer 3 (total: 16.45 min)
+[395.29] Task 132 completed at Computer 1 (queue: 0.00 min, process: 3.05 min)
+[395.36] Task 133 arrived
+[396.51] Task 130 COMPLETED at Computer 2 (total: 9.20 min)
+[397.87] Task 126 COMPLETED at Computer 3 (total: 22.01 min)
+[398.12] Task 134 arrived
+[398.79] Task 133 completed at Computer 1 (queue: 0.00 min, process: 3.42 min)
+[400.88] Task 135 arrived
+[402.17] Task 128 COMPLETED at Computer 3 (total: 20.40 min)
+[403.38] Task 136 arrived
+[405.50] Task 129 COMPLETED at Computer 3 (total: 20.63 min)
+[406.46] Task 137 arrived
+[408.38] Task 136 completed at Computer 1 (queue: 0.00 min, process: 5.00 min)
+[409.77] Task 137 COMPLETED at Computer 2 (total: 3.30 min)
+[409.90] Task 132 COMPLETED at Computer 3 (total: 17.67 min)
+[410.02] Task 138 arrived
+[412.07] Task 139 arrived
+[413.33] Task 138 completed at Computer 1 (queue: 0.00 min, process: 3.30 min)
+[415.40] Task 140 arrived
+[416.70] Task 134 COMPLETED at Computer 3 (total: 18.58 min)
+[416.77] Task 139 completed at Computer 1 (queue: 1.26 min, process: 3.44 min)
+[417.74] Task 140 COMPLETED at Computer 2 (total: 2.34 min)
+[418.94] Task 141 arrived
+[422.13] Task 133 COMPLETED at Computer 3 (total: 26.77 min)
+[422.58] Task 142 arrived
+[423.87] Task 141 completed at Computer 1 (queue: 0.00 min, process: 4.93 min)
+[425.20] Task 143 arrived
+[425.56] Task 135 COMPLETED at Computer 3 (total: 24.68 min)
+[428.63] Task 144 arrived
+[428.78] Task 142 completed at Computer 1 (queue: 1.29 min, process: 4.92 min)
+[428.86] Task 136 COMPLETED at Computer 3 (total: 25.48 min)
+[430.83] Task 144 COMPLETED at Computer 2 (total: 2.20 min)
+[431.89] Task 145 arrived
+[433.48] Task 143 completed at Computer 1 (queue: 3.58 min, process: 4.70 min)
+[434.27] Task 138 COMPLETED at Computer 3 (total: 24.24 min)
+[435.85] Task 146 arrived
+[437.18] Task 145 completed at Computer 1 (queue: 1.60 min, process: 3.69 min)
+[438.86] Task 147 arrived
+[438.98] Task 139 COMPLETED at Computer 3 (total: 26.91 min)
+[441.08] Task 148 arrived
+[441.88] Task 146 completed at Computer 1 (queue: 1.33 min, process: 4.70 min)
+[444.49] Task 148 COMPLETED at Computer 2 (total: 3.41 min)
+[444.73] Task 149 arrived
+[445.82] Task 141 COMPLETED at Computer 3 (total: 26.88 min)
+[448.66] Task 150 arrived
+[449.90] Task 142 COMPLETED at Computer 3 (total: 27.33 min)
+[451.74] Task 151 arrived
+[454.28] Task 151 COMPLETED at Computer 2 (total: 2.54 min)
+[454.84] Task 143 COMPLETED at Computer 3 (total: 29.64 min)
+[455.20] Task 152 arrived
+[457.38] Task 153 arrived
+[459.86] Task 154 arrived
+[461.24] Task 145 COMPLETED at Computer 3 (total: 29.36 min)
+[462.62] Task 154 COMPLETED at Computer 2 (total: 2.76 min)
+[463.08] Task 155 arrived
+[464.36] Task 147 COMPLETED at Computer 3 (total: 25.49 min)
+[465.45] Task 156 arrived
+[468.13] Task 157 arrived
+[468.21] Task 146 COMPLETED at Computer 3 (total: 32.35 min)
+[471.53] Task 158 arrived
+[472.31] Task 149 COMPLETED at Computer 3 (total: 27.58 min)
+[474.70] Task 158 completed at Computer 1 (queue: 0.00 min, process: 3.17 min)
+[475.43] Task 159 arrived
+[478.19] Task 150 COMPLETED at Computer 3 (total: 29.53 min)
+[478.81] Task 160 arrived
+[480.99] Task 160 COMPLETED at Computer 2 (total: 2.19 min)
+[482.39] Task 161 arrived
+[483.78] Task 152 COMPLETED at Computer 3 (total: 28.57 min)
+[485.78] Task 162 arrived
+[486.01] Task 161 completed at Computer 1 (queue: 0.00 min, process: 3.61 min)
+[488.63] Task 162 COMPLETED at Computer 2 (total: 2.85 min)
+[488.84] Task 163 arrived
+[489.10] Task 153 COMPLETED at Computer 3 (total: 31.73 min)
+[492.25] Task 164 arrived
+[492.38] Task 163 completed at Computer 1 (queue: 0.00 min, process: 3.54 min)
+[493.11] Task 155 COMPLETED at Computer 3 (total: 30.02 min)
+[494.63] Task 165 arrived
+[495.45] Task 163 COMPLETED at Computer 2 (total: 6.61 min)
+[496.85] Task 156 COMPLETED at Computer 3 (total: 31.40 min)
+[496.91] Task 164 completed at Computer 1 (queue: 0.14 min, process: 4.52 min)
+[497.60] Task 166 arrived
+[499.80] Task 167 arrived
+[500.96] Task 165 completed at Computer 1 (queue: 2.28 min, process: 4.05 min)
+[502.26] Task 168 arrived
+[502.75] Task 157 COMPLETED at Computer 3 (total: 34.62 min)
+[502.98] Task 165 COMPLETED at Computer 2 (total: 8.35 min)
+[505.02] Task 166 completed at Computer 1 (queue: 3.36 min, process: 4.07 min)
+[506.20] Task 169 arrived
+[507.96] Task 158 COMPLETED at Computer 3 (total: 36.43 min)
+[508.28] Task 167 completed at Computer 1 (queue: 5.22 min, process: 3.25 min)
+[509.19] Task 170 arrived
+[511.29] Task 170 COMPLETED at Computer 2 (total: 2.10 min)
+[511.55] Task 171 arrived
+[512.21] Task 168 completed at Computer 1 (queue: 6.02 min, process: 3.94 min)
+[514.45] Task 159 COMPLETED at Computer 3 (total: 39.02 min)
+[514.51] Task 172 arrived
+[517.62] Task 172 completed at Computer 1 (queue: 0.00 min, process: 3.11 min)
+[517.77] Task 173 arrived
+[519.05] Task 161 COMPLETED at Computer 3 (total: 36.66 min)
+[520.74] Task 172 COMPLETED at Computer 2 (total: 6.23 min)
+[521.01] Task 173 completed at Computer 1 (queue: 0.00 min, process: 3.24 min)
+[521.76] Task 174 arrived
+[524.21] Task 175 arrived
+[525.11] Task 164 COMPLETED at Computer 3 (total: 32.87 min)
+[527.09] Task 175 COMPLETED at Computer 2 (total: 2.89 min)
+[527.11] Task 176 arrived
+[529.72] Task 177 arrived
+[531.55] Task 166 COMPLETED at Computer 3 (total: 33.95 min)
+[532.94] Task 178 arrived
+[533.20] Task 177 COMPLETED at Computer 2 (total: 3.48 min)
+[535.36] Task 179 arrived
+[537.26] Task 178 completed at Computer 1 (queue: 0.00 min, process: 4.32 min)
+[537.71] Task 180 arrived
+[538.34] Task 169 COMPLETED at Computer 3 (total: 32.14 min)
+[539.26] Task 178 COMPLETED at Computer 2 (total: 6.33 min)
+[540.29] Task 181 arrived
+[541.16] Task 179 completed at Computer 1 (queue: 1.90 min, process: 3.90 min)
+[542.27] Task 167 COMPLETED at Computer 3 (total: 42.47 min)
+[542.68] Task 180 COMPLETED at Computer 2 (total: 4.97 min)
+[543.20] Task 182 arrived
+[546.45] Task 183 arrived
+[548.96] Task 171 COMPLETED at Computer 3 (total: 37.41 min)
+[549.30] Task 183 COMPLETED at Computer 2 (total: 2.85 min)
+[550.32] Task 184 arrived
+[553.97] Task 184 COMPLETED at Computer 2 (total: 3.65 min)
+[554.13] Task 185 arrived
+[554.14] Task 168 COMPLETED at Computer 3 (total: 51.89 min)
+[556.47] Task 186 arrived
+[557.75] Task 185 completed at Computer 1 (queue: 0.00 min, process: 3.62 min)
+[558.71] Task 186 COMPLETED at Computer 2 (total: 2.25 min)
+[559.04] Task 187 arrived
+[560.14] Task 173 COMPLETED at Computer 3 (total: 42.37 min)
+[562.04] Task 187 COMPLETED at Computer 2 (total: 3.00 min)
+[562.93] Task 188 arrived
+[565.01] Task 189 arrived
+[565.11] Task 174 COMPLETED at Computer 3 (total: 43.36 min)
+[566.79] Task 188 completed at Computer 1 (queue: 0.00 min, process: 3.86 min)
+[567.51] Task 190 arrived
+[568.48] Task 176 COMPLETED at Computer 3 (total: 41.37 min)
+[571.41] Task 191 arrived
+[571.46] Task 189 completed at Computer 1 (queue: 1.78 min, process: 4.67 min)
+[571.51] Task 190 COMPLETED at Computer 2 (total: 4.00 min)
+[573.49] Task 192 arrived
+[574.17] Task 181 COMPLETED at Computer 3 (total: 33.88 min)
+[575.40] Task 191 completed at Computer 1 (queue: 0.05 min, process: 3.94 min)
+[575.85] Task 192 COMPLETED at Computer 2 (total: 2.36 min)
+[577.32] Task 193 arrived
+[579.50] Task 194 arrived
+[579.51] Task 179 COMPLETED at Computer 3 (total: 44.15 min)
+[580.02] Task 193 COMPLETED at Computer 2 (total: 2.70 min)
+[582.85] Task 195 arrived
+[583.83] Task 182 COMPLETED at Computer 3 (total: 40.63 min)
+[584.22] Task 194 completed at Computer 1 (queue: 0.00 min, process: 4.72 min)
+[585.42] Task 196 arrived
+[586.74] Task 195 COMPLETED at Computer 2 (total: 3.89 min)
+[588.05] Task 197 arrived
+[589.38] Task 196 COMPLETED at Computer 2 (total: 3.96 min)
+[590.08] Task 185 COMPLETED at Computer 3 (total: 35.95 min)
+[590.86] Task 198 arrived
+[594.17] Task 199 arrived
+[595.14] Task 188 COMPLETED at Computer 3 (total: 32.21 min)
+[596.55] Task 199 COMPLETED at Computer 2 (total: 2.38 min)
+[597.00] Task 200 arrived
+[599.59] Task 189 COMPLETED at Computer 3 (total: 34.58 min)
+[605.09] Task 191 COMPLETED at Computer 3 (total: 33.68 min)
+[611.13] Task 194 COMPLETED at Computer 3 (total: 31.63 min)
+[614.94] Task 197 COMPLETED at Computer 3 (total: 26.89 min)
+[620.14] Task 198 COMPLETED at Computer 3 (total: 29.28 min)
+[626.85] Task 200 COMPLETED at Computer 3 (total: 29.85 min)
+
+======================================================================
+SIMULATION RESULTS
+======================================================================
+
+Task Generation:
+  Tasks generated: 200
+  Tasks completed: 200
+
+Initial Routing:
+  To Computer 1: 83 (41.5%)
+  To Computer 2: 64 (32.0%)
+  To Computer 3: 53 (26.5%)
+
+Routing from Computer 1:
+  To Computer 2: 25 (30.1%)
+  To Computer 3: 58 (69.9%)
+
+Task Completion:
+  At Computer 2: 89 (44.5%)
+  At Computer 3: 111 (55.5%)
+
+Timing Statistics:
+  Total time per task: avg=14.08 min, min=2.01 min, max=51.89 min
+  Computer 1 queue: avg=0.81 min, max=6.02 min
+  Computer 2 queue: avg=0.45 min, max=4.12 min
+  Computer 3 queue: avg=13.81 min, max=38.38 min
+  Computer 1 processing: avg=3.98 min
+  Computer 2 processing: avg=2.99 min
+  Computer 3 processing: avg=5.23 min

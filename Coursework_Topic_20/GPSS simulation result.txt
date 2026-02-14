@@ -1,0 +1,50 @@
+
+
+              GPSS World Simulation Report - Untitled Model 2.1.1
+
+
+                   Saturday, February 14, 2026 23:56:57  
+
+           START TIME           END TIME  BLOCKS  FACILITIES  STORAGES
+                0.000            609.297    23        3          0
+
+
+              NAME                       VALUE  
+          COMP1                           5.000
+          COMP1_TO_COMP2                 10.000
+          COMP1_TO_COMP3                 11.000
+          COMP2                          12.000
+          COMP3                          16.000
+          COMP3_FINAL                    20.000
+
+
+ LABEL              LOC  BLOCK TYPE     ENTRY COUNT CURRENT COUNT RETRY
+                    1    GENERATE           200             0       0
+                    2    TRANSFER           200             0       0
+                    3    TRANSFER            78             0       0
+                    4    TRANSFER            36             0       0
+COMP1               5    SEIZE              122             0       0
+                    6    ADVANCE            122             0       0
+                    7    RELEASE            122             0       0
+                    8    TRANSFER           122             0       0
+                    9    TRANSFER            34             0       0
+COMP1_TO_COMP2     10    TRANSFER            88             0       0
+COMP1_TO_COMP3     11    TRANSFER            34             0       0
+COMP2              12    SEIZE              130             0       0
+                   13    ADVANCE            130             0       0
+                   14    RELEASE            130             0       0
+                   15    TERMINATE          130             0       0
+COMP3              16    SEIZE               36             0       0
+                   17    ADVANCE             36             0       0
+                   18    RELEASE             36             0       0
+                   19    TERMINATE           36             0       0
+COMP3_FINAL        20    SEIZE               34             0       0
+                   21    ADVANCE             34             0       0
+                   22    RELEASE             34             0       0
+                   23    TERMINATE           34             0       0
+
+
+FACILITY         ENTRIES  UTIL.   AVE. TIME AVAIL. OWNER PEND INTER RETRY DELAY
+ 1                  122    0.783       3.913  1        0    0    0     0      0
+ 2                  130    0.642       3.007  1        0    0    0     0      0
+ 3                   70    0.570       4.965  1        0    0    0     0      0

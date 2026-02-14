@@ -1,0 +1,64 @@
+
+
+              GPSS World Simulation Report - Untitled Model 3.1.1
+
+
+                   Saturday, February 14, 2026 23:57:16  
+
+           START TIME           END TIME  BLOCKS  FACILITIES  STORAGES
+                0.000           1745.583    37        6          0
+
+
+              NAME                       VALUE  
+          QUERY_A                         8.000
+          QUERY_B                        18.000
+          QUERY_C                        28.000
+
+
+ LABEL              LOC  BLOCK TYPE     ENTRY COUNT CURRENT COUNT RETRY
+                    1    GENERATE           150             0       0
+                    2    SEIZE              150             0       0
+                    3    ADVANCE            150             0       0
+                    4    RELEASE            150             0       0
+                    5    SPLIT              150             0       0
+                    6    SPLIT              150             0       0
+                    7    TRANSFER           150             0       0
+QUERY_A             8    SEIZE              150             0       0
+                    9    ADVANCE            150             0       0
+                   10    RELEASE            150             0       0
+                   11    SEIZE              150             0       0
+                   12    ADVANCE            150             0       0
+                   13    RELEASE            150             0       0
+                   14    SEIZE              150             0       0
+                   15    ADVANCE            150             0       0
+                   16    RELEASE            150             0       0
+                   17    TERMINATE          150             0       0
+QUERY_B            18    SEIZE              150             0       0
+                   19    ADVANCE            150             0       0
+                   20    RELEASE            150             0       0
+                   21    SEIZE              150             0       0
+                   22    ADVANCE            150             0       0
+                   23    RELEASE            150             0       0
+                   24    SEIZE              150             0       0
+                   25    ADVANCE            150             0       0
+                   26    RELEASE            150             0       0
+                   27    TERMINATE          150             0       0
+QUERY_C            28    SEIZE              150             0       0
+                   29    ADVANCE            150             0       0
+                   30    RELEASE            150             0       0
+                   31    SEIZE              150             0       0
+                   32    ADVANCE            150             0       0
+                   33    RELEASE            150             0       0
+                   34    SEIZE              150             0       0
+                   35    ADVANCE            150             0       0
+                   36    RELEASE            150             0       0
+                   37    TERMINATE          150             0       0
+
+
+FACILITY         ENTRIES  UTIL.   AVE. TIME AVAIL. OWNER PEND INTER RETRY DELAY
+ 1                  150    0.168       1.955  1        0    0    0     0      0
+ 4                  150    0.444       5.161  1        0    0    0     0      0
+ 5                  150    0.871      10.138  1        0    0    0     0      0
+ 6                  150    0.692       8.058  1        0    0    0     0      0
+ 10                 450    0.258       1.000  1        0    0    0     0      0
+ 11                 450    0.516       2.000  1        0    0    0     0      0

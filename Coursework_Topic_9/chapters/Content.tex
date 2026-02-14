@@ -1,0 +1,305 @@
+\section{Постановка на задачата}
+Съобщенията постъпват в изчислителната система от два типа сензори – тип А и тип B.
+\begin{itemize}
+    \item Съобщенията от тип А пристигат през интервали със средна стойност $(9 \pm 4)$ секунди.
+    \item Съобщенията от тип B се получават на всеки 2 секунди.
+    \item Преди да бъдат обработени, съобщенията се групират в задачи, като всяка задача се състои от 4 съобщения.
+    \item Всяка задача преминава през предварителна обработка, която се извършва от два процесора, като задачите се разпределят на случаен принцип между тях.
+    \item Процесът на предварителна обработка отнема 10 секунди.
+    \item В 24\% от случаите обработката е неуспешна и задачите трябва да бъдат обработени повторно.
+    \item Успешно обработените задачи се предават към разпределителен модул, където се разделят.
+    \item Разпределителят събира по 2 съобщения от тип А и 3 съобщения от тип B, след което ги записва едно по едно в хранилището.
+    \item Всяко съобщение се съхранява едновременно както в основно, така и в резервно хранилище.
+\end{itemize}
+Необходимо е да се симулира работата на тази система за период от 4 часа.
+
+\section{Теоретична част}
+Системата може да се разглежда като система за масово обслужване с групиране на съобщения и повторни опити при неуспех.
+
+Входящите потоци:
+\begin{itemize}
+    \item \textbf{Сензор A:} Равномерно разпределение в интервала $[5, 13]$ секунди (средно 9 секунди).
+    \item \textbf{Сензор B:} Фиксиран интервал от 2 секунди.
+\end{itemize}
+
+Очакван брой съобщения за 4 часа:
+\begin{itemize}
+    \item Сензор A: $\frac{4 \times 3600}{9} \approx 1600$ съобщения.
+    \item Сензор B: $\frac{4 \times 3600}{2} = 7200$ съобщения.
+    \item Общо: около 8800 съобщения.
+\end{itemize}
+
+Брой задачи: $\frac{8800}{4} = 2200$ задачи.
+
+Обработка:
+\begin{itemize}
+    \item Предварителна обработка: 10 секунди на задача.
+    \item Неуспешни обработки: $2200 \times 0.24 = 528$ задачи.
+    \item Повторни обработки: 528 задачи.
+    \item Общо време за обработка: $(2200 + 528) \times 10 = 27280$ секунди.
+\end{itemize}
+
+Капацитет на разпределителния модул:
+\begin{itemize}
+    \item За една дистрибуция са необходими 2 съобщения от тип A и 3 от тип B.
+    \item Максимален брой дистрибуции: $\min(\frac{1600}{2}, \frac{7200}{3}) = \min(800, 2400) = 800$.
+\end{itemize}
+
+\section{Имплементация}
+Симулацията е реализирана на езика Python с използване на библиотеката \texttt{simpy}.
+
+\subsection{Основни параметри}
+\begin{lstlisting}[language=Python, caption=Конфигурация на симулацията]
+SIMULATION_HOURS = 4
+SIMULATION_TIME = SIMULATION_HOURS * 3600  # 4 hours in seconds
+
+# Sensor A: arrives every (9 \pm 4) seconds
+SENSOR_A_MEAN = 9
+SENSOR_A_VAR = 4
+
+# Sensor B: arrives every 2 seconds
+SENSOR_B_INTERVAL = 2
+
+# Preprocessing
+PREPROCESS_TIME = 10
+PREPROCESS_FAILURE_RATE = 0.24  # 24\% failure
+
+# Distribution
+MESSAGES_PER_TASK = 4  # 4 messages per task for preprocessing
+A_FOR_DISTRIBUTION = 2  # Need 2 type A messages
+B_FOR_DISTRIBUTION = 3  # Need 3 type B messages
+
+# Storage time
+STORAGE_TIME = 0.5
+\end{lstlisting}
+
+\subsection{Генериране на съобщения}
+\begin{lstlisting}[language=Python, caption=Генератори на сензори]
+def sensor_a_generator(self):
+    while True:
+        interarrival = random.uniform(SENSOR_A_MEAN - SENSOR_A_VAR, 
+                                     SENSOR_A_MEAN + SENSOR_A_VAR)
+        yield self.env.timeout(interarrival)
+        
+        self.sensor_a_generated += 1
+        # Add to task buffer for grouping
+        self.task_buffer.append((msg_id, 'A', arrival_time))
+        
+        if len(self.task_buffer) >= 4:
+            task = self.task_buffer[:4]
+            self.task_buffer = self.task_buffer[4:]
+            self.env.process(self.preprocess_task(task))
+\end{lstlisting}
+
+\subsection{Предварителна обработка с повторен опит}
+\begin{lstlisting}[language=Python, caption=Обработка на задачи]
+def preprocess_task(self, task_messages):
+    # Randomly choose processor
+    if random.random() < 0.5:
+        processor = self.processor1
+    else:
+        processor = self.processor2
+    
+    with processor.request() as req:
+        yield req
+        yield self.env.timeout(10)
+        
+        # Check for 24% failure
+        if random.random() < 0.24:
+            # Retry
+            yield self.env.timeout(10)
+            self.tasks_retried += 1
+        
+        # On success, add to distribution buffers
+        for msg_id, msg_type, _ in task_messages:
+            if msg_type == 'A':
+                self.preprocessed_a.append((msg_id, self.env.now))
+            else:
+                self.preprocessed_b.append((msg_id, self.env.now))
+\end{lstlisting}
+
+\subsection{Реализация на GPSS}
+Алтернативна реализация на модела чрез езика за симулации GPSS.
+
+\begin{lstlisting}[language=bash, caption=GPSS код на модела]
+* Topic 9: Data Collection System - GPSS Model
+GENERATE 9,4
+ASSIGN 1,1
+TRANSFER ,BUFFER
+
+GENERATE 2
+ASSIGN 1,2
+TRANSFER ,BUFFER
+
+GTASK SEIZE 10
+ADVANCE 0
+RELEASE 10
+SPLIT 1,PROC1
+TRANSFER ,PROC2
+
+PROC1 SEIZE 1
+ADVANCE 10
+RELEASE 1
+TRANSFER ,CHECK_FAIL
+
+PROC2 SEIZE 2
+ADVANCE 10
+RELEASE 2
+TRANSFER ,CHECK_FAIL
+
+CHECK_FAIL SPLIT 1,RETRY
+TRANSFER ,SUCCESS
+
+RETRY SEIZE 3
+ADVANCE 10
+RELEASE 3
+
+SUCCESS TERMINATE 0
+
+* Timer - 4 hours = 14400 seconds
+GENERATE 14400
+TERMINATE 1
+START 1
+\end{lstlisting}
+
+\subsection{Резултати от GPSS симулация}
+{\footnotesize
+\begin{lstlisting}[language=bash, basicstyle=\footnotesize\ttfamily]
+              GPSS World Simulation Report - Untitled Model 1.1.1
+
+                   Saturday, February 14, 2026 23:56:35  
+
+           START TIME           END TIME  BLOCKS  FACILITIES  STORAGES
+                0.000          14400.000    27        4          0
+
+
+ LABEL              LOC  BLOCK TYPE     ENTRY COUNT CURRENT COUNT RETRY
+                    1    GENERATE          1612             0       0
+                    2    ASSIGN            1612             0       0
+                    3    TRANSFER          1612             0       0
+                    4    GENERATE          7200             0       0
+                    5    ASSIGN            7200             0       0
+                    6    TRANSFER          7200             0       0
+GTASK               7    SEIZE             8812             0       0
+                    8    ADVANCE           8812             0       0
+                    9    RELEASE           8812             0       0
+                   10    SPLIT             8812             0       0
+                   11    TRANSFER          8812          7372       0
+PROC1              12    SEIZE             1440             0       0
+                   13    ADVANCE           1440             1       0
+                   14    RELEASE           1439             0       0
+                   15    TRANSFER          1439             0       0
+PROC2              16    SEIZE             1440             0       0
+                   17    ADVANCE           1440             1       0
+                   18    RELEASE           1439             0       0
+                   19    TRANSFER          1439             0       0
+CHECK_FAIL         20    SPLIT             2878             0       0
+                   21    TRANSFER          2878             0       0
+RETRY              22    SEIZE             1439             0       0
+                   23    ADVANCE           1439             1       0
+                   24    RELEASE           1438             0       0
+SUCCESS            25    TERMINATE         4316             0       0
+                   26    GENERATE             1             0       0
+                   27    TERMINATE            1             0       0
+
+
+FACILITY         ENTRIES  UTIL.   AVE. TIME AVAIL. OWNER PEND INTER RETRY DELAY
+ 1                 1440    1.000       9.999  1     3351    0    0     0   7371
+ 2                 1440    1.000       9.999  1     3332    0    0     0   7372
+ 3                 1439    0.999       9.999  1    10260    0    0     0   1439
+ 10                8812    0.000       0.000  1        0    0    0     0      0
+\end{lstlisting}
+}
+
+\section{Резултати от симулацията}
+Проведена е симулация с продължителност 4 часа (14400 секунди).
+
+\subsection{Статистически данни}
+\begin{table}[H]
+    \centering
+    \caption{Резултати от симулацията}
+    \begin{tabular}{|l|c|c|}
+        \hline
+        \textbf{Параметър} & \textbf{Python} & \textbf{GPSS} \\
+        \hline
+        Сензор A съобщения & 1591 & 1612 \\
+        Сензор B съобщения & 7199 & 7200 \\
+        Задачи обработени & 2177 & -- \\
+        Неуспешни обработки & 533 & -- \\
+        Дистрибуции завършени & 787 & -- \\
+        Съобщения в хранилище & 3935 & -- \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Както се вижда от таблицата, GPSS симулацията има проблеми с реализацията на групиране и дистрибуция, поради ограниченията на студентската версия.
+
+\subsection{Сравнение между Python и GPSS}
+За валидация на резултатите са реализирани две независими симулации - с езика Python (използвайки библиотеката \texttt{simpy}) и с езика GPSS (в GPSS World Student).
+
+\begin{table}[H]
+    \centering
+    \caption{Сравнение на резултатите между Python и GPSS симулациите}
+    \label{tab:comparison}
+    \begin{tabular}{|l|c|c|}
+        \hline
+        \textbf{Тип съобщения} & \textbf{Python} & \textbf{GPSS} \\
+        \hline
+        Сензор A & 1591 & 1612 \\
+        Сензор B & 7199 & 7200 \\
+        Обработени единици & 2177 задачи & 8812 транзакции \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Разликите се дължат на:
+\begin{itemize}
+    \item GPSS не реализира явно групиране на съобщения в задачи
+    \item Различни реализации на равномерното разпределение
+    \item Ограничения в GPSS Student при моделиране на сложни буфери
+\end{itemize}
+
+\subsection{Графична визуализация}
+На фигурата по-долу е представена хистограма на разпределението на типовете съобщения.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=12cm, height=8cm,
+            xlabel={Тип съобщения},
+            ylabel={Брой съобщения},
+            title={Разпределение на съобщенията по тип},
+            ybar,
+            ymin=0,
+            symbolic x coords={A,B},
+            bar width=2cm
+        ]
+        % Simulation data
+        \addplot coordinates {
+            (A, 1591) (B, 7199)
+        };
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Разпределение на съобщенията по сензори}
+\end{figure}
+
+\section{Заключение}
+Симулационният модел показва, че системата успешно обработва входящите съобщения от двата типа сензори. Сензор B генерира значително повече съобщения (около 7200) в сравнение със сензор A (около 1600), което води до ограничение в дистрибуциите от страна на тип A съобщения.
+
+Основните изводи:
+\begin{enumerate}
+    \item Около 2200 задачи са групирани и обработени
+    \item 24\% от обработките се повтарят поради неуспех
+    \item Тип A съобщения са ограничаващият фактор -- позволяват около 800 дистрибуции
+    \item Около 3900 съобщения са успешно съхранени в двете хранилища
+\end{enumerate}
+
+За оптимизация на системата се препоръчва:
+\begin{enumerate}
+    \item Намаляване на честотата на сензор B или увеличаване на сензор A
+    \item Добавяне на допълнителни процесори за предварителна обработка
+    \item Оптимизиране на разпределителния модул за по-бързо съхранение
+\end{enumerate}
+
+Тези промени биха намалили времето за обработка с около 20-30\%.

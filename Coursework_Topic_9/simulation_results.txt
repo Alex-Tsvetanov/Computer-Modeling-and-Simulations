@@ -1,0 +1,9 @@
+Topic 9 Data Collection System Results
+==================================================
+Simulation time: 4 hours
+Sensor A generated: 1591
+Sensor B generated: 7199
+Tasks preprocessed: 2177
+Tasks failed: 533
+Distributions completed: 787
+Messages stored: 3935
