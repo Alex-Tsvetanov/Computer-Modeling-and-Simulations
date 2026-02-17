@@ -57,7 +57,7 @@ EXPON FUNCTION RN1,C24
 
 \begin{figure}[H]
     \centering
-    %\includegraphics[width=0.8\linewidth]{images/task3_plot.png}
+    \includegraphics[width=0.8\linewidth]{images/task3_plot.png}
     \caption{Графика на зависимостта Натовареност = f(Интензивност)}
     \label{fig:task3_plot}
 \end{figure}
@@ -67,8 +67,13 @@ EXPON FUNCTION RN1,C24
 
 \textbf{Код на модела (GPSS):}
 \begin{lstlisting}[language=bash]
+IAT_TAB TABLE P1,0,2,20  ; Table using P1 (Calculated Inter-Arrival)
+
     GENERATE 10,FN$EXPON
-    TABULATE IAT_TAB
+    ASSIGN    1,AC1          ; P1 = Current Time
+    ASSIGN    1-,X$LAST_TIME ; P1 = Current - Last (Interval)
+    SAVEVALUE LAST_TIME,AC1  ; Update Last Time
+    TABULATE  IAT_TAB        ; Record Interval
     TERMINATE 1
     START    1000
 \end{lstlisting}

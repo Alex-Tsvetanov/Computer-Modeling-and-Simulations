@@ -4,17 +4,23 @@
 
 ; Define Exponential distribution function
 EXPON FUNCTION RN1,C24
-0,0/.1,.104/.2,.222/.3,.355/.4,.509/.5,.69/.6,.915/.7,1.2
+0,0/.1,.104/.2,.222/.3,.355/.4,.509/.5,.69/.6,0.915/.7,1.2
 .75,1.38/.8,1.6/.84,1.83/.88,2.12/.9,2.3/.92,2.52/.94,2.81
 .95,2.99/.96,3.2/.97,3.5/.98,3.9/.99,4.6/.995,5.3/.998,6.2
 .999,7/.9998,8
 
-; Define Table for histogram
-; Table Name, Argument, Start, Step, Count
-IAT_TAB TABLE IA,0,2,20
+    ; Define Table for Inter-Arrival Time
+    ; Using P1 (Parameter 1) which will hold the calculated interval
+    IAT_TAB TABLE P1,0,2,20
 
-    GENERATE 10,FN$EXPON   ; Generate with mean 10, exponential
-    TABULATE IAT_TAB       ; Record Inter-Arrival Time
-    TERMINATE 1            ; Count towards finish
+    GENERATE 10,FN$EXPON
+    
+    ; Calculate Inter-Arrival Time manually
+    ASSIGN    1,AC1              ; P1 = Current Clock Time
+    ASSIGN    1-,X$LAST_TIME     ; P1 = Current - Last (Difference)
+    SAVEVALUE LAST_TIME,AC1      ; Store Current Time as Last Time for next loop
+    
+    TABULATE  IAT_TAB            ; Tabulate P1
+    TERMINATE 1
 
     START    1000          ; Generate 1000 samples
