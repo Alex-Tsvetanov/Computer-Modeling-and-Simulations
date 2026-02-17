@@ -1,0 +1,48 @@
+
+
+              GPSS World Simulation Report - Untitled Model 1.14.1
+
+
+                   Tuesday, February 17, 2026 07:12:45  
+
+           START TIME           END TIME  BLOCKS  FACILITIES  STORAGES
+                0.000           2000.000    16        1          0
+
+
+              NAME                       VALUE  
+          PROCESSOR                   10001.000
+          WAITLINE                    10000.000
+
+
+ LABEL              LOC  BLOCK TYPE     ENTRY COUNT CURRENT COUNT RETRY
+                    1    GENERATE            34             0       0
+                    2    QUEUE               34             1       0
+                    3    SEIZE               33             0       0
+                    4    DEPART              33             0       0
+                    5    ADVANCE             33             1       0
+                    6    RELEASE             32             0       0
+                    7    TERMINATE           32             0       0
+                    8    GENERATE            25             0       0
+                    9    QUEUE               25            23       0
+                   10    SEIZE                2             0       0
+                   11    DEPART               2             0       0
+                   12    ADVANCE              2             0       0
+                   13    RELEASE              2             0       0
+                   14    TERMINATE            2             0       0
+                   15    GENERATE             1             0       0
+                   16    TERMINATE            1             0       0
+
+
+FACILITY         ENTRIES  UTIL.   AVE. TIME AVAIL. OWNER PEND INTER RETRY DELAY
+ PROCESSOR           35    0.963      55.037  1       59    0    0     0     24
+
+
+QUEUE              MAX CONT. ENTRY ENTRY(0) AVE.CONT. AVE.TIME   AVE.(-0) RETRY
+ WAITLINE           24   24     59      1    11.557    391.753    398.507   0
+
+
+FEC XN   PRI         BDT      ASSEM  CURRENT  NEXT  PARAMETER    VALUE
+    59    2        2016.470     59      5      6
+    61    1        2052.206     61      0      8
+    62    2        2060.247     62      0      1
+    63    0        4000.000     63      0     15

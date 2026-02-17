@@ -1,0 +1,45 @@
+
+
+              GPSS World Simulation Report - Untitled Model 1.15.1
+
+
+                   Tuesday, February 17, 2026 07:13:07  
+
+           START TIME           END TIME  BLOCKS  FACILITIES  STORAGES
+                0.000            600.000    11        1          1
+
+
+              NAME                       VALUE  
+          BUF                         10000.000
+          DROP                            9.000
+          EXPON                       10001.000
+          PROCESSOR                   10002.000
+          TRY_BUF                         3.000
+
+
+ LABEL              LOC  BLOCK TYPE     ENTRY COUNT CURRENT COUNT RETRY
+                    1    GENERATE             4             0       0
+                    2    TRANSFER             4             0       0
+TRY_BUF             3    ENTER                4             0       0
+                    4    SEIZE                4             0       0
+                    5    LEAVE                4             0       0
+                    6    ADVANCE              4             1       0
+                    7    RELEASE              3             0       0
+                    8    TERMINATE            3             0       0
+DROP                9    TERMINATE            0             0       0
+                   10    GENERATE             1             0       0
+                   11    TERMINATE            1             0       0
+
+
+FACILITY         ENTRIES  UTIL.   AVE. TIME AVAIL. OWNER PEND INTER RETRY DELAY
+ PROCESSOR            4    0.230      34.508  1        5    0    0     0      0
+
+
+STORAGE            CAP. REM. MIN. MAX.  ENTRIES AVL.  AVE.C. UTIL. RETRY DELAY
+ BUF                10   10   0     1        4   1    0.000  0.000    0    0
+
+
+FEC XN   PRI         BDT      ASSEM  CURRENT  NEXT  PARAMETER    VALUE
+     6    0         600.681      6      0      1
+     5    0         617.610      5      6      7
+     7    0        1200.000      7      0     10
