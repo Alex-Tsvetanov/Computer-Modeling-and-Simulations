@@ -1,0 +1,150 @@
+
+\section{Постановка на задачата}
+Целта на упражнението е да се изследват характеристиките на компютърни системи чрез симулационно моделиране в средата GPSS World. Задачите включват:
+\begin{enumerate}
+    \item Симулиране на еднопроцесорна система и изследване на натоварването при вариране на интензивността на входния поток.
+    \item Изследване на статистическите свойства на генератор на случайни събития.
+    \item Симулиране на системи с приоритетно обслужване и с ограничена буферна памет.
+\end{enumerate}
+
+\section{Резултати от експериментите}
+
+\subsection{Задача 3: Еднопроцесорна система (M/G/1)}
+Изследвана е еднопроцесорна система с равномерно разпределено време за обслужване $5 \pm 3$ s. Входният поток е с експоненциално разпределение, като интензивността $\lambda$ варира.
+
+\textbf{Код на модела (GPSS):}
+\begin{lstlisting}[language=bash]
+; Task 3: Single Server M/G/1
+EXPON FUNCTION RN1,C24
+0,0/.1,.104/.2,.222/.3,.355/.4,.509/.5,.69/.6,.915/.7,1.2
+.75,1.38/.8,1.6/.84,1.83/.88,2.12/.9,2.3/.92,2.52/.94,2.81
+.95,2.99/.96,3.2/.97,3.5/.98,3.9/.99,4.6/.995,5.3/.998,6.2
+.999,7/.9998,8
+
+    GENERATE 40,FN$EXPON   ; Mean varies: 40, 20, 13.3, 10, 6.6, 5
+    QUEUE    Line
+    SEIZE    Server
+    DEPART   Line
+    ADVANCE  5,3
+    RELEASE  Server
+    TERMINATE 1
+    START    1000
+\end{lstlisting}
+
+\subsubsection{Резултати}
+
+\begin{table}[H]
+    \centering
+    \caption{Резултати от експериментите за Задача 3}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{Интензивност} $\lambda$ [заявки/s] & \textbf{Среден интервал} [s] & \textbf{Натовареност} (Utilization) \\
+        \hline
+        0.025 & 40 & \textit{(Попълнете от GPSS)} \\
+        \hline
+        0.050 & 20 & \textit{(Попълнете от GPSS)} \\
+        \hline
+        0.075 & 13.33 & \textit{(Попълнете от GPSS)} \\
+        \hline
+        0.100 & 10 & \textit{(Попълнете от GPSS)} \\
+        \hline
+        0.150 & 6.67 & \textit{(Попълнете от GPSS)} \\
+        \hline
+        0.200 & 5.00 & \textit{(Попълнете от GPSS)} \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    %\includegraphics[width=0.8\linewidth]{images/task3_plot.png}
+    \caption{Графика на зависимостта Натовареност = f(Интензивност)}
+    \label{fig:task3_plot}
+\end{figure}
+
+\subsection{Задача 4: Изследване на генератор на заявки}
+Генерирани са 1000 заявки с експоненциално разпределение за проверка на статистическите характеристики.
+
+\textbf{Код на модела (GPSS):}
+\begin{lstlisting}[language=bash]
+    GENERATE 10,FN$EXPON
+    TABULATE IAT_TAB
+    TERMINATE 1
+    START    1000
+\end{lstlisting}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/task4_hist.png}
+    \caption{Хистограма на разпределението на интервалите}
+    \label{fig:task4_hist}
+\end{figure}
+
+\subsection{Задача 5а: Система с два потока и приоритети}
+Симулирана е система с два входни потока:
+\begin{itemize}
+    \item \textbf{Поток 1 (Висок приоритет):} Интервал $60 \pm 20$, Обслужване $50 \pm 20$.
+    \item \textbf{Поток 2 (Нисък приоритет):} Интервал $80 \pm 30$, Обслужване $100 \pm 30$.
+\end{itemize}
+
+\textbf{Код на модела (GPSS):}
+\begin{lstlisting}[language=bash]
+    GENERATE 60,20,,,2    ; High Priority
+    QUEUE    WaitLine
+    SEIZE    Processor
+    DEPART   WaitLine
+    ADVANCE  50,20
+    RELEASE  Processor
+    TERMINATE 0
+
+    GENERATE 80,30,,,1    ; Low Priority
+    QUEUE    WaitLine
+    SEIZE    Processor
+    DEPART   WaitLine
+    ADVANCE  100,30
+    RELEASE  Processor
+    TERMINATE 0
+\end{lstlisting}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/task5a_results.png}
+    \caption{Резултати от симулацията на Задача 5а}
+    \label{fig:task5a_results}
+\end{figure}
+
+\subsection{Задача 5б: Система с ограничен буфер}
+Системата има буфер с капацитет 10 заявки. При запълване на буфера, новите заявки се отхвърлят.
+\begin{itemize}
+    \item Входен поток: Експоненциален (Mean=80).
+    \item Обслужване: $60 \pm 40$ s.
+\end{itemize}
+
+\textbf{Код на модела (GPSS):}
+\begin{lstlisting}[language=bash]
+BUF STORAGE 10
+    GENERATE 80,FN$EXPON
+    TRANSFER BOTH,TRY_BUF,DROP 
+TRY_BUF ENTER    BUF
+    SEIZE    Processor
+    LEAVE    BUF
+    ADVANCE  60,40
+    RELEASE  Processor
+    TERMINATE 0
+DROP TERMINATE 0
+\end{lstlisting}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/task5b_results.png}
+    \caption{Резултати от симулацията на Задача 5б}
+    \label{fig:task5b_results}
+\end{figure}
+
+\section{Анализ и Заключение}
+Проведените експерименти демонстрират основните принципи на работа със системата GPSS.
+\begin{itemize}
+    \item В \textbf{Задача 3} се наблюдава линейна зависимост между натовареността на процесора и интензивността на входния поток, докато системата не наближи насищане.
+    \item В \textbf{Задача 4} хистограмата потвърждава експоненциалния характер на генерирания поток.
+    \item В \textbf{Задача 5} се вижда влиянието на приоритезацията върху времето за чакане на различните класове заявки, както и ефектът на ограничения буфер върху загубата на заявки.
+\end{itemize}

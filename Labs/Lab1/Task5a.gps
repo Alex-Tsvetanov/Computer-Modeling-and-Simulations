@@ -1,0 +1,27 @@
+; Task 5a: Two independent streams with priorities
+; Stream 1: Arrival 60 +/- 20, Service 50 +/- 20, Priority 2 (High)
+; Stream 2: Arrival 80 +/- 30, Service 100 +/- 30, Priority 1 (Low)
+
+; Stream 1 (High Priority)
+    GENERATE 60,20,,,2    ; Mean 60, Spread 20, Priority 2
+    QUEUE    WaitLine
+    SEIZE    Processor
+    DEPART   WaitLine
+    ADVANCE  50,20        ; Process 50 +/- 20
+    RELEASE  Processor
+    TERMINATE 0           ; Don't count for termination directly here if we want total time
+
+; Stream 2 (Low Priority)
+    GENERATE 80,30,,,1    ; Mean 80, Spread 30, Priority 1
+    QUEUE    WaitLine
+    SEIZE    Processor
+    DEPART   WaitLine
+    ADVANCE  100,30       ; Process 100 +/- 30
+    RELEASE  Processor
+    TERMINATE 0
+
+; Timer to stop simulation after some time (e.g., 2000 units)
+    GENERATE 2000
+    TERMINATE 1
+
+    START    1
