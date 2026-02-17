@@ -90,13 +90,15 @@ EXPON FUNCTION RN1,C24
 
 \textbf{Код на модела (GPSS):}
 \begin{lstlisting}[language=bash]
-IAT_TAB TABLE P1,0,2,20  ; Table using P1 (Calculated Inter-Arrival)
+XTIME TABLE M1,0,10,20
 
     GENERATE 10,FN$EXPON
-    ASSIGN    1,AC1          ; P1 = Current Time
-    ASSIGN    1-,X$LAST_TIME ; P1 = Current - Last (Interval)
-    SAVEVALUE LAST_TIME,AC1  ; Update Last Time
-    TABULATE  IAT_TAB        ; Record Interval
+    QUEUE    DISP
+    SEIZE    PROC
+    DEPART   DISP
+    ADVANCE  5,3
+    RELEASE  PROC
+    TABULATE XTIME
     TERMINATE 1
     START    1000
 \end{lstlisting}
@@ -104,7 +106,7 @@ IAT_TAB TABLE P1,0,2,20  ; Table using P1 (Calculated Inter-Arrival)
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth]{images/task4.png}
-    \caption{Хистограма на разпределението на интервалите}
+    \caption{Хистограма на разпределението на интервалите (Task 4)}
     \label{fig:task4_hist}
 \end{figure}
 
@@ -117,7 +119,8 @@ IAT_TAB TABLE P1,0,2,20  ; Table using P1 (Calculated Inter-Arrival)
 
 \textbf{Код на модела (GPSS):}
 \begin{lstlisting}[language=bash]
-    GENERATE 60,20,,,2    ; High Priority
+; High Priority (2)
+    GENERATE 60,20,,,2
     QUEUE    WaitLine
     SEIZE    Processor
     DEPART   WaitLine
@@ -125,18 +128,38 @@ IAT_TAB TABLE P1,0,2,20  ; Table using P1 (Calculated Inter-Arrival)
     RELEASE  Processor
     TERMINATE 0
 
-    GENERATE 80,30,,,1    ; Low Priority
+; Low Priority (1)
+    GENERATE 80,30,,,1
     QUEUE    WaitLine
     SEIZE    Processor
     DEPART   WaitLine
     ADVANCE  100,30
     RELEASE  Processor
     TERMINATE 0
+
+    GENERATE 2000
+    TERMINATE 1
+    START    1
 \end{lstlisting}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\linewidth]{images/task5a.png}
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            symbolic x coords={High Priority, Low Priority},
+            xtick=data,
+            ylabel={Средно време в опашка (Ave. Wait)},
+            ymin=0,
+            grid=major,
+            width=0.8\linewidth,
+            height=6cm,
+            title={Сравнение на времето за чакане (Task 5a)}
+        ]
+        % Replace y-values with AVE.TIME from GPSS Queue statistics
+        \addplot[fill=blue!50] coordinates {(High Priority, 10) (Low Priority, 50)};
+        \end{axis}
+    \end{tikzpicture}
     \caption{Резултати от симулацията на Задача 5а}
     \label{fig:task5a_results}
 \end{figure}
@@ -153,18 +176,39 @@ IAT_TAB TABLE P1,0,2,20  ; Table using P1 (Calculated Inter-Arrival)
 BUF STORAGE 10
     GENERATE 80,FN$EXPON
     TRANSFER BOTH,TRY_BUF,DROP 
+
 TRY_BUF ENTER    BUF
     SEIZE    Processor
     LEAVE    BUF
     ADVANCE  60,40
     RELEASE  Processor
     TERMINATE 0
+
 DROP TERMINATE 0
+
+    GENERATE 600
+    TERMINATE 1
+    START 1
 \end{lstlisting}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\linewidth]{images/task5b.png}
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            symbolic x coords={Processed, Dropped},
+            xtick=data,
+            ylabel={Брой транзакции (Transactions)},
+            ymin=0,
+            grid=major,
+            width=0.8\linewidth,
+            height=6cm,
+            title={Обработени спрямо Отхвърлени заявки (Task 5b)}
+        ]
+        % Replace y-values with counts from GPSS (Total Entries vs Drop Block Entries)
+        \addplot[fill=red!50] coordinates {(Processed, 800) (Dropped, 50)};
+        \end{axis}
+    \end{tikzpicture}
     \caption{Резултати от симулацията на Задача 5б}
     \label{fig:task5b_results}
 \end{figure}
