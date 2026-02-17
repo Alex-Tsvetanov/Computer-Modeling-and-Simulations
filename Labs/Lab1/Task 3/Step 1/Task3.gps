@@ -1,10 +1,17 @@
-GENERATE	10,5	-- постъпване на задачи през интервали от 5 до 15 ЕМВ
-QUEUE	DISP	-- постъпване в опашката (дисциплина FCFS)
-SEIZE	PROC	-- заемане на обслужващо устройство (ако е свободно)
-DEPART	DISP	-- напускане на опашката
-ADVANCE	5,3	-- времезадръжка за обслужване на задача
-RELEASE	PROC	-- освобождаване на устройството
-TERMINATE		-- унищожаване на заявка (обслужена задача)
-GENERATE	300	-- дефинира общо време за симулация 300 ЕМВ
-TERMINATE	1	
-START	1	--стартира еднократно изпълнение
+; Task 3: Single Server M/G/1 - Step 1
+; Lambda = 0.025 -> Mean = 40
+
+EXPON FUNCTION RN1,C24
+0,0/.1,.104/.2,.222/.3,.355/.4,.509/.5,.69/.6,.915/.7,1.2
+.75,1.38/.8,1.6/.84,1.83/.88,2.12/.9,2.3/.92,2.52/.94,2.81
+.95,2.99/.96,3.2/.97,3.5/.98,3.9/.99,4.6/.995,5.3/.998,6.2
+.999,7/.9998,8
+
+    GENERATE 40,FN$EXPON   ; Exponential Interarrival, Mean 40
+    QUEUE    Line
+    SEIZE    Server
+    DEPART   Line
+    ADVANCE  5,3           ; Service Time 5 +/- 3 (Uniform)
+    RELEASE  Server
+    TERMINATE 1
+    START    1000
