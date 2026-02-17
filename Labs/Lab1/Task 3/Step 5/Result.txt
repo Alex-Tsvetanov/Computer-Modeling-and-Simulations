@@ -1,12 +1,12 @@
 
 
-              GPSS World Simulation Report - Untitled Model 1.5.1
+              GPSS World Simulation Report - Untitled Model 1.12.1
 
 
-                   Tuesday, February 17, 2026 06:48:23  
+                   Tuesday, February 17, 2026 06:58:29  
 
            START TIME           END TIME  BLOCKS  FACILITIES  STORAGES
-                0.000           9990.365     7        1          0
+                0.000           6514.938     7        1          0
 
 
               NAME                       VALUE  
@@ -16,9 +16,9 @@
 
 
  LABEL              LOC  BLOCK TYPE     ENTRY COUNT CURRENT COUNT RETRY
-                    1    GENERATE          1001             0       0
-                    2    QUEUE             1001             0       0
-                    3    SEIZE             1001             1       0
+                    1    GENERATE          1000             0       0
+                    2    QUEUE             1000             0       0
+                    3    SEIZE             1000             0       0
                     4    DEPART            1000             0       0
                     5    ADVANCE           1000             0       0
                     6    RELEASE           1000             0       0
@@ -26,16 +26,12 @@
 
 
 FACILITY         ENTRIES  UTIL.   AVE. TIME AVAIL. OWNER PEND INTER RETRY DELAY
- SERVER            1001    0.490       4.890  1     1001    0    0     0      0
+ SERVER            1000    0.766       4.991  1        0    0    0     0      0
 
 
 QUEUE              MAX CONT. ENTRY ENTRY(0) AVE.CONT. AVE.TIME   AVE.(-0) RETRY
- LINE                5    1   1001    510     0.263      2.626      5.355   0
-
-
-CEC XN   PRI          M1      ASSEM  CURRENT  NEXT  PARAMETER    VALUE
-  1001    0        9986.139   1001      3      4
+ LINE                8    0   1000    231     1.265      8.243     10.719   0
 
 
 FEC XN   PRI         BDT      ASSEM  CURRENT  NEXT  PARAMETER    VALUE
-  1002    0        9993.127   1002      0      1
+  1001    0        6517.536   1001      0      1

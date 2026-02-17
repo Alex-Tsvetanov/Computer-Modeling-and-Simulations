@@ -1,12 +1,12 @@
 
 
-              GPSS World Simulation Report - Untitled Model 1.3.1
+              GPSS World Simulation Report - Untitled Model 1.10.1
 
 
-                   Tuesday, February 17, 2026 06:47:39  
+                   Tuesday, February 17, 2026 06:57:40  
 
            START TIME           END TIME  BLOCKS  FACILITIES  STORAGES
-                0.000          20382.705     7        1          0
+                0.000          13444.323     7        1          0
 
 
               NAME                       VALUE  
@@ -26,12 +26,12 @@
 
 
 FACILITY         ENTRIES  UTIL.   AVE. TIME AVAIL. OWNER PEND INTER RETRY DELAY
- SERVER            1000    0.241       4.919  1        0    0    0     0      0
+ SERVER            1000    0.369       4.957  1        0    0    0     0      0
 
 
 QUEUE              MAX CONT. ENTRY ENTRY(0) AVE.CONT. AVE.TIME   AVE.(-0) RETRY
- LINE                3    0   1000    748     0.045      0.926      3.673   0
+ LINE                5    0   1000    618     0.123      1.647      4.312   0
 
 
 FEC XN   PRI         BDT      ASSEM  CURRENT  NEXT  PARAMETER    VALUE
-  1001    0       20419.420   1001      0      1
+  1001    0       13466.451   1001      0      1
