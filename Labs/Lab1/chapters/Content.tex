@@ -40,24 +40,47 @@ EXPON FUNCTION RN1,C24
         \hline
         \textbf{Интензивност} $\lambda$ [заявки/s] & \textbf{Среден интервал} [s] & \textbf{Натовареност} (Utilization) \\
         \hline
-        0.025 & 40 & \textit{(Попълнете от GPSS)} \\
+        0.025 & 40 & 0.124 \\
         \hline
-        0.050 & 20 & \textit{(Попълнете от GPSS)} \\
+        0.050 & 20 & 0.241 \\
         \hline
-        0.075 & 13.33 & \textit{(Попълнете от GPSS)} \\
+        0.075 & 13.33 & 0.369 \\
         \hline
-        0.100 & 10 & \textit{(Попълнете от GPSS)} \\
+        0.100 & 10 & 0.490 \\
         \hline
-        0.150 & 6.67 & \textit{(Попълнете от GPSS)} \\
+        0.150 & 6.67 & 0.766 \\
         \hline
-        0.200 & 5.00 & \textit{(Попълнете от GPSS)} \\
+        0.200 & 5.00 & 0.944 \\
         \hline
     \end{tabular}
 \end{table}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\linewidth]{images/task3.png}
+    \begin{tikzpicture}
+        \begin{axis}[
+            title={Натовареност на процесора спрямо Интензивност},
+            xlabel={Интензивност $\lambda$ [заявки/s]},
+            ylabel={Натовареност (Utilization)},
+            grid=major,
+            width=0.8\linewidth,
+            height=6cm,
+            xmin=0, xmax=0.22,
+            ymin=0, ymax=1.0,
+            xtick={0, 0.025, 0.05, 0.075, 0.1, 0.15, 0.2},
+            xticklabels={0, 0.025, 0.05, 0.075, 0.1, 0.15, 0.2},
+            x tick label style={rotate=45, anchor=east},
+        ]
+        \addplot[
+            color=blue,
+            mark=*,
+            thick
+            ]
+            coordinates {
+            (0.025, 0.124)(0.050, 0.241)(0.075, 0.369)(0.100, 0.490)(0.150, 0.766)(0.200, 0.944)
+            };
+        \end{axis}
+    \end{tikzpicture}
     \caption{Графика на зависимостта Натовареност = f(Интензивност)}
     \label{fig:task3_plot}
 \end{figure}
