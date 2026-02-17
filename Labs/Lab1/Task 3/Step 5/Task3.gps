@@ -1,0 +1,37 @@
+; Task 3: Single Server M/G/1
+; Single Processor System with Uniform Service Time
+; Arrival: Exponential, Mean depends on X (Variable)
+; Service: Uniform, 5 +/- 3 (Range 2-8)
+; Simulation time: Depends on stability, usually run for some time.
+; We need to vary lambda (Arrival Intensity). Mean Interarrival = 1/lambda.
+; Case 1: lambda = 0.025 -> Mean = 40
+; Case 2: lambda = 0.05  -> Mean = 20
+; Case 3: lambda = 0.075 -> Mean = 13.333
+; Case 4: lambda = 0.1   -> Mean = 10
+; Case 5: lambda = 0.15  -> Mean = 6.666
+; Case 6: lambda = 0.2   -> Mean = 5
+
+; Define Exponential distribution function
+EXPON FUNCTION RN1,C24
+0,0/.1,.104/.2,.222/.3,.355/.4,.509/.5,.69/.6,.915/.7,1.2
+.75,1.38/.8,1.6/.84,1.83/.88,2.12/.9,2.3/.92,2.52/.94,2.81
+.95,2.99/.96,3.2/.97,3.5/.98,3.9/.99,4.6/.995,5.3/.998,6.2
+.999,7/.9998,8
+
+; --- Simulation for lambda = 0.025 (Mean = 40) ---
+    GENERATE 10,FN$EXPON   ; Exponential Interarrival, Mean 40
+    QUEUE    Line          ; Enter Queue
+    SEIZE    Server        ; Seize Processor
+    DEPART   Line          ; Leave Queue
+    ADVANCE  5,3           ; Service Time 5 +/- 3 (Uniform)
+    RELEASE  Server        ; Release Processor
+    TERMINATE 1            ; Decrease termination counter
+
+    START    1000          ; Process 1000 transactions
+
+; Note: To run for other values of lambda, change the GENERATE block:
+; lambda = 0.05  -> GENERATE 20,FN$EXPON
+; lambda = 0.075 -> GENERATE 13.333,FN$EXPON
+; lambda = 0.1   -> GENERATE 10,FN$EXPON
+; lambda = 0.15  -> GENERATE 6.666,FN$EXPON
+; lambda = 0.2   -> GENERATE 5,FN$EXPON
