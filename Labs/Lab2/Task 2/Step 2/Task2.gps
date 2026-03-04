@@ -1,0 +1,33 @@
+; Task 2: Linear EFK (4 phases, constant clock t=5)
+; Step 2: Mean inter-arrival = 4 (near saturation)
+; Expected utilization ~80-90% on phase 1
+
+EXPON FUNCTION RN1,C24
+0,0/.1,.104/.2,.222/.3,.355/.4,.509/.5,.69/.6,.915/.7,1.2
+.75,1.38/.8,1.6/.84,1.83/.88,2.12/.9,2.3/.92,2.52/.94,2.81
+.95,2.99/.96,3.2/.97,3.5/.98,3.9/.99,4.6/.995,5.3/.998,6.2
+.999,7/.9998,8
+
+         GENERATE 4,FN$EXPON    ; Exponential inter-arrival, mean = 4
+         QUEUE    WAIT1          ; Queue for phase 1
+         SEIZE    PROC1          ; Occupy functional unit 1
+         DEPART   WAIT1
+         ADVANCE  5              ; Fixed clock t = 5
+         RELEASE  PROC1
+         QUEUE    WAIT2          ; Queue for phase 2
+         SEIZE    PROC2
+         DEPART   WAIT2
+         ADVANCE  5
+         RELEASE  PROC2
+         QUEUE    WAIT3          ; Queue for phase 3
+         SEIZE    PROC3
+         DEPART   WAIT3
+         ADVANCE  5
+         RELEASE  PROC3
+         QUEUE    WAIT4          ; Queue for phase 4
+         SEIZE    PROC4
+         DEPART   WAIT4
+         ADVANCE  5
+         RELEASE  PROC4
+         TERMINATE 1
+         START    300

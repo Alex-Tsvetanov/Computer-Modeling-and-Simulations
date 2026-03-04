@@ -1,0 +1,86 @@
+
+
+              GPSS World Simulation Report - Untitled Model 1.11.1
+
+
+                   Wednesday, March 04, 2026 09:00:32  
+
+           START TIME           END TIME  BLOCKS  FACILITIES  STORAGES
+                0.000           2076.922    34        4          0
+
+
+              NAME                       VALUE  
+          EXPON                       10000.000
+          PROC1                       10002.000
+          PROC2                       10009.000
+          PROC3                       10005.000
+          PROC4                       10007.000
+          WA1                         10003.000
+          WA2                         10008.000
+          WA3                         10010.000
+          WB1                         10001.000
+          WB3                         10004.000
+          WB4                         10006.000
+
+
+ LABEL              LOC  BLOCK TYPE     ENTRY COUNT CURRENT COUNT RETRY
+                    1    GENERATE           258             0       0
+                    2    QUEUE              258             4       0
+                    3    SEIZE              254             0       0
+                    4    DEPART             254             0       0
+                    5    ADVANCE            254             0       0
+                    6    RELEASE            254             0       0
+                    7    QUEUE              254             0       0
+                    8    SEIZE              254             0       0
+                    9    DEPART             254             0       0
+                   10    ADVANCE            254             0       0
+                   11    RELEASE            254             0       0
+                   12    QUEUE              254             0       0
+                   13    SEIZE              254             0       0
+                   14    DEPART             254             0       0
+                   15    ADVANCE            254             0       0
+                   16    RELEASE            254             0       0
+                   17    TERMINATE          254             0       0
+                   18    GENERATE           151             0       0
+                   19    QUEUE              151             2       0
+                   20    SEIZE              149             1       0
+                   21    DEPART             148             0       0
+                   22    ADVANCE            148             0       0
+                   23    RELEASE            148             0       0
+                   24    QUEUE              148             1       0
+                   25    SEIZE              147             1       0
+                   26    DEPART             146             0       0
+                   27    ADVANCE            146             0       0
+                   28    RELEASE            146             0       0
+                   29    QUEUE              146             0       0
+                   30    SEIZE              146             0       0
+                   31    DEPART             146             0       0
+                   32    ADVANCE            146             0       0
+                   33    RELEASE            146             0       0
+                   34    TERMINATE          146             0       0
+
+
+FACILITY         ENTRIES  UTIL.   AVE. TIME AVAIL. OWNER PEND INTER RETRY DELAY
+ PROC1              403    0.968       4.988  1      404    0    0     0      6
+ PROC3              401    0.963       4.988  1      399    0    0     0      1
+ PROC4              146    0.351       5.000  1        0    0    0     0      0
+ PROC2              254    0.611       5.000  1        0    0    0     0      0
+
+
+QUEUE              MAX CONT. ENTRY ENTRY(0) AVE.CONT. AVE.TIME   AVE.(-0) RETRY
+ WB1                10    3    151      3     2.616     35.988     36.718   0
+ WA1                14    4    258      5     4.271     34.384     35.063   0
+ WB3                 2    2    148     54     0.223      3.132      4.931   0
+ WB4                 1    0    146    146     0.000      0.000      0.000   0
+ WA2                 1    0    254    254     0.000      0.000      0.000   0
+ WA3                 1    0    254    202     0.125      1.024      5.000   0
+
+
+CEC XN   PRI          M1      ASSEM  CURRENT  NEXT  PARAMETER    VALUE
+   404    0        2056.705    404     20     21
+   399    0        2048.802    399     25     26
+
+
+FEC XN   PRI         BDT      ASSEM  CURRENT  NEXT  PARAMETER    VALUE
+   411    0        2086.144    411      0      1
+   408    0        2088.607    408      0     18

@@ -1,0 +1,288 @@
+
+\section{Постановка на задачата}
+Целта на упражнението е симулационно изследване на организацията и системните характеристики на базови конвейерни архитектури в средата GPSS World. Задачите обхващат:
+\begin{enumerate}
+    \item Разучаване на организацията и диспечерирането на конвейерни структури.
+    \item Симулационно изследване на \textbf{линеен едно-функционален конвейер (ЕФК)} с постоянен такт при вариращ входен поток.
+    \item Разработване на модел за \textbf{ЕФК с обратна връзка} при рекурсивна обработка.
+    \item Разработване на модел за \textbf{многофункционален конвейер (МФК)} с два типа операции.
+\end{enumerate}
+
+\section{Резултати от експериментите}
+
+\subsection{Задача 2: Линеен ЕФК с постоянен такт}
+
+Изследван е линеен едно-функционален конвейер с $k = 4$ фази (функционални устройства PROC1--PROC4) и постоянен такт $t = 5$ моделни единици. Входният поток е с експоненциално разпределение. Проведени са 5 симулационни експеримента с вариращо средно време между постъпванията (IAT), всеки симулира 300 завършени задачи. Теоретичната натовареност на всяка фаза е $\rho = t / \mathrm{IAT} = 5 / \mathrm{IAT}$.
+
+\textbf{Код на симулационния модел (GPSS, пример при IAT\,=\,7):}
+\begin{lstlisting}[language=bash]
+EXPON FUNCTION RN1,C24
+0,0/.1,.104/.2,.222/.3,.355/.4,.509/.5,.69/.6,.915/.7,1.2
+.75,1.38/.8,1.6/.84,1.83/.88,2.12/.9,2.3/.92,2.52/.94,2.81
+.95,2.99/.96,3.2/.97,3.5/.98,3.9/.99,4.6/.995,5.3/.998,6.2
+.999,7/.9998,8
+
+         GENERATE 7,FN$EXPON    ; IAT varied: 2, 4, 5, 7, 10
+         QUEUE    WAIT1          ; Phase 1 queue
+         SEIZE    PROC1          ; Occupy FU1
+         DEPART   WAIT1
+         ADVANCE  5              ; Fixed clock t = 5
+         RELEASE  PROC1
+         QUEUE    WAIT2          ; Phase 2 queue
+         SEIZE    PROC2
+         DEPART   WAIT2
+         ADVANCE  5
+         RELEASE  PROC2
+         QUEUE    WAIT3          ; Phase 3 queue
+         SEIZE    PROC3
+         DEPART   WAIT3
+         ADVANCE  5
+         RELEASE  PROC3
+         QUEUE    WAIT4          ; Phase 4 queue
+         SEIZE    PROC4
+         DEPART   WAIT4
+         ADVANCE  5
+         RELEASE  PROC4
+         TERMINATE 1
+         START    300
+\end{lstlisting}
+
+\subsubsection{Резултати}
+
+\begin{table}[H]
+    \centering
+    \caption{Натовареност на ФУ при вариращ входен поток (300 задачи)}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        \textbf{IAT} & \textbf{$\rho_\mathrm{теор}$} & \textbf{PROC1} & \textbf{PROC2} & \textbf{PROC3} & \textbf{PROC4} & \textbf{Ср. чакане [м.е.]} \\
+        \hline
+        2  & $>$100\% & 99{,}9\% & 99{,}5\% & 99{,}2\% & 98{,}9\% & 434{,}0 \\
+        \hline
+        4  & $>$100\% & 99{,}0\% & 98{,}6\% & 98{,}3\% & 98{,}0\% & 149{,}5 \\
+        \hline
+        5  & 100\%    & 93{,}4\% & 93{,}2\% & 93{,}0\% & 92{,}7\% & 17{,}5  \\
+        \hline
+        7  & 71{,}4\% & 70{,}6\% & 70{,}6\% & 70{,}4\% & 70{,}2\% & 5{,}5   \\
+        \hline
+        10 & 50{,}0\% & 51{,}3\% & 51{,}2\% & 51{,}0\% & 50{,}9\% & 2{,}4   \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            title={Натовареност на PROC1 спрямо средно IAT},
+            xlabel={Средно IAT [мод. ед.]},
+            ylabel={Натовареност (\%)},
+            grid=major,
+            width=0.8\linewidth,
+            height=6cm,
+            xmin=1, xmax=11,
+            ymin=0, ymax=110,
+            xtick={2,4,5,7,10},
+            legend pos=south east,
+        ]
+        \addplot[color=blue, mark=*, thick]
+            coordinates {(2,99.9)(4,99.0)(5,93.4)(7,70.6)(10,51.3)};
+        \addplot[color=red, dashed, thick, mark=square*]
+            coordinates {(2,100)(4,100)(5,100)(7,71.4)(10,50.0)};
+        \legend{Симулация (PROC1), Теория}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Зависимост на натовареността от средното IAT}
+    \label{fig:task2_util}
+\end{figure}
+
+При $\mathrm{IAT} \leq t = 5$ конвейерът е претоварен ($\rho \geq 1$) и опашката пред PROC1 нараства неограничено. При $\mathrm{IAT} = 2$ максималният брой задачи в WAIT1 достига 446, а средното чакане е 434{,}0 мод. ед. При $\mathrm{IAT} > t$ конвейерът работи в стационарен режим и натовареността съответства точно на теоретичната.
+
+\subsection{Задача 3: ЕФК с обратна връзка}
+
+Изследван е три-фазен ЕФК ($k = 3$, такт $t = 5$) с вероятност за обратна връзка $p = 0{,}4$, имитираща рекурсивни изчисления. Задача, преминала всички три фази, с вероятност 40\% повторно постъпва в конвейера от начало. Средното IAT на входния поток е 7 мод. ед.
+
+Ефективната натовареност на всяка фаза се определя по:
+\begin{equation}
+    \rho_\mathrm{eff} = \frac{t}{\mathrm{IAT} \cdot (1-p)} = \frac{5}{7 \cdot 0{,}6} \approx 1{,}19 > 1
+\end{equation}
+
+Тъй като $\rho_\mathrm{eff} > 1$, системата е в режим на претоварване.
+
+\textbf{Код на симулационния модел (GPSS):}
+\begin{lstlisting}[language=bash]
+EXPON FUNCTION RN1,C24
+0,0/.1,.104/.2,.222/.3,.355/.4,.509/.5,.69/.6,.915/.7,1.2
+.75,1.38/.8,1.6/.84,1.83/.88,2.12/.9,2.3/.92,2.52/.94,2.81
+.95,2.99/.96,3.2/.97,3.5/.98,3.9/.99,4.6/.995,5.3/.998,6.2
+.999,7/.9998,8
+
+         GENERATE 7,FN$EXPON    ; Inter-arrival mean = 7
+
+PIPEIN   QUEUE    WAIT1          ; Phase 1 queue (feedback entry point)
+         SEIZE    PROC1
+         DEPART   WAIT1
+         ADVANCE  5              ; Fixed clock t = 5
+         RELEASE  PROC1
+         QUEUE    WAIT2          ; Phase 2 queue
+         SEIZE    PROC2
+         DEPART   WAIT2
+         ADVANCE  5
+         RELEASE  PROC2
+         QUEUE    WAIT3          ; Phase 3 queue
+         SEIZE    PROC3
+         DEPART   WAIT3
+         ADVANCE  5
+         RELEASE  PROC3
+         TRANSFER .4,,PIPEIN    ; 40% feedback -> re-enters pipeline
+         TERMINATE 1             ; 60% exit
+         START    300
+\end{lstlisting}
+
+\subsubsection{Резултати}
+
+\begin{table}[H]
+    \centering
+    \caption{Резултати от симулация на ЕФК с обратна връзка ($p = 0{,}4$, IAT\,=\,7)}
+    \begin{tabular}{|l|c|}
+        \hline
+        \textbf{Показател} & \textbf{Стойност} \\
+        \hline
+        Генерирани задачи & 391 \\
+        \hline
+        Общо входове в конвейера & 639 \\
+        \hline
+        Средно прохода на задача & 1{,}63 \quad (теория: $1/(1-0{,}4) = 1{,}67$) \\
+        \hline
+        Натовареност PROC1 & 98{,}7\% \\
+        \hline
+        Натовареност PROC2 & 98{,}5\% \\
+        \hline
+        Натовареност PROC3 & 98{,}4\% \\
+        \hline
+        Максимална опашка WAIT1 & 90 задачи \\
+        \hline
+        Среден брой задачи в WAIT1 & 42{,}6 \\
+        \hline
+        Средно чакане WAIT1 & 185{,}6 мод. ед. \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Средният брой проходи на задача (1{,}63) е в отлично съответствие с теоретичната стойност 1{,}67. Обратната връзка драстично увеличава натоварването на конвейера и предизвиква критично нарастване на опашката пред PROC1 (максимум 90 задачи, средно чакане 185{,}6 мод. ед.).
+
+\subsection{Задача 4: Многофункционален конвейер (МФК)}
+
+Изследван е динамичен МФК с четири функционални устройства и два независими входни потока:
+\begin{itemize}
+    \item \textbf{Операция A (целочислено събиране):} PROC1 $\to$ PROC2 $\to$ PROC3, IAT\,=\,8
+    \item \textbf{Операция B (умножение с плаваща запетая):} PROC1 $\to$ PROC3 $\to$ PROC4, IAT\,=\,12
+\end{itemize}
+
+Такт на всяко ФУ: $t = 5$ мод. ед. Устройствата PROC1 и PROC3 са \textbf{споделени} между двете операции, моделирайки колизионен хазарт в МФК.
+
+\textbf{Код на симулационния модел (GPSS):}
+\begin{lstlisting}[language=bash]
+EXPON FUNCTION RN1,C24
+0,0/.1,.104/.2,.222/.3,.355/.4,.509/.5,.69/.6,.915/.7,1.2
+.75,1.38/.8,1.6/.84,1.83/.88,2.12/.9,2.3/.92,2.52/.94,2.81
+.95,2.99/.96,3.2/.97,3.5/.98,3.9/.99,4.6/.995,5.3/.998,6.2
+.999,7/.9998,8
+
+; --- Op A: Integer ADD (PROC1 -> PROC2 -> PROC3), IAT = 8 ---
+         GENERATE 8,FN$EXPON
+         QUEUE    WA1
+         SEIZE    PROC1
+         DEPART   WA1
+         ADVANCE  5
+         RELEASE  PROC1
+         QUEUE    WA2
+         SEIZE    PROC2
+         DEPART   WA2
+         ADVANCE  5
+         RELEASE  PROC2
+         QUEUE    WA3
+         SEIZE    PROC3
+         DEPART   WA3
+         ADVANCE  5
+         RELEASE  PROC3
+         TERMINATE 1
+
+; --- Op B: Float MULT (PROC1 -> PROC3 -> PROC4), IAT = 12 ---
+         GENERATE 12,FN$EXPON
+         QUEUE    WB1
+         SEIZE    PROC1
+         DEPART   WB1
+         ADVANCE  5
+         RELEASE  PROC1
+         QUEUE    WB3
+         SEIZE    PROC3
+         DEPART   WB3
+         ADVANCE  5
+         RELEASE  PROC3
+         QUEUE    WB4
+         SEIZE    PROC4
+         DEPART   WB4
+         ADVANCE  5
+         RELEASE  PROC4
+         TERMINATE 1
+         START    400
+\end{lstlisting}
+
+\subsubsection{Резултати}
+
+\begin{table}[H]
+    \centering
+    \caption{Натовареност на ФУ в МФК (400 задачи)}
+    \begin{tabular}{|l|c|c|c|}
+        \hline
+        \textbf{ФУ} & \textbf{Натовареност} & \textbf{Тип} & \textbf{$\rho_\mathrm{теор}$} \\
+        \hline
+        PROC1 & 96{,}8\% & Споделен (Op A + Op B) & $5/8 + 5/12 \approx 104\%$ \\
+        \hline
+        PROC2 & 61{,}1\% & Само Op A              & $5/8 = 62{,}5\%$           \\
+        \hline
+        PROC3 & 96{,}3\% & Споделен (Op A + Op B) & $5/8 + 5/12 \approx 104\%$ \\
+        \hline
+        PROC4 & 35{,}1\% & Само Op B              & $5/12 \approx 41{,}7\%$    \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            title={Натовареност на ФУ в МФК},
+            ylabel={Натовареност (\%)},
+            symbolic x coords={PROC1, PROC2, PROC3, PROC4},
+            xtick=data,
+            ymin=0, ymax=110,
+            nodes near coords,
+            nodes near coords align={vertical},
+            width=0.8\linewidth,
+            height=6cm,
+            bar width=1.2cm,
+            enlarge x limits=0.25,
+        ]
+        \addplot[fill=blue!60] coordinates {
+            (PROC1,96.8)(PROC2,61.1)(PROC3,96.3)(PROC4,35.1)
+        };
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Натовареност на функционалните устройства в МФК}
+    \label{fig:task4_util}
+\end{figure}
+
+Споделените устройства PROC1 и PROC3 са силно натоварени (над 96\%), докато несподелените PROC2 и PROC4 работят при значително по-ниска натовареност. Средното чакане пред PROC1 е 34{,}4 мод. ед. за Операция A и 36{,}0 мод. ед. за Операция B (максимални опашки 14 и 10 задачи съответно). PROC4 е с по-ниска натовареност от теоретичната поради закъсненията от тясното място при PROC3.
+
+\section{Анализ и заключение}
+
+Проведените симулационни експерименти демонстрират основните характеристики на конвейерните архитектури:
+\begin{itemize}
+    \item При \textbf{Задача 2} натовареността на всяка фаза на линейния ЕФК е еднаква и съответства точно на теоретичната стойност $\rho = t / \mathrm{IAT}$. При $\mathrm{IAT} \leq t$ системата влиза в режим на претоварване --- опашките нарастват неограничено, а средното чакане нараства рязко (от 2{,}4 мод. ед. при IAT\,=\,10 до 434{,}0 мод. ед. при IAT\,=\,2).
+
+    \item При \textbf{Задача 3} обратната връзка с $p = 0{,}4$ увеличава ефективното натоварване до $\rho_\mathrm{eff} \approx 1{,}19$, което води до критично претоварване на конвейера. Средният брой проходи на задача (1{,}63) съответства отлично на теоретичната стойност $1/(1-p) = 1{,}67$, потвърждавайки коректността на модела.
+
+    \item При \textbf{Задача 4} споделянето на PROC1 и PROC3 между двата потока води до тяхното пресищане (около 97\%), демонстрирайки колизионния хазарт в динамичен МФК. Несподелените устройства PROC2 и PROC4 работят при значително по-ниско натоварване. Резултатите потвърждават, че споделените ресурси са определящото тясно място в МФК архитектурата.
+\end{itemize}

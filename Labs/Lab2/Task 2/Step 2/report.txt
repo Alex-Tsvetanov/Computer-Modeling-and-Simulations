@@ -1,0 +1,71 @@
+
+
+              GPSS World Simulation Report - Untitled Model 1.3.1
+
+
+                   Wednesday, March 04, 2026 08:55:56  
+
+           START TIME           END TIME  BLOCKS  FACILITIES  STORAGES
+                0.000           1531.044    22        4          0
+
+
+              NAME                       VALUE  
+          EXPON                       10000.000
+          PROC1                       10002.000
+          PROC2                       10004.000
+          PROC3                       10006.000
+          PROC4                       10008.000
+          WAIT1                       10001.000
+          WAIT2                       10003.000
+          WAIT3                       10005.000
+          WAIT4                       10007.000
+
+
+ LABEL              LOC  BLOCK TYPE     ENTRY COUNT CURRENT COUNT RETRY
+                    1    GENERATE           370             0       0
+                    2    QUEUE              370            66       0
+                    3    SEIZE              304             1       0
+                    4    DEPART             303             0       0
+                    5    ADVANCE            303             0       0
+                    6    RELEASE            303             0       0
+                    7    QUEUE              303             0       0
+                    8    SEIZE              303             0       0
+                    9    DEPART             303             0       0
+                   10    ADVANCE            303             1       0
+                   11    RELEASE            302             0       0
+                   12    QUEUE              302             0       0
+                   13    SEIZE              302             1       0
+                   14    DEPART             301             0       0
+                   15    ADVANCE            301             0       0
+                   16    RELEASE            301             0       0
+                   17    QUEUE              301             0       0
+                   18    SEIZE              301             1       0
+                   19    DEPART             300             0       0
+                   20    ADVANCE            300             0       0
+                   21    RELEASE            300             0       0
+                   22    TERMINATE          300             0       0
+
+
+FACILITY         ENTRIES  UTIL.   AVE. TIME AVAIL. OWNER PEND INTER RETRY DELAY
+ PROC1              304    0.990       4.984  1      304    0    0     0     66
+ PROC2              303    0.986       4.983  1      303    0    0     0      0
+ PROC3              302    0.983       4.983  1      302    0    0     0      0
+ PROC4              301    0.980       4.983  1      301    0    0     0      0
+
+
+QUEUE              MAX CONT. ENTRY ENTRY(0) AVE.CONT. AVE.TIME   AVE.(-0) RETRY
+ WAIT1              69   67    370      5    36.125    149.483    151.531   0
+ WAIT2               1    0    303    303     0.000      0.000      0.000   0
+ WAIT3               1    1    302    301     0.000      0.000      0.000   0
+ WAIT4               1    1    301    300     0.000      0.000      0.000   0
+
+
+CEC XN   PRI          M1      ASSEM  CURRENT  NEXT  PARAMETER    VALUE
+   304    0        1267.802    304      3      4
+   302    0        1260.174    302     13     14
+   301    0        1253.854    301     18     19
+
+
+FEC XN   PRI         BDT      ASSEM  CURRENT  NEXT  PARAMETER    VALUE
+   303    0        1536.044    303     10     11
+   371    0        1536.850    371      0      1

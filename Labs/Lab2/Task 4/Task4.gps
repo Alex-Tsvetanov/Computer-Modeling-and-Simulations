@@ -1,0 +1,56 @@
+; Task 4: Multi-function pipeline (MFK) - Dynamic, 2 operations
+;
+; Operation A (Integer ADD):   FU1(5) -> FU2(5) -> FU3(5)
+; Operation B (Floating MULT): FU1(5) -> FU3(5) -> FU4(5)
+;
+; FU1 and FU3 are SHARED between both operations -> collision hazard
+;
+; Stream A: mean inter-arrival = 8
+; Stream B: mean inter-arrival = 12
+; Simulation: 400 total tasks
+
+EXPON FUNCTION RN1,C24
+0,0/.1,.104/.2,.222/.3,.355/.4,.509/.5,.69/.6,.915/.7,1.2
+.75,1.38/.8,1.6/.84,1.83/.88,2.12/.9,2.3/.92,2.52/.94,2.81
+.95,2.99/.96,3.2/.97,3.5/.98,3.9/.99,4.6/.995,5.3/.998,6.2
+.999,7/.9998,8
+
+; --- Operation A: Integer ADD (PROC1 -> PROC2 -> PROC3) ---
+         GENERATE 8,FN$EXPON    ; Stream A, mean inter-arrival = 8
+         QUEUE    WA1            ; Queue for PROC1 (shared)
+         SEIZE    PROC1
+         DEPART   WA1
+         ADVANCE  5              ; PROC1 clock = 5
+         RELEASE  PROC1
+         QUEUE    WA2            ; Queue for PROC2 (exclusive to Op A)
+         SEIZE    PROC2
+         DEPART   WA2
+         ADVANCE  5              ; PROC2 clock = 5
+         RELEASE  PROC2
+         QUEUE    WA3            ; Queue for PROC3 (shared)
+         SEIZE    PROC3
+         DEPART   WA3
+         ADVANCE  5              ; PROC3 clock = 5
+         RELEASE  PROC3
+         TERMINATE 1
+
+; --- Operation B: Floating MULT (PROC1 -> PROC3 -> PROC4) ---
+         GENERATE 12,FN$EXPON   ; Stream B, mean inter-arrival = 12
+         QUEUE    WB1            ; Queue for PROC1 (shared)
+         SEIZE    PROC1
+         DEPART   WB1
+         ADVANCE  5              ; PROC1 clock = 5
+         RELEASE  PROC1
+         QUEUE    WB3            ; Queue for PROC3 (shared)
+         SEIZE    PROC3
+         DEPART   WB3
+         ADVANCE  5              ; PROC3 clock = 5
+         RELEASE  PROC3
+         QUEUE    WB4            ; Queue for PROC4 (exclusive to Op B)
+         SEIZE    PROC4
+         DEPART   WB4
+         ADVANCE  5              ; PROC4 clock = 5
+         RELEASE  PROC4
+         TERMINATE 1
+
+         START    400
