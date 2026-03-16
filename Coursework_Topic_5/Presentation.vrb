@@ -1,0 +1,21 @@
+\frametitle{GPSS ^^d0^^bc^^d0^^be^^d0^^b4^^d0^^b5^^d0^^bb ^^d0^^bd^^d0^^b0 ^^d1^^81^^d0^^b8^^d1^^81^^d1^^82^^d0^^b5^^d0^^bc^^d0^^b0^^d1^^82^^d0^^b0}
+\small
+    \begin{block}{^^d0^^9e^^d1^^81^^d0^^bd^^d0^^be^^d0^^b2^^d0^^b5^^d0^^bd GPSS ^^d0^^ba^^d0^^be^^d0^^b4}
+\scriptsize
+\begin{verbatim}
+SIMULATE
+GENERATE 1
+SEIZE 1
+ADVANCE 2,1
+RELEASE 1
+TERMINATE 0
+GENERATE 3,1
+SEIZE 2
+ADVANCE 2,1
+RELEASE 2
+TERMINATE 0
+GENERATE 1800
+TERMINATE 1
+START 1
+\end{verbatim}
+    \end{block}

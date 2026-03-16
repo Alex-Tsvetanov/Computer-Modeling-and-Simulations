@@ -7,3 +7,5 @@
 *.fdb_latexmk
 .miktex/
 *.fls
+*.nav
+*.snm

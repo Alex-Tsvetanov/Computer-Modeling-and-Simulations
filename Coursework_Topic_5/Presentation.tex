@@ -1,0 +1,268 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[bulgarian]{babel}
+\usepackage{tempora}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\usetheme{Copenhagen}
+\usecolortheme{default}
+\setbeamertemplate{navigation symbols}{}
+
+\title{Моделиране на център за обработка на заявки с два компютъра}
+\author{Кирил Вълков \\ фак. № 121222194}
+\institute{Технически университет -- София \\ Факултет „Компютърни системи и технологии“}
+\date{}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{Съдържание}
+    \tableofcontents
+\end{frame}
+
+\section{Постановка на задачата}
+
+\begin{frame}{Постановка на задачата}
+    \begin{itemize}
+        \item Центърът за обработка на заявки се състои от два компютъра.
+        \item Към Компютър 1 заявките пристигат с експоненциално разпределение и средно междупристигателно време 1 s.
+        \item Към Компютър 2 заявките пристигат с нормално разпределение и средно междупристигателно време 3 s с отклонение в рамките на $\pm 1$ s.
+        \item Времето за обслужване и за двата компютъра е $(2 \pm 1)$ s, тоест равномерно в интервала $[1,3]$ s.
+        \item Периодът на моделиране е 1800 s (30 min).
+    \end{itemize}
+\end{frame}
+
+\section{Теоретичен анализ}
+
+\begin{frame}{Теоретичен анализ на системата}
+    Системата може да се разглежда като две независими системи за масово обслужване.
+
+    \vspace{0.5cm}
+
+    \begin{block}{Компютър 1}
+        M/G/1 система с $E[A]=1$ s и $E[S]=2$ s.
+    \end{block}
+
+    \begin{block}{Компютър 2}
+        G/G/1 система с приблизително $E[A]=3$ s и $E[S]=2$ s.
+    \end{block}
+\end{frame}
+
+\begin{frame}{Коефициент на натоварване}
+    \begin{columns}[T]
+        \begin{column}{0.48\textwidth}
+            \begin{block}{Компютър 1}
+                \[
+                    \rho_1 = \frac{E[S]}{E[A]} = \frac{2}{1} = 2
+                \]
+                \begin{itemize}
+                    \item $\rho_1 > 1$
+                    \item Системата е нестабилна
+                    \item Опашката нараства неограничено
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \begin{column}{0.48\textwidth}
+            \begin{block}{Компютър 2}
+                \[
+                    \rho_2 = \frac{2}{3} \approx 0.67
+                \]
+                \begin{itemize}
+                    \item $\rho_2 < 1$
+                    \item Системата е стабилна
+                    \item Изчакването е минимално
+                \end{itemize}
+            \end{block}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\section{Реализация на модела}
+
+\begin{frame}{Реализация на симулацията}
+    \begin{itemize}
+        \item Основната симулация е реализирана на Python с библиотеката \texttt{simpy}.
+        \item Използвани са два независими генератора на заявки.
+        \item Всеки компютър е моделиран като ресурс с капацитет 1.
+        \item За валидация е създаден и алтернативен модел на GPSS.
+    \end{itemize}
+
+    \vspace{0.4cm}
+
+    \begin{block}{Основни параметри}
+        \begin{itemize}
+            \item Време за симулация: 1800 s
+            \item Компютър 1: експоненциални пристигания, средно 1 s
+            \item Компютър 2: нормални пристигания, средно 3 s
+            \item Обслужване: равномерно в $[1,3]$ s
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Логика на модела}
+    \begin{enumerate}
+        \item Генерират се заявки за двата компютъра според зададените разпределения.
+        \item Всяка заявка постъпва в опашка към съответния ресурс.
+        \item При освобождаване на ресурса заявката започва обслужване.
+        \item Измерват се:
+        \begin{itemize}
+            \item броят обработени заявки,
+            \item средно време на изчакване,
+            \item максимално време на изчакване,
+            \item натовареност на ресурса.
+        \end{itemize}
+        \item Получените резултати се сравняват между Python и GPSS.
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{GPSS модел на системата}
+    \small
+    \begin{block}{Основен GPSS код}
+\scriptsize
+\begin{verbatim}
+SIMULATE
+GENERATE 1
+SEIZE 1
+ADVANCE 2,1
+RELEASE 1
+TERMINATE 0
+GENERATE 3,1
+SEIZE 2
+ADVANCE 2,1
+RELEASE 2
+TERMINATE 0
+GENERATE 1800
+TERMINATE 1
+START 1
+\end{verbatim}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Резултати от GPSS симулацията}
+    \small
+    \begin{table}
+        \centering
+        \begin{tabular}{lcc}
+            \toprule
+            \textbf{Параметър} & \textbf{Компютър 1} & \textbf{Компютър 2} \\
+            \midrule
+            Входове във FACILITY & 910 & 595 \\
+            Средно време за обслужване (s) & 1.977 & 2.002 \\
+            Натовареност & 0.999 & 0.662 \\
+            Забавени заявки & 890 & 0 \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+    \vspace{0.3cm}
+
+    \begin{itemize}
+        \item GPSS отчетът показва силно претоварване на Компютър 1 и липса на натрупване при Компютър 2.
+        \item Получените стойности са в съответствие с Python симулацията и теоретичния анализ.
+    \end{itemize}
+\end{frame}
+
+\section{Резултати}
+
+\begin{frame}{Резултати от симулацията}
+    \begin{table}
+        \centering
+        \begin{tabular}{>{\raggedright\arraybackslash}p{4.4cm}cc}
+            \toprule
+            \textbf{Параметър} & \textbf{Компютър 1} & \textbf{Компютър 2} \\
+            \midrule
+            Обработени заявки & 895 & 597 \\
+            Средно време на изчакване (s) & 444.78 & 0.016 \\
+            Максимално време на изчакване (s) & 932.10 & 0.91 \\
+            Натовареност & 99.93\% & 67.27\% \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+\end{frame}
+
+\begin{frame}{Сравнение между Python и GPSS}
+    \begin{table}
+        \centering
+        \begin{tabular}{lcccc}
+            \toprule
+            \textbf{Параметър} & \multicolumn{2}{c}{\textbf{Компютър 1}} & \multicolumn{2}{c}{\textbf{Компютър 2}} \\
+            \cmidrule(lr){2-3} \cmidrule(lr){4-5}
+             & \textbf{Python} & \textbf{GPSS} & \textbf{Python} & \textbf{GPSS} \\
+            \midrule
+            Обработени заявки & 895 & 910 & 597 & 595 \\
+            Натовареност & 99.93\% & 99.9\% & 67.27\% & 66.2\% \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+    \vspace{0.3cm}
+
+    \begin{itemize}
+        \item Резултатите са близки и потвърждават коректността на модела.
+        \item Разликите се дължат на случайния характер и различните реализации на разпределенията.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Графична интерпретация на изчакването}
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=11.5cm,
+            height=6.3cm,
+            xlabel={Време на изчакване (s)},
+            ylabel={Брой заявки},
+            title={Хистограма на времената за изчакване за Компютър 1},
+            ybar,
+            ymin=0,
+            xmin=0,
+            xmax=1000,
+            bar width=6pt
+        ]
+        \addplot coordinates {
+            (46.6, 86) (139.8, 118) (233.0, 100) (326.2, 93) (419.4, 92)
+            (512.7, 75) (605.9, 88) (699.1, 80) (792.3, 80) (885.5, 84)
+        };
+        \end{axis}
+    \end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Основни изводи от резултатите}
+    \begin{itemize}
+        \item Компютър 1 работи в претоварен режим.
+        \item Натовареността му е практически 100\%, а опашката расте с времето.
+        \item Компютър 2 остава в стабилен режим с почти нулево време на изчакване.
+        \item Теоретичният анализ и симулационните резултати съвпадат.
+    \end{itemize}
+\end{frame}
+
+\section{Заключение}
+
+\begin{frame}{Заключение}
+    \begin{block}{Обобщение}
+        Симулационният модел показва, че при зададените параметри първият компютър не може да обслужва входящия поток без натрупване на опашка, докато вторият компютър работи устойчиво.
+    \end{block}
+
+    \vspace{0.4cm}
+
+    \begin{alertblock}{Препоръка}
+        За оптимизация на системата е целесъобразно част от натоварването на Компютър 1 да бъде пренасочено към Компютър 2 или да се увеличи производителността на първия компютър.
+    \end{alertblock}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \Huge Благодаря за вниманието!
+\end{frame}
+
+\end{document}

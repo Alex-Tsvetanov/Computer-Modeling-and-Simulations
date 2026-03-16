@@ -1,0 +1,284 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage{cmap}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[bulgarian]{babel}
+\usepackage{tempora}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usetikzlibrary{positioning, arrows.meta}
+\usetikzlibrary{decorations.pathreplacing}
+
+\usetheme{Copenhagen}
+\usecolortheme{default}
+\setbeamertemplate{navigation symbols}{}
+
+\title{Моделиране на система за обработка на сензорни данни с крайни срокове}
+\subtitle{Курсова работа по „Компютърно моделиране и симулации“}
+\author{Алекс Цветанов\\Фак. № 121222225}
+\institute{Технически университет -- София\\Факултет „Компютърни системи и технологии“}
+\date{}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{Съдържание}
+    \tableofcontents
+\end{frame}
+
+\section{Постановка на задачата}
+
+\begin{frame}{Описание на системата}
+    \begin{itemize}
+        \item Разпределена банка от данни с три отдалечени центъра: A, B и C.
+        \item Заявките постъпват към централен компютър през интервали \((12 \pm 5)\) минути.
+        \item Централният компютър извършва предварителна обработка за \((2 \pm 1)\) минути.
+        \item След това се изпращат паралелни заявки към трите центъра.
+        \item Обработката приключва след получаване на отговори от всички центрове.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Времеви параметри}
+    \begin{table}[ht]
+        \centering
+        \begin{tabular}{lc}
+            \toprule
+            Параметър & Стойност \\
+            \midrule
+            Междупристигащо време & \((12 \pm 5)\) мин \\
+            Предварителна обработка & \((2 \pm 1)\) мин \\
+            Предаване на заявка & 1 мин \\
+            Търсене в център A & \((5 \pm 2)\) мин \\
+            Търсене в център B & \((10 \pm 5)\) мин \\
+            Търсене в център C & \((8 \pm 4)\) мин \\
+            Предаване на отговор & 2 мин \\
+            Брой заявки & 150 \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+\end{frame}
+
+\section{Теоретичен модел}
+
+\begin{frame}{Логика на обработката}
+    \begin{enumerate}
+        \item Генериране на входяща заявка.
+        \item Предварителна обработка в централния компютър.
+        \item Паралелно изпращане към A, B и C.
+        \item Паралелно търсене в трите центъра.
+        \item Получаване на трите отговора.
+        \item Завършване на заявката след синхронизация.
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Оценка на очакваното време}
+    Общото време за една заявка се определя от критичния път:
+
+    \[
+        T \approx T_{prep} + T_{send} + \max(T_A, T_B, T_C) + T_{resp}
+    \]
+
+    При средни стойности:
+
+    \[
+        T \approx 2 + 1 + \max(5, 10, 8) + 2 = 15\ \text{минути}
+    \]
+
+    \vspace{0.4cm}
+    \begin{itemize}
+        \item Очаквано най-силно влияние има център B.
+        \item Общото време се доминира от най-бавния паралелен клон.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Архитектура на системата}
+    \centering
+    \begin{tikzpicture}[node distance=2.6cm, >=Stealth, every node/.style={font=\small}]
+        \node[draw, rectangle, align=center] (central) {Централен\\компютър};
+        \node[draw, rectangle, align=center, below left=of central] (a) {Център A\\\(5\pm2\) мин};
+        \node[draw, rectangle, align=center, below=of central] (b) {Център B\\\(10\pm5\) мин};
+        \node[draw, rectangle, align=center, below right=of central] (c) {Център C\\\(8\pm4\) мин};
+
+        \draw[->] (central) to[bend left=15] node[left] {1 мин} (a);
+        \draw[->] (central) to[bend left=15] node[right] {1 мин} (b);
+        \draw[->] (central) to[bend right=15] node[right] {1 мин} (c);
+
+        \draw[->] (a) to[bend left=15] node[left] {2 мин} (central);
+        \draw[->] (b) to[bend left=15] node[left] {2 мин} (central);
+        \draw[->] (c) to[bend right=15] node[right] {2 мин} (central);
+    \end{tikzpicture}
+\end{frame}
+
+\section{Имплементация}
+
+\begin{frame}{Реализация в Python и SimPy}
+    \begin{itemize}
+        \item Моделът е реализиран на Python с библиотеката \texttt{simpy}.
+        \item Входният поток и времената за обработка се генерират с равномерни разпределения.
+        \item За паралелното изчакване на трите центъра се използва механизъм от типа \texttt{AllOf}.
+        \item За всяка заявка се измерва пълното време от постъпване до приключване.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Ключови параметри на симулацията}
+    \begin{block}{Конфигурация}
+        \begin{itemize}
+            \item \texttt{REQUEST\_COUNT = 150}
+            \item \texttt{ARRIVAL\_MEAN = 12}, \texttt{ARRIVAL\_VAR = 5}
+            \item \texttt{PREPROCESS\_MIN = 1}, \texttt{PREPROCESS\_MAX = 3}
+            \item \texttt{QUERY\_TRANSMIT\_TIME = 1}
+            \item \texttt{RESPONSE\_TRANSMIT\_TIME = 2}
+            \item \texttt{SEARCH\_A = [3, 7]}, \texttt{SEARCH\_B = [5, 15]}, \texttt{SEARCH\_C = [4, 12]}
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Алтернативна реализация в GPSS}
+    \begin{itemize}
+        \item Изградена е и независима GPSS реализация за валидация на модела.
+        \item Паралелизмът е представен чрез разделяне на транзакцията в отделни клонове.
+        \item GPSS е подходящ за проверка на логиката на потока и натоварването.
+        \item Python дава по-удобен достъп до агрегирани статистики за времената.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{GPSS код на модела}
+\tiny
+\begin{verbatim}
+GENERATE 12,5
+SEIZE 1
+ADVANCE 2,1
+RELEASE 1
+SPLIT 1,QUERY_A
+SPLIT 1,QUERY_B
+TRANSFER ,QUERY_C
+QUERY_A SEIZE 2
+ADVANCE 1
+ADVANCE 5,2
+ADVANCE 2
+RELEASE 2
+QUERY_B SEIZE 3
+ADVANCE 1
+ADVANCE 10,5
+ADVANCE 2
+RELEASE 3
+QUERY_C SEIZE 4
+ADVANCE 1
+ADVANCE 8,4
+ADVANCE 2
+RELEASE 4
+TERMINATE 0
+START 150
+\end{verbatim}
+\end{frame}
+
+\begin{frame}{Резултати от GPSS симулацията}
+    \begin{table}[ht]
+        \centering
+        \begin{tabular}{lcc}
+            \toprule
+            Параметър & Стойност \\
+            \midrule
+            Start time & 0.000 \\
+            End time & 1745.583 \\
+            Blocks & 37 \\
+            Facilities & 6 \\
+            Генерирани транзакции & 150 \\
+            Завършени транзакции & 150 \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+    \vspace{0.3cm}
+
+    \begin{itemize}
+        \item Отчетът показва, че всички 150 заявки са преминали успешно през модела.
+        \item GPSS потвърждава коректната синхронизация между трите паралелни клона.
+        \item Резултатите са в съответствие с Python симулацията, но без детайлни времеви статистики.
+    \end{itemize}
+\end{frame}
+
+\section{Резултати}
+
+\begin{frame}{Резултати от симулацията}
+    \begin{table}[ht]
+        \centering
+        \begin{tabular}{lcc}
+            \toprule
+            Параметър & Python & GPSS \\
+            \midrule
+            Генерирани заявки & 150 & 150 \\
+            Завършени заявки & 150 & 150 \\
+            Средно общо време & 20.25 мин & -- \\
+            Минимално време & 13.25 мин & -- \\
+            Максимално време & 39.36 мин & -- \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+\end{frame}
+
+\begin{frame}{Анализ на резултатите}
+    \begin{itemize}
+        \item Всички 150 заявки са обработени успешно и в двата модела.
+        \item Средното време в Python симулацията е около 20 минути.
+        \item Получената средна стойност е по-висока от теоретичната оценка 15 минути.
+        \item Причината е вариацията във времената и ефектът на най-бавния паралелен клон.
+        \item Най-съществено влияние оказва център B, който има най-голяма средна продължителност.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Сравнение между Python и GPSS}
+    \begin{columns}[T]
+        \column{0.48\textwidth}
+        \begin{block}{Python / SimPy}
+            \begin{itemize}
+                \item Детайлни временни измервания
+                \item Гъвкава статистическа обработка
+                \item Лесно разширяване на модела
+            \end{itemize}
+        \end{block}
+
+        \column{0.48\textwidth}
+        \begin{block}{GPSS}
+            \begin{itemize}
+                \item Ясен транзакционен модел
+                \item Подходящ за структурна валидация
+                \item По-ограничени обобщени времеви статистики
+            \end{itemize}
+        \end{block}
+    \end{columns}
+\end{frame}
+
+\section{Заключение}
+
+\begin{frame}{Основни изводи}
+    \begin{enumerate}
+        \item Системата работи коректно при паралелна обработка на 150 заявки.
+        \item Средното време за обработка е около 20 минути.
+        \item Център B определя критичния път в повечето случаи.
+        \item Моделът е успешно валидиран чрез Python и GPSS реализация.
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Препоръки за оптимизация}
+    \begin{itemize}
+        \item Подобряване производителността на център B.
+        \item Намаляване на времената за предаване по каналите.
+        \item Добавяне на кеширане за често използвани данни.
+        \item Очакван ефект: намаляване на средното време с около 25--30\%.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \Large Благодаря за вниманието!
+\end{frame}
+
+\end{document}
